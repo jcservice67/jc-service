@@ -4,70 +4,58 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JC Service | Chauffage - Sanitaire - Climatisation</title>
+<title>JC SERVICE | Chauffage - Sanitaire - Climatisation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
+margin:0;
 font-family:'Poppins',sans-serif;
 background:#f4f7fb;
 color:#333;
 }
 
 header{
-position:fixed;
-width:100%;
-top:0;
 background:white;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
-z-index:1000;
-}
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
 padding:15px 8%;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
 .logo{
-font-weight:700;
-font-size:22px;
-color:#0d2b55;
+display:flex;
+align-items:center;
+}
+
+.logo img{
+height:60px;
+margin-right:10px;
 }
 
 nav a{
 margin-left:25px;
 text-decoration:none;
-color:#333;
-font-weight:500;
+color:#0d2b55;
+font-weight:600;
 }
 
 .hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
 background:linear-gradient(rgba(13,43,85,0.85),rgba(13,43,85,0.85)),
-url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+url("https://images.unsplash.com/photo-1581578731548-c64695cc6952");
 background-size:cover;
 background-position:center;
-padding:20px;
+color:white;
+text-align:center;
+padding:140px 20px;
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:20px;
+font-size:45px;
+margin-bottom:15px;
 }
 
 .hero p{
@@ -76,22 +64,16 @@ margin-bottom:30px;
 }
 
 .btn{
-display:inline-block;
 background:#ff7a00;
 padding:15px 30px;
-border-radius:6px;
+border-radius:5px;
 color:white;
 text-decoration:none;
 font-weight:600;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#e66800;
 }
 
 section{
-padding:90px 8%;
+padding:80px 8%;
 }
 
 .title{
@@ -100,8 +82,8 @@ margin-bottom:50px;
 }
 
 .title h2{
-font-size:32px;
 color:#0d2b55;
+font-size:32px;
 }
 
 .services{
@@ -115,48 +97,34 @@ background:white;
 padding:30px;
 border-radius:10px;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.service:hover{
-transform:translateY(-5px);
 }
 
 .service h3{
 color:#0d2b55;
-margin-bottom:10px;
 }
 
 .about{
+max-width:900px;
+margin:auto;
 background:white;
 padding:50px;
 border-radius:10px;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
-max-width:900px;
-margin:auto;
-text-align:center;
 line-height:1.7;
+text-align:center;
 }
 
 .contact{
 background:#0d2b55;
 color:white;
 text-align:center;
-}
-
-.contact p{
-margin:10px 0;
-font-size:18px;
+padding:70px 20px;
 }
 
 .contact a{
 color:#ff7a00;
-text-decoration:none;
 font-weight:600;
-}
-
-.map{
-margin-top:40px;
+text-decoration:none;
 }
 
 footer{
@@ -166,7 +134,7 @@ text-align:center;
 padding:20px;
 }
 
-.call-button{
+.call{
 position:fixed;
 bottom:20px;
 right:20px;
@@ -176,7 +144,6 @@ padding:15px 20px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 </style>
@@ -186,9 +153,9 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 
 <header>
 
-<div class="navbar">
-
-<div class="logo">JC SERVICE</div>
+<div class="logo">
+<img src="logo.png">
+</div>
 
 <nav>
 <a href="#services">Services</a>
@@ -196,21 +163,15 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <a href="#contact">Contact</a>
 </nav>
 
-</div>
-
 </header>
 
 <section class="hero">
 
-<div>
+<h1>Chauffage • Sanitaire • Climatisation</h1>
 
-<h1>Chauffage • Climatisation • Sanitaire</h1>
-
-<p>Installation, rénovation et dépannage par un artisan expérimenté</p>
+<p>Installation • Dépannage • Rénovation intérieure</p>
 
 <a class="btn" href="tel:0685306973">Demander un devis</a>
-
-</div>
 
 </section>
 
@@ -224,12 +185,12 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 
 <div class="service">
 <h3>🔥 Chauffage</h3>
-<p>Installation et dépannage de systèmes de chauffage pour votre confort toute l'année.</p>
+<p>Installation et dépannage de systèmes de chauffage.</p>
 </div>
 
 <div class="service">
 <h3>🚿 Sanitaire</h3>
-<p>Plomberie et création de salles de bain modernes.</p>
+<p>Plomberie et installation sanitaire.</p>
 </div>
 
 <div class="service">
@@ -238,18 +199,18 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 </div>
 
 <div class="service">
-<h3>🛠️ Rénovation intérieure</h3>
-<p>Travaux et aménagement intérieur.</p>
-</div>
-
-<div class="service">
 <h3>🛁 Salle de bain</h3>
 <p>Rénovation complète de salle de bain.</p>
 </div>
 
 <div class="service">
+<h3>🏠 Rénovation intérieure</h3>
+<p>Aménagement et rénovation de votre habitat.</p>
+</div>
+
+<div class="service">
 <h3>🌱 Énergies renouvelables</h3>
-<p>Solutions modernes pour améliorer l'efficacité énergétique.</p>
+<p>Solutions pour améliorer la performance énergétique.</p>
 </div>
 
 </div>
@@ -258,17 +219,9 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 
 <section id="about">
 
-<div class="title">
-<h2>Votre artisan local</h2>
-</div>
-
 <div class="about">
 
-<p>
-
-<strong>JC SERVICE – Artisan chauffagiste & sanitaire</strong>
-
-</p>
+<h2>JC SERVICE – Artisan chauffagiste & sanitaire</h2>
 
 <p>
 
@@ -294,38 +247,25 @@ Contactez-moi pour un devis gratuit et des solutions adaptées à votre habitati
 
 <section id="contact" class="contact">
 
-<div class="title">
 <h2>Contact</h2>
-</div>
 
 <p>📞 <a href="tel:0685306973">06 85 30 69 73</a></p>
 
-<p>📧 <a href="mailto:instal.jcservice@gmail.com">installe.jcservice@gmail.com</a></p>
+<p>📧 <a href="mailto:instal.jcservice@gmail.com">instal.jcservice@gmail.com</a></p>
 
 <p>📍 9a route de Paris, 67117 Ittenheim</p>
 
 <p>Facebook : JC Service</p>
 
-<div class="map">
-
-<iframe
-src="https://maps.google.com/maps?q=9a%20route%20de%20paris%2067117%20ittenheim&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="300"
-style="border:0;">
-</iframe>
-
-</div>
-
 </section>
 
 <footer>
 
-<p>© 2026 JC Service - Artisan Chauffagiste</p>
+<p>© 2026 JC SERVICE</p>
 
 </footer>
 
-<a class="call-button" href="tel:0685306973">📞 Appeler</a>
+<a class="call" href="tel:0685306973">📞 Appeler</a>
 
 </body>
 </html>
