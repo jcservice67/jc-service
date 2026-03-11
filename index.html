@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,14 +28,8 @@ align-items:center;
 justify-content:space-between;
 }
 
-.logo{
-display:flex;
-align-items:center;
-}
-
 .logo img{
-height:60px;
-margin-right:10px;
+height:70px;
 }
 
 nav a{
@@ -55,12 +51,15 @@ padding:140px 20px;
 
 .hero h1{
 font-size:45px;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
-.hero p{
-font-size:18px;
-margin-bottom:30px;
+.slogan{
+font-size:22px;
+font-weight:600;
+color:#ff7a00;
+min-height:30px;
+margin-bottom:20px;
 }
 
 .btn{
@@ -97,6 +96,12 @@ background:white;
 padding:30px;
 border-radius:10px;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.service:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 .service h3{
@@ -146,7 +151,20 @@ text-decoration:none;
 font-weight:bold;
 }
 
+.whatsapp{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
 </style>
+
 </head>
 
 <body>
@@ -158,8 +176,8 @@ font-weight:bold;
 </div>
 
 <nav>
-<a href="index.html">Accueil</a>
-<a href="entretien.html">Entretien</a>
+<a href="#">Accueil</a>
+<a href="#services">Services</a>
 <a href="#about">Entreprise</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -170,7 +188,13 @@ font-weight:bold;
 
 <h1>Chauffage • Sanitaire • Climatisation</h1>
 
+<p class="slogan">
+<span id="typing"></span>
+</p>
+
 <p>Installation • Dépannage • Rénovation intérieure</p>
+
+<br>
 
 <a class="btn" href="#devis">Demander un devis</a>
 
@@ -218,6 +242,38 @@ font-weight:bold;
 
 </section>
 
+<section>
+
+<div class="title">
+<h2>Pourquoi choisir JC SERVICE</h2>
+</div>
+
+<div class="services">
+
+<div class="service">
+<h3>✔ 15 ans d’expérience</h3>
+<p>Un savoir-faire solide dans le chauffage et le sanitaire.</p>
+</div>
+
+<div class="service">
+<h3>⚡ Intervention rapide</h3>
+<p>Dépannage et intervention dans les meilleurs délais.</p>
+</div>
+
+<div class="service">
+<h3>📋 Devis gratuit</h3>
+<p>Étude de votre projet et devis sans engagement.</p>
+</div>
+
+<div class="service">
+<h3>🤝 Artisan local</h3>
+<p>Un interlocuteur unique proche de chez vous.</p>
+</div>
+
+</div>
+
+</section>
+
 <section id="about">
 
 <div class="about">
@@ -240,6 +296,22 @@ Contactez-moi pour un devis gratuit et des solutions adaptées à votre habitati
 
 </section>
 
+<section id="zone">
+
+<div class="title">
+<h2>Zone d'intervention</h2>
+</div>
+
+<p style="text-align:center;font-size:18px;max-width:800px;margin:auto;">
+
+JC SERVICE intervient principalement dans le Bas-Rhin :
+
+Strasbourg • Ittenheim • Obernai • Saverne • Brumath • Truchtersheim et les communes environnantes.
+
+</p>
+
+</section>
+
 <section id="devis">
 
 <div class="title">
@@ -253,7 +325,9 @@ Contactez-moi pour un devis gratuit et des solutions adaptées à votre habitati
 <input type="hidden" name="_subject" value="Nouvelle demande de devis JC Service">
 
 <input type="text" name="Nom" placeholder="Votre nom" required>
+
 <input type="tel" name="Téléphone" placeholder="Votre téléphone" required>
+
 <input type="email" name="Email" placeholder="Votre email">
 
 <select name="Service">
@@ -279,17 +353,41 @@ Envoyer la demande
 <h2>Contact</h2>
 
 <p>📞 <a href="tel:0685306973">06 85 30 69 73</a></p>
+
 <p>📧 <a href="mailto:instal.jcservice@gmail.com">instal.jcservice@gmail.com</a></p>
+
 <p>📍 9a route de Paris, 67117 Ittenheim</p>
+
 <p>Facebook : JC Service</p>
 
 </section>
 
 <footer>
+
 <p>© 2026 JC SERVICE</p>
+
 </footer>
 
 <a class="call" href="tel:0685306973">📞 Appeler</a>
+
+<a class="whatsapp" href="https://wa.me/33685306973">💬 WhatsApp</a>
+
+<script>
+
+const text = "L’expérience au service de votre confiance";
+let index = 0;
+
+function typeWriter(){
+if(index < text.length){
+document.getElementById("typing").innerHTML += text.charAt(index);
+index++;
+setTimeout(typeWriter,40);
+}
+}
+
+window.onload = typeWriter;
+
+</script>
 
 </body>
 </html>
