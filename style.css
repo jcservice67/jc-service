@@ -53,10 +53,11 @@ color:#38bdf8;
 /* HERO */
 
 .hero{
-background-image:url("hero-energie.png");
+height:100vh;
+background-image:url("images/hero-energie.png");
 background-size:cover;
 background-position:center;
-height:550px;
+position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
