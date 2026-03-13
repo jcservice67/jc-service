@@ -64,55 +64,48 @@ color:#38bdf8;
 /* HERO SECTION */
 
 .hero{
-background:url("hero.jpg") center/cover no-repeat;
+background-image:url("images/hero.jpg");
+background-size:cover;
+background-position:center;
 height:500px;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
-position:relative;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.55);
 }
 
 .hero-content{
-position:relative;
-z-index:1;
+background:rgba(0,0,0,0.45);
+padding:40px;
+border-radius:10px;
 }
 
 .hero h1{
 font-size:42px;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .hero p{
 font-size:20px;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 .hero button{
-background:#38bdf8;
+background:#0ea5e9;
 border:none;
-padding:15px 35px;
+padding:14px 30px;
 font-size:16px;
 font-weight:bold;
 color:white;
-border-radius:5px;
+border-radius:6px;
 cursor:pointer;
 transition:0.3s;
 }
 
 .hero button:hover{
-background:#0ea5e9;
+background:#0284c7;
+}
 }
 
 /* SECTIONS */
