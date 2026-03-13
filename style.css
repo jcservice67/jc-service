@@ -161,3 +161,37 @@ transition:1s all ease;
 opacity:1;
 transform:translateY(0);
 }
+
+.expert-section{
+padding:100px 20px;
+text-align:center;
+background:#f8f9fb;
+}
+
+.expert-section h2{
+font-size:38px;
+margin-bottom:25px;
+}
+
+.presentation{
+max-width:700px;
+margin:auto;
+font-size:18px;
+line-height:1.6;
+margin-bottom:50px;
+}
+
+.expert-points{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.point{
+background:white;
+padding:20px 30px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+font-weight:600;
+}
