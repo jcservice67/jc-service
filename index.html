@@ -2,172 +2,10 @@
 <html lang="fr">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>JC SERVICE | Chauffage - Sanitaire - Climatisation</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:#f4f7fb;
-color:#333;
-}
-
-header{
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-padding:15px 8%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.logo img{
-height:70px;
-}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#0d2b55;
-font-weight:600;
-}
-
-.hero{
-background:linear-gradient(rgba(13,43,85,0.85),rgba(13,43,85,0.85)),
-url("https://images.unsplash.com/photo-1581578731548-c64695cc6952");
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
-padding:140px 20px;
-}
-
-.hero h1{
-font-size:45px;
-margin-bottom:20px;
-}
-
-.slogan{
-font-size:22px;
-font-weight:600;
-color:#ff7a00;
-min-height:30px;
-margin-bottom:20px;
-}
-
-.btn{
-background:#ff7a00;
-padding:15px 30px;
-border-radius:5px;
-color:white;
-text-decoration:none;
-font-weight:600;
-}
-
-section{
-padding:80px 8%;
-}
-
-.title{
-text-align:center;
-margin-bottom:50px;
-}
-
-.title h2{
-color:#0d2b55;
-font-size:32px;
-}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.service{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.service:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 35px rgba(0,0,0,0.15);
-}
-
-.service h3{
-color:#0d2b55;
-}
-
-.about{
-max-width:900px;
-margin:auto;
-background:white;
-padding:50px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-line-height:1.7;
-text-align:center;
-}
-
-.contact{
-background:#0d2b55;
-color:white;
-text-align:center;
-padding:70px 20px;
-}
-
-.contact a{
-color:#ff7a00;
-font-weight:600;
-text-decoration:none;
-}
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-.call{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#ff7a00;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.whatsapp{
-position:fixed;
-bottom:80px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-}
-
-</style>
-
+<title>JC Service | Chauffage & Gaz</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -175,223 +13,55 @@ font-weight:bold;
 <header>
 
 <div class="logo">
-<img src="logo.png">
+JC Service
 </div>
 
 <nav>
 <a href="index.html">Accueil</a>
-<a href="#services">Services</a>
-<a href="entretien.html">Entretien & Tarifs</a>
-<a href="#about">Entreprise</a>
-<a href="#contact">Contact</a>
+<a href="services.html">Services</a>
+<a href="tarifs.html">Tarifs</a>
+<a href="realisations.html">Réalisations</a>
+<a href="contact.html">Contact</a>
 </nav>
 
 </header>
 
+
 <section class="hero">
 
-<h1>Chauffage • Sanitaire • Climatisation</h1>
-
-<p class="slogan">
-<span id="typing"></span>
-</p>
-
-<p>Installation • Dépannage • Rénovation intérieure</p>
-
-<br>
-
-<a class="btn" href="#devis">Demander un devis</a>
-
-</section>
-
-<section id="services">
-
-<div class="title">
-<h2>Nos Services</h2>
-</div>
-
-<div class="services">
-
-<div class="service">
-<h3>🔥 Chauffage</h3>
-<p>Installation et dépannage de systèmes de chauffage.</p>
-</div>
-
-<div class="service">
-<h3>🚿 Sanitaire</h3>
-<p>Plomberie et installation sanitaire.</p>
-</div>
-
-<div class="service">
-<h3>❄️ Climatisation</h3>
-<p>Installation et entretien de climatisation.</p>
-</div>
-
-<div class="service">
-<h3>🛁 Salle de bain</h3>
-<p>Rénovation complète de salle de bain.</p>
-</div>
-
-<div class="service">
-<h3>🏠 Rénovation intérieure</h3>
-<p>Aménagement et rénovation de votre habitat.</p>
-</div>
-
-<div class="service">
-<h3>🌱 Énergies renouvelables</h3>
-<p>Solutions pour améliorer la performance énergétique.</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="title">
-<h2>Pourquoi choisir JC SERVICE</h2>
-</div>
-
-<div class="services">
-
-<div class="service">
-<h3>✔ 15 ans d’expérience</h3>
-<p>Un savoir-faire solide dans le chauffage et le sanitaire.</p>
-</div>
-
-<div class="service">
-<h3>⚡ Intervention rapide</h3>
-<p>Dépannage et intervention rapide.</p>
-</div>
-
-<div class="service">
-<h3>📋 Devis gratuit</h3>
-<p>Étude de votre projet sans engagement.</p>
-</div>
-
-<div class="service">
-<h3>🤝 Artisan local</h3>
-<p>Un interlocuteur unique proche de chez vous.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="about">
-
-<div class="about">
-
-<h2>JC SERVICE – Artisan chauffagiste & sanitaire</h2>
+<h1>L’expérience au service de votre confiance</h1>
 
 <p>
-Artisan local formé chez les Compagnons du Devoir, je mets à votre service plus de 15 ans d’expérience dans les domaines du chauffage, du sanitaire, de la climatisation et de la rénovation intérieure.
+Installation • Entretien • Dépannage chauffage et gaz
 </p>
+
+<a href="contact.html" class="btn">
+Demander un devis
+</a>
+
+</section>
+
+
+<section class="intro">
+
+<h2>Votre spécialiste chauffage et gaz</h2>
 
 <p>
-Je vous accompagne dans vos projets avec sérieux, conseils et savoir-faire, que ce soit pour une installation, une rénovation ou un dépannage.
-</p>
-
-<p>
-Contactez-moi pour un devis gratuit et des solutions adaptées à votre habitation.
-</p>
-
-</div>
-
-</section>
-
-<section id="zone">
-
-<div class="title">
-<h2>Zone d'intervention</h2>
-</div>
-
-<p style="text-align:center;font-size:18px;max-width:800px;margin:auto;">
-
-JC SERVICE intervient dans le Bas-Rhin :
-
-Strasbourg • Ittenheim • Obernai • Saverne • Brumath • Truchtersheim et les communes environnantes.
-
+JC Service est une entreprise spécialisée dans l'installation,
+l'entretien et le dépannage de systèmes de chauffage et
+d’installations gaz à Ittenheim, Strasbourg et dans tout le Bas-Rhin.
 </p>
 
 </section>
 
-<section id="devis">
-
-<div class="title">
-<h2>Demande de devis</h2>
-<p>Remplissez le formulaire et nous vous répondrons rapidement.</p>
-</div>
-
-<form action="https://formsubmit.co/instal.jcservice@gmail.com" method="POST" style="max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px;">
-
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_subject" value="Nouvelle demande de devis JC Service">
-
-<input type="text" name="Nom" placeholder="Votre nom" required>
-
-<input type="tel" name="Téléphone" placeholder="Votre téléphone" required>
-
-<input type="email" name="Email" placeholder="Votre email">
-
-<select name="Service">
-<option>Chauffage</option>
-<option>Climatisation</option>
-<option>Salle de bain</option>
-<option>Rénovation</option>
-<option>Entretien</option>
-</select>
-
-<textarea name="Message" placeholder="Décrivez votre projet..." rows="5"></textarea>
-
-<button type="submit" style="background:#ff7a00;color:white;padding:15px;border:none;border-radius:5px;font-weight:bold;">
-Envoyer la demande
-</button>
-
-</form>
-
-</section>
-
-<section id="contact" class="contact">
-
-<h2>Contact</h2>
-
-<p>📞 <a href="tel:0685306973">06 85 30 69 73</a></p>
-
-<p>📧 <a href="mailto:instal.jcservice@gmail.com">instal.jcservice@gmail.com</a></p>
-
-<p>📍 9a route de Paris, 67117 Ittenheim</p>
-
-<p>Facebook : JC Service</p>
-
-</section>
 
 <footer>
 
-<p>© 2026 JC SERVICE</p>
+<p>JC Service</p>
+<p>📞 06 85 30 69 73</p>
+<p>📧 instal.jcservice@gmail.com</p>
 
 </footer>
-
-<a class="call" href="tel:0685306973">📞 Appeler</a>
-
-<a class="whatsapp" href="https://wa.me/33685306973">💬 WhatsApp</a>
-
-<script>
-
-const text = "L’expérience au service de votre confiance";
-let index = 0;
-
-function typeWriter(){
-if(index < text.length){
-document.getElementById("typing").innerHTML += text.charAt(index);
-index++;
-setTimeout(typeWriter,40);
-}
-}
-
-window.onload = typeWriter;
-
-</script>
 
 </body>
 </html>
