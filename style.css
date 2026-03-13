@@ -64,7 +64,7 @@ color:#38bdf8;
 /* HERO SECTION */
 
 .hero{
-background-image:url("images/hero.jpg");
+background-image:url("images/hero-energie.jpg");
 background-size:cover;
 background-position:center;
 height:500px;
@@ -76,7 +76,7 @@ color:white;
 }
 
 .hero-content{
-background:rgba(0,0,0,0.45);
+background:rgba(0,0,0,0.4);
 padding:40px;
 border-radius:10px;
 }
