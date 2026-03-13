@@ -76,9 +76,13 @@ backdrop-filter:blur(6px);
 }
 
 .logo{
-font-size:22px;
-font-weight:700;
-letter-spacing:2px;
+font-size:24px;
+font-weight:600;
+letter-spacing:1px;
 color:white;
-text-transform:uppercase;
+}
+
+.logo .jc{
+color:#ff6a00;
+font-weight:800;
 }
