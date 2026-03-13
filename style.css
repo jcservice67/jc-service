@@ -195,3 +195,53 @@ border-radius:10px;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
 font-weight:600;
 }
+
+.expert-section{
+padding:120px 60px;
+background:#f8f9fb;
+}
+
+.expert-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+max-width:1200px;
+margin:auto;
+flex-wrap:wrap;
+}
+
+.expert-text{
+flex:1;
+}
+
+.expert-text h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.expert-text p{
+font-size:18px;
+line-height:1.6;
+margin-bottom:30px;
+}
+
+.expert-list{
+list-style:none;
+padding:0;
+}
+
+.expert-list li{
+margin-bottom:12px;
+font-size:17px;
+}
+
+.expert-image{
+flex:1;
+}
+
+.expert-image img{
+width:100%;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
