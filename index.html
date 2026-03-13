@@ -8,24 +8,11 @@
 
 <title>JC Service - Chauffage & Énergie</title>
 
+<link rel="stylesheet" href="style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 </head>
-
-<script>
-
-window.addEventListener("scroll", function() {
-
-const header = document.querySelector("header");
-
-if(window.scrollY > 50){
-header.classList.add("scrolled");
-} else{
-header.classList.remove("scrolled");
-}
-
-});
-
-</script>  
 
 <body>
 
@@ -59,7 +46,7 @@ header.classList.remove("scrolled");
 
 <div class="hero-content">
 
-<h1>JC Service</h1>
+<h1><span class="logo-jc">JC</span> Service</h1>
 
 <p class="hero-subtitle">
 Solutions de chauffage et d'énergie pour votre confort au quotidien.
@@ -112,7 +99,8 @@ Chaudières – Pompes à chaleur – Énergies renouvelables
 </section>
 
 
-<section class="expert-section reveal">
+
+<section class="expert-section reveal" id="about">
 
 <div class="expert-container">
 
@@ -153,6 +141,24 @@ votre confort et améliorer la performance énergétique de votre logement.
 <p>Email : instal.jcservice@gmail.com</p>
 
 </footer>
+
+
+
+<script>
+
+window.addEventListener("scroll", function() {
+
+const header = document.querySelector("header");
+
+if(window.scrollY > 50){
+header.classList.add("scrolled");
+} else{
+header.classList.remove("scrolled");
+}
+
+});
+
+</script>
 
 
 
