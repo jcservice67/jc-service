@@ -52,6 +52,8 @@ color:#38bdf8;
 
 /* HERO */
 
+<img src="images/hero-energie.png" width="400">
+
 .hero{
 background-image:url("images/hero-energie.png");
 background-size:cover;
