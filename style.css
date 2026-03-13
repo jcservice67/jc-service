@@ -5,19 +5,30 @@ background:#f4f4f4;
 }
 
 header{
+position:absolute;
+top:0;
+left:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
-background:#1c1c1c;
+padding:25px 60px;
+background:transparent;
 color:white;
+z-index:10;
 }
 
 nav a{
 color:white;
-margin-left:20px;
+margin-left:30px;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
+font-size:15px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff6a00;
 }
 
 .hero{
@@ -72,7 +83,7 @@ padding:30px;
 }
 
 .logo img{
-height:60px;
+height:70px;
 }
 
 .phone{
