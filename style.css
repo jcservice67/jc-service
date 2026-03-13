@@ -75,11 +75,9 @@ border-radius:8px;
 backdrop-filter:blur(6px);
 }
 
-.logo img{
-height:65px;
-width:auto;
-}
-.phone{
+.logo{
+font-size:22px;
+font-weight:700;
+letter-spacing:2px;
 color:white;
-font-weight:bold;
 }
