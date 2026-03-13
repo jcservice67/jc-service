@@ -86,3 +86,12 @@ color:white;
 color:#ff6a00;
 font-weight:800;
 }
+
+.header-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 20px;
+}
