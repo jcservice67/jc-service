@@ -3,6 +3,8 @@ margin:0;
 font-family:'Poppins', sans-serif;
 }
 
+/* HEADER */
+
 header{
 position:fixed;
 top:0;
@@ -12,15 +14,21 @@ z-index:1000;
 transition:0.3s;
 }
 
+/* NAVIGATION */
+
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 60px;
+max-width:1200px;
+margin:auto;
 
-background:rgba(255,255,255,0.1);
+background:rgba(255,255,255,0.15);
 backdrop-filter:blur(10px);
 }
+
+/* LOGO */
 
 .logo{
 font-size:26px;
@@ -28,6 +36,8 @@ font-weight:700;
 letter-spacing:1px;
 color:#0f172a;
 }
+
+/* MENU */
 
 nav ul{
 list-style:none;
@@ -40,8 +50,10 @@ nav ul li{
 margin-left:40px;
 }
 
+/* LIENS */
+
 nav ul li a{
-color:#222;
+color:#0f172a;
 text-decoration:none;
 font-weight:600;
 font-size:16px;
