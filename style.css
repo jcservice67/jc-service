@@ -272,8 +272,8 @@ letter-spacing:1px;
 color:#ff6600;
 }
 
-.footer{
-background:linear-gradient(135deg,#1e3a8a,#0f172a);
+footer{
+background:#1e3a8a;
 color:white;
 padding:20px 40px;
 }
