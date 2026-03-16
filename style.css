@@ -314,3 +314,24 @@ transition:0.3s;
 .btn-devis:hover{
 background:#e56700;
 }
+
+.floating-devis{
+position:fixed;
+right:20px;
+top:50%;
+transform:translateY(-50%);
+background:#ff7a00;
+color:white;
+padding:15px 22px;
+font-weight:600;
+text-decoration:none;
+border-radius:8px;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+z-index:999;
+transition:0.3s;
+}
+
+.floating-devis:hover{
+background:#e56700;
+transform:translateY(-50%) scale(1.05);
+}
