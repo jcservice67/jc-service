@@ -299,7 +299,7 @@ opacity:0.9;
 opacity:0.9;
 }
 
-/* BOUTON FLOTTANT DEMANDE DE DEVIS */
+/* BOUTON FLOTTANT DESKTOP */
 
 .floating-devis{
 position:fixed;
@@ -320,4 +320,25 @@ transition:0.3s;
 .floating-devis:hover{
 background:#e56700;
 transform:translateY(-50%) scale(1.05);
+}
+
+
+/* VERSION MOBILE PROPRE */
+
+@media screen and (max-width:768px){
+
+.floating-devis{
+right:50%;
+bottom:20px;
+top:auto;
+transform:translateX(50%);
+padding:16px 30px;
+border-radius:30px;
+font-size:16px;
+}
+
+.floating-devis:hover{
+transform:translateX(50%);
+}
+
 }
