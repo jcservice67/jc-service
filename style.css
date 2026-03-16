@@ -299,21 +299,7 @@ opacity:0.9;
 opacity:0.9;
 }
 
-.btn-devis{
-display:inline-block;
-margin-top:25px;
-padding:14px 30px;
-background:#ff7a00;
-color:white;
-font-weight:600;
-text-decoration:none;
-border-radius:6px;
-transition:0.3s;
-}
-
-.btn-devis:hover{
-background:#e56700;
-}
+/* BOUTON FLOTTANT DEMANDE DE DEVIS */
 
 .floating-devis{
 position:fixed;
