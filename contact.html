@@ -4,36 +4,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Demande de devis - JC Service</title>
+<title>Contact - JC Service</title>
 
 <link rel="stylesheet" href="style.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header>
-<h1>Demande de devis</h1>
+<nav>
+
+<div class="logo">
+<span class="logo-jc">JC</span> Service
+</div>
+
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="tarifs.html">Tarifs entretien</a></li>
+</ul>
+
+</nav>
 </header>
 
-<section class="contact">
+<section class="contact-section">
 
-<form>
+<div class="contact-container">
 
-<input type="text" placeholder="Nom" required>
+<h2>Demande de devis</h2>
+<p>Remplissez ce formulaire, nous vous recontactons rapidement.</p>
 
-<input type="email" placeholder="Email" required>
+<form action="https://formsubmit.co/instal.jcservice@gmail.com" method="POST">
 
-<input type="tel" placeholder="Téléphone">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
 
-<textarea placeholder="Décrivez votre projet"></textarea>
+<div class="form-group">
+<input type="text" name="Nom" placeholder="Nom / Prénom" required>
+</div>
 
-<button type="submit">Envoyer</button>
+<div class="form-group">
+<input type="tel" name="Téléphone" placeholder="Téléphone" required>
+</div>
+
+<div class="form-group">
+<input type="email" name="Email" placeholder="Email" required>
+</div>
+
+<div class="form-group">
+<select name="Service" required>
+<option value="">Type de demande</option>
+<option>Installation</option>
+<option>Entretien</option>
+<option>Dépannage</option>
+</select>
+</div>
+
+<div class="form-group">
+<textarea name="Message" placeholder="Décrivez votre besoin..." rows="5" required></textarea>
+</div>
+
+<button type="submit" class="btn">Envoyer la demande</button>
 
 </form>
 
+</div>
+
 </section>
+
+<a href="contact.html" class="floating-devis">
+Demander un devis
+</a>
 
 </body>
 </html>
