@@ -312,3 +312,45 @@ font-size:16px;
 }
 
 }
+
+.contact-section{
+padding:120px 20px;
+text-align:center;
+}
+
+.contact-container{
+max-width:600px;
+margin:auto;
+}
+
+.contact-container h2{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.contact-container p{
+margin-bottom:40px;
+color:#555;
+}
+
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+width:100%;
+padding:15px;
+border-radius:8px;
+border:1px solid #ddd;
+font-family:'Poppins', sans-serif;
+font-size:15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+outline:none;
+border-color:#ff6600;
+}
