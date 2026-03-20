@@ -463,3 +463,14 @@ margin-bottom:20px;
 .services-cta .btn{
 margin:10px;
 }
+
+.services-list {
+align-items: stretch;
+}
+
+.service-item {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 100%;
+}
