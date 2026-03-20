@@ -13,11 +13,10 @@ width:100%;
 z-index:1000;
 transition:0.3s;
 
-/* Effet flou pleine largeur */
 background:rgba(255,255,255,0.2);
 backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
-
 /* NAVIGATION */
 
 nav{
