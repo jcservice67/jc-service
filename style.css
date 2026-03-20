@@ -12,6 +12,10 @@ left:0;
 width:100%;
 z-index:1000;
 transition:0.3s;
+
+/* Effet flou pleine largeur */
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(12px);
 }
 
 /* NAVIGATION */
@@ -23,9 +27,7 @@ align-items:center;
 padding:20px 60px;
 max-width:1200px;
 margin:auto;
-
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(10px);
+width:100%;
 }
 
 /* LOGO */
@@ -35,6 +37,10 @@ font-size:26px;
 font-weight:700;
 letter-spacing:1px;
 color:#0f172a;
+}
+
+.logo-jc{
+color:#ff6600;
 }
 
 /* MENU */
@@ -66,7 +72,7 @@ color:#ff6600;
 
 /* MENU QUAND ON SCROLL */
 
-header.scrolled nav{
+header.scrolled{
 background:white;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
@@ -78,6 +84,8 @@ color:#222;
 header.scrolled nav ul li a{
 color:#222;
 }
+
+/* HERO */
 
 .hero{
 height:100vh;
@@ -109,16 +117,6 @@ text-decoration:none;
 border-radius:5px;
 font-weight:bold;
 }
-
-/* HERO */
-
-.hero{
-height:100vh;
-background-image:url("images/hero-energie.png");
-background-size:cover;
-background-position:center;
-}
-
 
 /* SERVICES */
 
@@ -161,7 +159,6 @@ margin-bottom:15px;
 font-size:18px;
 }
 
-
 /* REVEAL ANIMATION */
 
 .reveal{
@@ -175,39 +172,7 @@ opacity:1;
 transform:translateY(0);
 }
 
-.expert-section{
-padding:100px 20px;
-text-align:center;
-background:#f8f9fb;
-}
-
-.expert-section h2{
-font-size:38px;
-margin-bottom:25px;
-}
-
-.presentation{
-max-width:700px;
-margin:auto;
-font-size:18px;
-line-height:1.6;
-margin-bottom:50px;
-}
-
-.expert-points{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-}
-
-.point{
-background:white;
-padding:20px 30px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-font-weight:600;
-}
+/* EXPERT SECTION */
 
 .expert-section{
 padding:120px 60px;
@@ -272,17 +237,7 @@ font-weight:500;
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-
-
-.logo{
-font-size:26px;
-font-weight:700;
-letter-spacing:1px;
-}
-
-.logo-jc{
-color:#ff6600;
-}
+/* FOOTER */
 
 footer{
 background:#1e3a8a;
@@ -333,10 +288,17 @@ transition:0.3s;
 background:#e56700;
 }
 
-
 /* VERSION MOBILE */
 
 @media (max-width:768px){
+
+nav{
+padding:15px 20px;
+}
+
+nav ul li{
+margin-left:20px;
+}
 
 .floating-devis{
 left:0;
@@ -350,7 +312,4 @@ border-radius:0;
 font-size:16px;
 }
 
-}
-nav {
-    width: 100%;
 }
