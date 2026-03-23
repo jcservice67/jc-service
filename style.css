@@ -481,71 +481,73 @@ min-height: 50px;
 }
 
 .contrats {
+    padding: 80px 20px;
     text-align: center;
-    padding: 60px 20px;
+    background: #f9f9f9;
 }
 
 .contrats h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .subtitle {
-    color: #666;
-    margin-bottom: 40px;
+    color: #777;
+    margin-bottom: 50px;
 }
 
 .cards {
     display: flex;
-    gap: 25px;
     justify-content: center;
-    align-items: stretch;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .card {
     width: 300px;
-    padding: 30px;
-    border-radius: 14px;
-    color: #fff;
+    padding: 35px;
+    border-radius: 16px;
     text-align: left;
+    color: #fff;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.4s;
 }
 
 /* TITRES */
 .card h3 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     margin-bottom: 10px;
 }
 
+/* DESC */
 .card .desc {
     font-size: 0.95rem;
-    margin-bottom: 20px;
-    opacity: 0.95;
+    margin-bottom: 25px;
+    opacity: 0.9;
 }
 
 /* LISTE */
 .card ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .card ul li {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
+    margin-bottom: 12px;
 }
 
 /* BOUTON */
 .card .btn {
-    display: inline-block;
+    display: block;
+    text-align: center;
     background: #fff;
     color: #000;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
     font-weight: 600;
+    text-decoration: none;
     transition: 0.3s;
 }
 
@@ -554,14 +556,16 @@ min-height: 50px;
     color: #fff;
 }
 
-/* COULEURS */
+/* COULEURS + DÉGRADÉS */
 .essentiel {
     background: linear-gradient(135deg, #f7d358, #f4c542);
+    color: #000;
 }
 
 .privilege {
     background: linear-gradient(135deg, #ff6b5a, #e74c3c);
-    transform: scale(1.08); /* mise en avant */
+    transform: scale(1.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
     z-index: 2;
 }
 
@@ -569,30 +573,27 @@ min-height: 50px;
     background: linear-gradient(135deg, #f5b041, #f39c12);
 }
 
-/* BADGE VIP */
-.privilege::before {
-    content: "OFFRE VIP";
+/* BADGE */
+.badge {
     position: absolute;
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
     background: #fff;
     color: #e74c3c;
-    font-size: 0.75rem;
+    padding: 5px 14px;
+    font-size: 0.7rem;
     font-weight: bold;
-    padding: 5px 12px;
     border-radius: 20px;
 }
 
 /* HOVER */
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transform: translateY(-10px);
 }
 
-/* ON GARDE LE PRIVILÈGE AU-DESSUS MÊME AU HOVER */
 .privilege:hover {
-    transform: scale(1.1) translateY(-8px);
+    transform: scale(1.12) translateY(-10px);
 }
 
 /* RESPONSIVE */
@@ -607,6 +608,6 @@ min-height: 50px;
     }
 
     .privilege:hover {
-        transform: translateY(-8px);
+        transform: translateY(-10px);
     }
 }
