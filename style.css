@@ -479,3 +479,134 @@ height: 100%;
 .service-item h3 {
 min-height: 50px;
 }
+
+.contrats {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contrats h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    padding: 30px;
+    border-radius: 14px;
+    color: #fff;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* TITRES */
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.card .desc {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+/* LISTE */
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* BOUTON */
+.card .btn {
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.card .btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* COULEURS */
+.essentiel {
+    background: linear-gradient(135deg, #f7d358, #f4c542);
+}
+
+.privilege {
+    background: linear-gradient(135deg, #ff6b5a, #e74c3c);
+    transform: scale(1.08); /* mise en avant */
+    z-index: 2;
+}
+
+.confort {
+    background: linear-gradient(135deg, #f5b041, #f39c12);
+}
+
+/* BADGE VIP */
+.privilege::before {
+    content: "OFFRE VIP";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #e74c3c;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* HOVER */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* ON GARDE LE PRIVILÈGE AU-DESSUS MÊME AU HOVER */
+.privilege:hover {
+    transform: scale(1.1) translateY(-8px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .privilege {
+        transform: scale(1);
+    }
+
+    .privilege:hover {
+        transform: translateY(-8px);
+    }
+}
