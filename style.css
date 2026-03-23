@@ -477,3 +477,11 @@ height: 100%;
 .service-item h3 {
 min-height: 50px;
 }
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+ul li a:hover {
+    color: #007BFF;
+}
