@@ -1,3 +1,5 @@
+/* GLOBAL */
+
 body{
 margin:0;
 font-family:'Poppins', sans-serif;
@@ -153,6 +155,7 @@ background:#e65c00;
 .services{
 padding:120px 60px;
 text-align:center;
+background:#fff;
 }
 
 .services h2{
@@ -160,18 +163,19 @@ font-size:36px;
 margin-bottom:60px;
 }
 
-.services-grid{
+.services-container{
 display:grid;
-grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-gap:40px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 max-width:1200px;
 margin:auto;
+align-items:stretch;
 }
 
-/* 🔥 CARTE SERVICE PREMIUM */
+/* CARTES */
 
 .service-card{
-background:rgba(255,255,255,0.9);
+background:rgba(255,255,255,0.95);
 backdrop-filter:blur(10px);
 padding:35px 25px;
 border-radius:16px;
@@ -180,6 +184,10 @@ transition:all 0.4s ease;
 position:relative;
 overflow:hidden;
 border:1px solid rgba(255,255,255,0.4);
+display:flex;
+flex-direction:column;
+justify-content:center;
+min-height:220px;
 }
 
 /* effet lumière */
@@ -215,13 +223,12 @@ transition:0.3s;
 opacity:1;
 }
 
-/* hover */
 .service-card:hover{
 transform:translateY(-12px) scale(1.03);
 box-shadow:0 25px 60px rgba(0,0,0,0.18);
 }
 
-/* icônes */
+/* EMOJI */
 
 .service-emoji{
 font-size:42px;
@@ -234,15 +241,117 @@ transition:0.3s;
 transform:scale(1.2) rotate(5deg);
 }
 
-/* titres */
+/* TEXTE */
 
 .service-card h3{
 font-size:18px;
 transition:0.3s;
 }
 
+.service-card p{
+font-size:14px;
+color:#555;
+margin-top:10px;
+}
+
 .service-card:hover h3{
 color:#ff6600;
+}
+
+/* HIGHLIGHT ENR */
+
+.service-card.highlight{
+background:linear-gradient(135deg,#ff6600,#ff8c42);
+color:white;
+border:none;
+}
+
+.service-card.highlight h3,
+.service-card.highlight p{
+color:white;
+}
+
+/* SECTION ÉNERGIE */
+
+.renewable{
+padding:100px 20px;
+text-align:center;
+color:white;
+background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
+background-size:cover;
+background-position:center;
+}
+
+.renewable h2{
+font-size:34px;
+margin-bottom:20px;
+}
+
+.renewable p{
+font-size:18px;
+max-width:600px;
+margin:auto;
+}
+
+/* CONTACT */
+
+.contact-section{
+padding:120px 60px;
+background:#f8f9fb;
+}
+
+.contact-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+max-width:1200px;
+margin:auto;
+align-items:center;
+}
+
+.contact-text h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.contact-text p{
+font-size:16px;
+line-height:1.6;
+margin-bottom:10px;
+}
+
+.contact-map iframe{
+width:100%;
+height:320px;
+border-radius:16px;
+border:none;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+
+.footer{
+background:#111;
+color:#aaa;
+padding:40px 20px 20px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:20px;
+max-width:1200px;
+margin:auto;
+font-size:14px;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:20px;
+font-size:13px;
+color:#666;
 }
 
 /* ANIMATION */
@@ -258,135 +367,25 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* EXPERT */
+/* CTA FLOTTANT */
 
-.expert-section{
-padding:120px 60px;
-background:#f8f9fb;
-}
-
-.expert-container{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:60px;
-max-width:1200px;
-margin:auto;
-flex-wrap:wrap;
-}
-
-/* ========================= */
-/* CONTRATS */
-/* ========================= */
-
-.contrats{
-padding:140px 20px 80px;
-text-align:center;
-background:#f9f9f9;
-}
-
-.contrats h2{
-font-size:2.4rem;
-margin-bottom:10px;
-font-weight:700;
-}
-
-.subtitle{
-color:#777;
-margin-bottom:50px;
-}
-
-.cards{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-}
-
-.card{
-width:300px;
-padding:35px;
-border-radius:16px;
-text-align:left;
-color:#fff;
-position:relative;
-transition:0.4s;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
-}
-
-.card h3{
-font-size:1.9rem;
-margin-bottom:10px;
-}
-
-.card .desc{
-font-size:0.95rem;
-margin-bottom:25px;
-opacity:0.9;
-}
-
-.card ul{
-list-style:none;
-padding:0;
-margin-bottom:30px;
-}
-
-.card ul li{
-margin-bottom:12px;
-}
-
-.card .btn{
-display:block;
-text-align:center;
-background:#fff;
-color:#000;
-padding:12px;
-border-radius:8px;
-font-weight:600;
+.floating-devis{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ff6600;
+color:white;
+padding:15px 20px;
+border-radius:30px;
 text-decoration:none;
+font-weight:bold;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+z-index:999;
 transition:0.3s;
 }
 
-.card .btn:hover{
-background:#000;
-color:#fff;
-}
-
-.essentiel{
-background:linear-gradient(135deg, #f7d358, #f4c542);
-color:#000;
-}
-
-.confort{
-background:linear-gradient(135deg, #f5b041, #f39c12);
-}
-
-.privilege{
-background:linear-gradient(135deg, #ff6b5a, #e74c3c);
-transform:scale(1.08);
-box-shadow:0 25px 60px rgba(0,0,0,0.25);
-z-index:2;
-}
-
-.badge{
-position:absolute;
-top:-12px;
-left:50%;
-transform:translateX(-50%);
-background:#fff;
-color:#e74c3c;
-padding:5px 14px;
-font-size:0.7rem;
-font-weight:bold;
-border-radius:20px;
-}
-
-.card:hover{
-transform:translateY(-15px) scale(1.03);
-}
-
-.privilege:hover{
-transform:scale(1.12) translateY(-15px);
+.floating-devis:hover{
+background:#e65c00;
 }
 
 /* MOBILE */
@@ -409,13 +408,22 @@ font-size:36px;
 font-size:18px;
 }
 
-.cards{
-flex-direction:column;
-align-items:center;
+.services{
+padding:80px 20px;
 }
 
-.privilege{
-transform:scale(1);
+.contact-container{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.renewable{
+padding:70px 20px;
+}
+
+.footer-container{
+flex-direction:column;
+text-align:center;
 }
 
 }
