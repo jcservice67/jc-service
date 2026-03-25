@@ -2,16 +2,13 @@
 <html lang="fr">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>JC Service - Chauffage & Énergie</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -19,31 +16,28 @@
 <!-- ✅ HEADER COMMUN -->
 <div id="header"></div>
 
-
+<!-- ✅ HERO -->
 <section class="hero">
 
-<div class="hero-overlay"></div>
+  <div class="hero-overlay"></div>
 
-<div class="hero-content">
+  <div class="hero-content">
+    <h1><span class="logo-jc">JC</span> Service</h1>
 
-<h1><span class="logo-jc">JC</span> Service</h1>
+    <p class="hero-subtitle">
+      Solutions de chauffage et d'énergie pour votre confort au quotidien.
+    </p>
 
-<p class="hero-subtitle">
-Solutions de chauffage et d'énergie pour votre confort au quotidien.
-</p>
-
-<p>
-Installation • Entretien • Dépannage<br>
-Chaudières – Pompes à chaleur – Énergies renouvelables
-</p>
-
-</div>
+    <p>
+      Installation • Entretien • Dépannage<br>
+      Chaudières – Pompes à chaleur – Énergies renouvelables
+    </p>
+  </div>
 
 </section>
 
-
+<!-- ✅ SERVICES -->
 <section class="services">
-
 <h2>Nos services</h2>
 
 <div class="services-grid">
@@ -74,16 +68,14 @@ Chaudières – Pompes à chaleur – Énergies renouvelables
 </div>
 
 </div>
-
 </section>
 
-
+<!-- ✅ EXPERT -->
 <section class="expert-section reveal" id="about">
 
 <div class="expert-container">
 
 <div class="expert-text">
-
 <h2>Votre expert chauffage</h2>
 
 <p>
@@ -97,11 +89,9 @@ votre confort et améliorer la performance énergétique de votre logement.
 <li>🛠️ Entretien et dépannage rapide</li>
 <li>⚡ Optimisation énergétique</li>
 </ul>
-
 </div>
 
 <div class="expert-image">
-
 <iframe
 src="https://maps.google.com/maps?q=9a%20route%20de%20Paris%2067117%20Ittenheim&t=&z=15&ie=UTF8&iwloc=&output=embed"
 loading="lazy">
@@ -111,13 +101,12 @@ loading="lazy">
 📍 9A Route de Paris<br>
 67117 Ittenheim
 </div>
-
 </div>
 
-
+</div>
 </section>
 
-
+<!-- ✅ FOOTER -->
 <footer class="footer">
 
 <div class="footer-container">
@@ -136,18 +125,19 @@ loading="lazy">
 
 </div>
 
-</footer>
-
 <div class="footer-bottom">
 © 2026 JC Service – Tous droits réservés
 </div>
 
 </footer>
 
-<!-- ✅ SCRIPT HEADER -->
+<!-- ✅ HEADER SCRIPT -->
 <script>
 fetch("header.html")
-  .then(response => response.text())
+  .then(response => {
+    if (!response.ok) throw new Error("Header introuvable");
+    return response.text();
+  })
   .then(data => {
     document.getElementById("header").innerHTML = data;
 
@@ -158,7 +148,6 @@ fetch("header.html")
       }
     });
 
-    // ⚠️ IMPORTANT : scroll header APRÈS chargement
     window.addEventListener("scroll", function() {
       const header = document.querySelector("header");
       if (!header) return;
@@ -169,37 +158,33 @@ fetch("header.html")
         header.classList.remove("scrolled");
       }
     });
-  });
+  })
+  .catch(error => console.error(error));
 </script>
 
-
+<!-- ✅ ANIMATION -->
 <script>
-
 function reveal() {
 const reveals = document.querySelectorAll(".reveal");
 
 reveals.forEach((element) => {
-
 const windowHeight = window.innerHeight;
 const elementTop = element.getBoundingClientRect().top;
-const elementVisible = 100;
 
-if (elementTop < windowHeight - elementVisible) {
+if (elementTop < windowHeight - 100) {
 element.classList.add("active");
 }
-
 });
 }
 
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
-
 </script>
 
+<!-- ✅ CTA -->
 <a href="contact.html" class="floating-devis">
 Demander un devis
 </a>  
 
 </body>
-
 </html>
