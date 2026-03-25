@@ -1,1 +1,19 @@
+<header>
 
+<nav>
+
+<div class="logo">
+<span class="logo-jc">JC</span> Service
+</div>
+
+<ul>
+
+<li><a href="index.html">Accueil</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="entretien-depannage.html">Entretien & dépannage</a></li>
+
+</ul>
+
+</nav>
+
+</header>
