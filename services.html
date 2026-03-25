@@ -13,6 +13,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
+            padding-top: 80px; /* ✅ pour éviter que le header cache le contenu */
         }
 
         header {
@@ -102,14 +103,8 @@
 
 <body>
 
-<header>
-    <h1>JC Service</h1>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="services.html">Services</a>
-        <a href="index.html#contact">Contact</a>
-    </nav>
-</header>
+<!-- ✅ HEADER COMMUN -->
+<div id="header"></div>
 
 <div class="container">
 
@@ -168,6 +163,22 @@
 <footer>
     <p>© JC Service - Tous droits réservés</p>
 </footer>
+
+<!-- ✅ SCRIPT HEADER -->
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const links = document.querySelectorAll("nav a");
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
