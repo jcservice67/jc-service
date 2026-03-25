@@ -1,183 +1,223 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Nos services - JC Service</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Nos services - JC Service</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO -->
-    <meta name="description" content="JC Service : plomberie, chauffage, climatisation, traitement de l’eau et rénovation de salle de bain. Intervention rapide, devis gratuit.">
+<link rel="stylesheet" href="style.css">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            padding-top: 80px; /* ✅ pour éviter que le header cache le contenu */
-        }
+<style>
 
-        header {
-            background-color: #0f172a;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+/* 🔥 HERO SPÉCIFIQUE SERVICES */
+.services-hero{
+background-image:url("hero-energie.png");
+}
 
-        header h1 {
-            margin: 0;
-        }
+/* SECTION SERVICES */
+.services-page{
+padding:120px 20px 80px;
+text-align:center;
+background:#f8f9fb;
+}
 
-        nav {
-            margin-top: 10px;
-        }
+.services-page h2{
+font-size:42px;
+margin-bottom:10px;
+color:#0f172a;
+}
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.services-subtitle{
+color:#666;
+margin-bottom:50px;
+font-size:18px;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 50px 20px;
-            text-align: center;
-        }
+/* GRID */
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
 
-        h2.subtitle {
-            color: #666;
-            margin-bottom: 40px;
-        }
+/* 🔥 CARTE SERVICE PREMIUM */
+.service-card{
+background:white;
+padding:30px 25px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.35s;
+position:relative;
+overflow:hidden;
+}
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
+/* effet lumière */
+.service-card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+transition:0.6s;
+}
 
-        .service {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+.service-card:hover::before{
+left:100%;
+}
 
-        .service:hover {
-            transform: translateY(-5px);
-        }
+/* hover */
+.service-card:hover{
+transform:translateY(-12px) scale(1.02);
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
 
-        .service h3 {
-            margin-top: 0;
-        }
+/* icône */
+.service-icon{
+font-size:40px;
+margin-bottom:15px;
+}
 
-        .cta {
-            margin-top: 50px;
-        }
+/* titre */
+.service-card h3{
+margin-bottom:10px;
+font-size:20px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 15px 25px;
-            margin: 10px;
-            background-color: #22c55e;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
+/* texte */
+.service-card p{
+color:#555;
+font-size:15px;
+line-height:1.5;
+}
 
-        .btn:hover {
-            background-color: #16a34a;
-        }
+/* CTA */
+.services-cta{
+margin-top:70px;
+}
 
-        footer {
-            background-color: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
-    </style>
+.services-cta .btn{
+margin:10px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<!-- ✅ HEADER COMMUN -->
-<div id="header"></div>
+<!-- ✅ HEADER -->
+<header>
+  <nav>
+    <div class="logo">
+      <span class="logo-jc">JC</span> Service
+    </div>
 
-<div class="container">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="entretien-depannage.html">Entretien & Dépannage</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
+<!-- ✅ HERO -->
+<section class="hero services-hero">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
     <h1>Nos services</h1>
-    <h2 class="subtitle">Notre expérience, votre confiance</h2>
 
-    <div class="services">
+    <p class="hero-subtitle">
+      Des solutions complètes pour votre confort thermique
+    </p>
 
-        <div class="service">
-            <h3>🔧 Dépannage plomberie</h3>
-            <p>Fuite d’eau, canalisation bouchée, réparation rapide à domicile.</p>
-        </div>
+    <p>
+      Plomberie • Chauffage • Climatisation • Ventilation<br>
+      Intervention rapide et devis gratuit
+    </p>
+  </div>
 
-        <div class="service">
-            <h3>🔥 Chauffage</h3>
-            <p>Installation, entretien et dépannage de vos systèmes de chauffage.</p>
-        </div>
+</section>
 
-        <div class="service">
-            <h3>❄️ Climatisation</h3>
-            <p>Installation et maintenance pour un confort toute l’année.</p>
-        </div>
+<!-- ✅ SERVICES -->
+<section class="services-page">
 
-        <div class="service">
-            <h3>🌬️ Ventilation & VMC</h3>
-            <p>Installation, entretien et dépannage de systèmes de ventilation (VMC simple et double flux).</p>
-        </div>
+<h2>Notre expertise</h2>
+<p class="services-subtitle">Des prestations fiables, rapides et professionnelles</p>
 
-        <div class="service">
-            <h3>💧 Traitement de l’eau</h3>
-            <p>Adoucisseur, filtration et amélioration de la qualité de l’eau.</p>
-        </div>
+<div class="services-grid">
 
-        <div class="service">
-            <h3>🛁 Salle de bain</h3>
-            <p>Création et rénovation complète de salle de bain moderne.</p>
-        </div>
+<div class="service-card">
+<div class="service-icon">🔧</div>
+<h3>Dépannage plomberie</h3>
+<p>Fuite d’eau, canalisation bouchée, réparation rapide à domicile.</p>
+</div>
 
-        <div class="service">
-            <h3>⚡ Intervention urgente</h3>
-            <p>Disponible 7j/7 pour toute urgence.</p>
-        </div>
+<div class="service-card">
+<div class="service-icon">🔥</div>
+<h3>Chauffage</h3>
+<p>Installation, entretien et dépannage de vos systèmes de chauffage.</p>
+</div>
 
-    </div>
+<div class="service-card">
+<div class="service-icon">❄️</div>
+<h3>Climatisation</h3>
+<p>Installation et maintenance pour un confort toute l’année.</p>
+</div>
 
-    <div class="cta">
-        <h2>Besoin d’une intervention rapide ?</h2>
-        <p>Devis gratuit et réponse rapide</p>
+<div class="service-card">
+<div class="service-icon">🌬️</div>
+<h3>Ventilation & VMC</h3>
+<p>Installation et entretien de systèmes de ventilation performants.</p>
+</div>
 
-        <a href="tel:0685306973" class="btn">📞 Appeler maintenant</a>
-        <a href="contact.html">📩 Demander un devis</a>
-    </div>
+<div class="service-card">
+<div class="service-icon">💧</div>
+<h3>Traitement de l’eau</h3>
+<p>Adoucisseur, filtration et amélioration de la qualité de l’eau.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🛁</div>
+<h3>Salle de bain</h3>
+<p>Création et rénovation complète de salle de bain moderne.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">⚡</div>
+<h3>Intervention urgente</h3>
+<p>Disponible 7j/7 pour toute urgence.</p>
+</div>
 
 </div>
 
-<footer>
-    <p>© JC Service - Tous droits réservés</p>
-</footer>
+<!-- CTA -->
+<div class="services-cta">
+<h2>Besoin d’une intervention rapide ?</h2>
 
-<!-- ✅ SCRIPT HEADER -->
+<a href="tel:0685306973" class="btn">📞 Appeler maintenant</a>
+<a href="contact.html" class="btn">📩 Demander un devis</a>
+</div>
+
+</section>
+
+<!-- SCRIPT SCROLL HEADER -->
 <script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
+window.addEventListener("scroll", function() {
+  const header = document.querySelector("header");
 
-    const links = document.querySelectorAll("nav a");
-    links.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add("active");
-      }
-    });
-  });
+  if(window.scrollY > 50){
+    header.classList.add("scrolled");
+  } else{
+    header.classList.remove("scrolled");
+  }
+});
 </script>
 
 </body>
