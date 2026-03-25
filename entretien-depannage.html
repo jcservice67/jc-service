@@ -10,6 +10,9 @@
 
 <body>
 
+<!-- ✅ HEADER COMMUN -->
+<div id="header"></div>
+
 <section class="contrats">
     <h2>Nos contrats d’entretien</h2>
     <p class="subtitle">Des solutions claires, sans surprise, adaptées à vos besoins</p>
@@ -64,6 +67,22 @@
 
     </div>
 </section>
+
+<!-- ✅ SCRIPT HEADER -->
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const links = document.querySelectorAll("nav a");
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
