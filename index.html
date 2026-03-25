@@ -13,8 +13,20 @@
 
 <body>
 
-<!-- ✅ HEADER COMMUN -->
-<div id="header"></div>
+<!-- ✅ HEADER (FIXÉ ET FONCTIONNEL) -->
+<header>
+  <nav>
+    <div class="logo">
+      <span class="logo-jc">JC</span> Service
+    </div>
+
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
 <!-- ✅ HERO -->
 <section class="hero">
@@ -32,6 +44,8 @@
       Installation • Entretien • Dépannage<br>
       Chaudières – Pompes à chaleur – Énergies renouvelables
     </p>
+
+    <a href="contact.html" class="btn">Demander un devis</a>
   </div>
 
 </section>
@@ -131,35 +145,17 @@ loading="lazy">
 
 </footer>
 
-<!-- ✅ HEADER SCRIPT -->
+<!-- ✅ SCRIPT SCROLL HEADER -->
 <script>
-fetch("header.html")
-  .then(response => {
-    if (!response.ok) throw new Error("Header introuvable");
-    return response.text();
-  })
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
+window.addEventListener("scroll", function() {
+  const header = document.querySelector("header");
 
-    const links = document.querySelectorAll("nav a");
-    links.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add("active");
-      }
-    });
-
-    window.addEventListener("scroll", function() {
-      const header = document.querySelector("header");
-      if (!header) return;
-
-      if(window.scrollY > 50){
-        header.classList.add("scrolled");
-      } else{
-        header.classList.remove("scrolled");
-      }
-    });
-  })
-  .catch(error => console.error(error));
+  if(window.scrollY > 50){
+    header.classList.add("scrolled");
+  } else{
+    header.classList.remove("scrolled");
+  }
+});
 </script>
 
 <!-- ✅ ANIMATION -->
