@@ -12,7 +12,6 @@ left:0;
 width:100%;
 z-index:1000;
 transition:0.3s;
-
 background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
 -webkit-backdrop-filter:blur(10px);
@@ -70,7 +69,7 @@ nav ul li a:hover{
 color:#ff6600;
 }
 
-/* HEADER AU SCROLL */
+/* HEADER SCROLL */
 
 header.scrolled{
 background:white;
@@ -90,7 +89,7 @@ color:#222;
 .hero{
 position:relative;
 height:100vh;
-background-image:url("hero-energie.png"); /* ⚠️ adapte si besoin */
+background-image:url("hero-energie.png");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -100,8 +99,6 @@ text-align:center;
 color:white;
 }
 
-/* OVERLAY */
-
 .hero-overlay{
 position:absolute;
 top:0;
@@ -110,8 +107,6 @@ width:100%;
 height:100%;
 background:rgba(0,0,0,0.5);
 }
-
-/* CONTENU HERO */
 
 .hero-content{
 position:relative;
@@ -190,10 +185,6 @@ font-size:40px;
 margin-bottom:15px;
 }
 
-.service-card h3{
-font-size:18px;
-}
-
 /* ANIMATION */
 
 .reveal{
@@ -224,91 +215,126 @@ margin:auto;
 flex-wrap:wrap;
 }
 
-.expert-text{
-flex:1;
+/* ========================= */
+/* 🔥 SECTION CONTRATS FIXÉE */
+/* ========================= */
+
+.contrats{
+padding:140px 20px 80px; /* 🔥 espace pour header */
+text-align:center;
+background:#f9f9f9;
 }
 
-.expert-text h2{
-font-size:40px;
-margin-bottom:20px;
+.contrats h2{
+font-size:2.4rem;
+margin-bottom:10px;
+font-weight:700;
 }
 
-.expert-text p{
-font-size:18px;
-line-height:1.6;
+.subtitle{
+color:#777;
+margin-bottom:50px;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:40px; /* 🔥 espace amélioré */
+flex-wrap:wrap;
+}
+
+.card{
+width:300px;
+padding:35px;
+border-radius:16px;
+text-align:left;
+color:#fff;
+position:relative;
+transition:0.4s;
+box-shadow:0 15px 40px rgba(0,0,0,0.15); /* 🔥 effet flottant */
+}
+
+/* TITRES */
+.card h3{
+font-size:1.9rem;
+margin-bottom:10px;
+}
+
+/* DESC */
+.card .desc{
+font-size:0.95rem;
+margin-bottom:25px;
+opacity:0.9;
+}
+
+/* LISTE */
+.card ul{
+list-style:none;
+padding:0;
 margin-bottom:30px;
 }
 
-.expert-list{
-list-style:none;
-padding:0;
-}
-
-.expert-list li{
+.card ul li{
 margin-bottom:12px;
-font-size:17px;
 }
 
-.expert-image{
-flex:1;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.expert-image iframe{
-width:100%;
-height:300px;
-border:0;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
-
-.address{
-background:#ffffff;
-padding:15px;
+/* BOUTON */
+.card .btn{
+display:block;
+text-align:center;
+background:#fff;
+color:#000;
+padding:12px;
 border-radius:8px;
-font-weight:500;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
-
-/* FOOTER */
-
-footer{
-background:#1e3a8a;
-color:white;
-padding:20px 40px;
-}
-
-.footer-container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:20px;
-font-size:14px;
-}
-
-/* BOUTON FLOTTANT */
-
-.floating-devis{
-position:fixed;
-right:20px;
-top:50%;
-transform:translateY(-50%);
-background:#ff7a00;
-color:white;
-padding:15px 22px;
 font-weight:600;
 text-decoration:none;
-border-radius:8px;
-box-shadow:0 4px 15px rgba(0,0,0,0.2);
-z-index:9999;
 transition:0.3s;
 }
 
-.floating-devis:hover{
-background:#e56700;
+.card .btn:hover{
+background:#000;
+color:#fff;
+}
+
+/* COULEURS */
+
+.essentiel{
+background:linear-gradient(135deg, #f7d358, #f4c542);
+color:#000;
+}
+
+.confort{
+background:linear-gradient(135deg, #f5b041, #f39c12);
+}
+
+.privilege{
+background:linear-gradient(135deg, #ff6b5a, #e74c3c);
+transform:scale(1.08);
+box-shadow:0 25px 60px rgba(0,0,0,0.25);
+z-index:2;
+}
+
+/* BADGE */
+.badge{
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%);
+background:#fff;
+color:#e74c3c;
+padding:5px 14px;
+font-size:0.7rem;
+font-weight:bold;
+border-radius:20px;
+}
+
+/* HOVER */
+.card:hover{
+transform:translateY(-15px) scale(1.03);
+}
+
+.privilege:hover{
+transform:scale(1.12) translateY(-15px);
 }
 
 /* MOBILE */
@@ -331,16 +357,13 @@ font-size:36px;
 font-size:18px;
 }
 
-.floating-devis{
-left:0;
-right:0;
-bottom:0;
-top:auto;
-transform:none;
-text-align:center;
-padding:18px;
-border-radius:0;
-font-size:16px;
+.cards{
+flex-direction:column;
+align-items:center;
+}
+
+.privilege{
+transform:scale(1);
 }
 
 }
