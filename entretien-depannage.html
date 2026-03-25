@@ -10,9 +10,23 @@
 
 <body>
 
-<!-- ✅ HEADER COMMUN -->
-<div id="header"></div>
+<!-- ✅ HEADER FIXE (CORRIGÉ) -->
+<header>
+  <nav>
+    <div class="logo">
+      <span class="logo-jc">JC</span> Service
+    </div>
 
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="entretien-depannage.html">Entretien & Dépannage</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ✅ CONTENU -->
 <section class="contrats">
     <h2>Nos contrats d’entretien</h2>
     <p class="subtitle">Des solutions claires, sans surprise, adaptées à vos besoins</p>
@@ -31,7 +45,7 @@
             </ul>
         </div>
 
-        <!-- PRIVILEGE (VIP) -->
+        <!-- PRIVILEGE -->
         <div class="card privilege">
             <div class="badge">OFFRE VIP</div>
 
@@ -47,7 +61,7 @@
                 <li>✔ 15% de remise sur les pièces détachées</li>
             </ul>
 
-            <a href="devis.html" class="btn">Choisir cette formule</a>
+            <a href="contact.html" class="btn">Choisir cette formule</a>
         </div>
 
         <!-- CONFORT -->
@@ -62,26 +76,23 @@
                 <li>✔ 1 dépannage inclus / an</li>
             </ul>
 
-            <a href="devis.html" class="btn">Demander un devis</a>
+            <a href="contact.html" class="btn">Demander un devis</a>
         </div>
 
     </div>
 </section>
 
-<!-- ✅ SCRIPT HEADER -->
+<!-- ✅ SCRIPT SCROLL HEADER -->
 <script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
+window.addEventListener("scroll", function() {
+  const header = document.querySelector("header");
 
-    const links = document.querySelectorAll("nav a");
-    links.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add("active");
-      }
-    });
-  });
+  if(window.scrollY > 50){
+    header.classList.add("scrolled");
+  } else{
+    header.classList.remove("scrolled");
+  }
+});
 </script>
 
 </body>
