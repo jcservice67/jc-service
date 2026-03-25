@@ -258,16 +258,34 @@ margin-top:10px;
 color:#ff6600;
 }
 
-/* HIGHLIGHT ENR */
+/* 🔥 HIGHLIGHT PREMIUM ENR */
 
 .service-card.highlight{
-background:linear-gradient(135deg,#16a34a,#22c55e);
+background:linear-gradient(135deg,#0f172a,#1e293b);
 color:white;
+border:1px solid rgba(255,255,255,0.1);
 }
 
-.service-card.highlight h3,
+/* titre vert */
+.service-card.highlight h3{
+color:#22c55e;
+}
+
+/* texte blanc */
 .service-card.highlight p{
-color:white;
+color:#e2e8f0;
+}
+
+/* barre verte toujours visible */
+.service-card.highlight::after{
+background:linear-gradient(90deg,#22c55e,#4ade80);
+opacity:1;
+}
+
+/* hover spécifique */
+.service-card.highlight:hover{
+transform:translateY(-12px) scale(1.04);
+box-shadow:0 30px 70px rgba(0,0,0,0.4);
 }
 
 /* SECTION ÉNERGIE */
