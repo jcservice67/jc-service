@@ -12,21 +12,8 @@
 
 <body>
 
-<header>
-<nav>
-
-<div class="logo">
-<span class="logo-jc">JC</span> Service
-</div>
-
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="tarifs.html">Tarifs entretien</a></li>
-</ul>
-
-</nav>
-</header>
+<!-- ✅ HEADER COMMUN -->
+<div id="header"></div>
 
 <section class="contact-section">
 
@@ -76,6 +63,22 @@
 <a href="contact.html" class="floating-devis">
 Demander un devis
 </a>
+
+<!-- ✅ SCRIPT HEADER -->
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const links = document.querySelectorAll("nav a");
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
