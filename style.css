@@ -3,6 +3,8 @@
 body{
 margin:0;
 font-family:'Poppins', sans-serif;
+background:#ffffff;
+color:#111;
 }
 
 /* HEADER */
@@ -75,7 +77,7 @@ color:#ff6600;
 
 header.scrolled{
 background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+box-shadow:0 2px 15px rgba(0,0,0,0.08);
 }
 
 header.scrolled .logo{
@@ -107,7 +109,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.5);
+background:rgba(0,0,0,0.55);
 }
 
 .hero-content{
@@ -129,7 +131,7 @@ margin-bottom:20px;
 
 .hero-content p{
 font-size:18px;
-line-height:1.5;
+line-height:1.6;
 }
 
 /* BOUTON */
@@ -139,8 +141,8 @@ background:#ff6600;
 color:white;
 padding:15px 30px;
 text-decoration:none;
-border-radius:6px;
-font-weight:bold;
+border-radius:8px;
+font-weight:600;
 display:inline-block;
 margin-top:20px;
 transition:0.3s;
@@ -148,6 +150,7 @@ transition:0.3s;
 
 .btn:hover{
 background:#e65c00;
+transform:translateY(-2px);
 }
 
 /* SERVICES */
@@ -155,7 +158,7 @@ background:#e65c00;
 .services{
 padding:120px 60px;
 text-align:center;
-background:#fff;
+background:#f9fafb;
 }
 
 .services h2{
@@ -175,15 +178,13 @@ align-items:stretch;
 /* CARTES */
 
 .service-card{
-background:rgba(255,255,255,0.95);
-backdrop-filter:blur(10px);
+background:white;
 padding:35px 25px;
-border-radius:16px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
 transition:all 0.4s ease;
 position:relative;
 overflow:hidden;
-border:1px solid rgba(255,255,255,0.4);
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -224,8 +225,8 @@ opacity:1;
 }
 
 .service-card:hover{
-transform:translateY(-12px) scale(1.03);
-box-shadow:0 25px 60px rgba(0,0,0,0.18);
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
 /* EMOJI */
@@ -233,29 +234,23 @@ box-shadow:0 25px 60px rgba(0,0,0,0.18);
 .service-emoji{
 font-size:42px;
 margin-bottom:15px;
-display:inline-block;
 transition:0.3s;
 }
 
 .service-card:hover .service-emoji{
-transform:scale(1.2) rotate(5deg);
+transform:scale(1.15);
 }
 
 /* TEXTE */
 
 .service-card h3{
 font-size:18px;
-transition:0.3s;
+margin-bottom:8px;
 }
 
 .service-card p{
 font-size:14px;
-color:#555;
-margin-top:10px;
-}
-
-.service-card:hover h3{
-color:#ff6600;
+color:#666;
 }
 
 /* 🔥 HIGHLIGHT PREMIUM ENR */
@@ -266,23 +261,19 @@ color:white;
 border:1px solid rgba(255,255,255,0.1);
 }
 
-/* titre vert */
 .service-card.highlight h3{
 color:#22c55e;
 }
 
-/* texte blanc */
 .service-card.highlight p{
-color:#e2e8f0;
+color:#cbd5e1;
 }
 
-/* barre verte toujours visible */
 .service-card.highlight::after{
 background:linear-gradient(90deg,#22c55e,#4ade80);
 opacity:1;
 }
 
-/* hover spécifique */
 .service-card.highlight:hover{
 transform:translateY(-12px) scale(1.04);
 box-shadow:0 30px 70px rgba(0,0,0,0.4);
@@ -291,31 +282,32 @@ box-shadow:0 30px 70px rgba(0,0,0,0.4);
 /* SECTION ÉNERGIE */
 
 .renewable{
-padding:100px 20px;
+padding:120px 20px;
 text-align:center;
 color:white;
-background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
 url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
 background-size:cover;
 background-position:center;
 }
 
 .renewable h2{
-font-size:34px;
+font-size:36px;
 margin-bottom:20px;
 }
 
 .renewable p{
 font-size:18px;
-max-width:600px;
+max-width:650px;
 margin:auto;
+line-height:1.6;
 }
 
 /* CONTACT */
 
 .contact-section{
 padding:120px 60px;
-background:#f8f9fb;
+background:#f9fafb;
 }
 
 .contact-container{
@@ -341,7 +333,7 @@ margin-bottom:10px;
 .contact-map iframe{
 width:100%;
 height:320px;
-border-radius:16px;
+border-radius:18px;
 border:none;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
@@ -349,8 +341,8 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 /* FOOTER */
 
 .footer{
-background:#111;
-color:#aaa;
+background:#0f172a;
+color:#cbd5e1;
 padding:40px 20px 20px;
 }
 
@@ -368,15 +360,15 @@ font-size:14px;
 text-align:center;
 margin-top:20px;
 font-size:13px;
-color:#666;
+color:#94a3b8;
 }
 
 /* ANIMATION */
 
 .reveal{
 opacity:0;
-transform:translateY(80px);
-transition:1s all ease;
+transform:translateY(60px);
+transition:0.8s all ease;
 }
 
 .reveal.active{
@@ -395,14 +387,15 @@ color:white;
 padding:15px 20px;
 border-radius:30px;
 text-decoration:none;
-font-weight:bold;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
+font-weight:600;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
 z-index:999;
 transition:0.3s;
 }
 
 .floating-devis:hover{
 background:#e65c00;
+transform:translateY(-2px);
 }
 
 /* MOBILE */
@@ -435,7 +428,7 @@ gap:30px;
 }
 
 .renewable{
-padding:70px 20px;
+padding:80px 20px;
 }
 
 .footer-container{
