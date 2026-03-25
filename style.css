@@ -261,9 +261,8 @@ color:#ff6600;
 /* HIGHLIGHT ENR */
 
 .service-card.highlight{
-background:linear-gradient(135deg,#ff6600,#ff8c42);
+background:linear-gradient(135deg,#16a34a,#22c55e);
 color:white;
-border:none;
 }
 
 .service-card.highlight h3,
