@@ -403,3 +403,22 @@ text-align:center;
 }
 
 }
+/* FIX HEADER VISUEL PARTOUT */
+
+header{
+background:rgba(0,0,0,0.7) !important;
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+}
+
+/* Empêche header blanc sur pages sans hero */
+
+body:not(.home) header.scrolled{
+background:rgba(0,0,0,0.7) !important;
+box-shadow:none;
+}
+
+body:not(.home) header.scrolled .logo,
+body:not(.home) header.scrolled nav ul li a{
+color:white !important;
+}
