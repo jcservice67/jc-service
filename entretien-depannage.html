@@ -1,16 +1,153 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Entretien & Dépannage - JC Service</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Entretien & Dépannage - JC Service</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* HERO */
+.hero-depannage{
+height:60vh;
+background:url('hero-energie.png') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#fff;
+position:relative;
+}
+
+.hero-depannage::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero-content h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero-content p{
+font-size:18px;
+opacity:0.9;
+}
+
+.hero-btns{
+margin-top:20px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 25px;
+background:#00bcd4;
+color:#fff;
+border-radius:30px;
+text-decoration:none;
+margin:5px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#0097a7;
+}
+
+/* SECTION CONTRATS */
+.contrats{
+padding:80px 20px;
+text-align:center;
+}
+
+.contrats h2{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.subtitle{
+opacity:0.7;
+margin-bottom:40px;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+}
+
+.card{
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+width:300px;
+position:relative;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card ul{
+list-style:none;
+padding:0;
+text-align:left;
+}
+
+.card ul li{
+margin:10px 0;
+}
+
+.badge{
+position:absolute;
+top:-10px;
+right:-10px;
+background:#ff9800;
+color:#fff;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+}
+
+/* URGENCE */
+.urgence{
+background:#111;
+color:#fff;
+text-align:center;
+padding:60px 20px;
+}
+
+.urgence h2{
+font-size:28px;
+margin-bottom:10px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<!-- ✅ HEADER FIXE (CORRIGÉ) -->
+<!-- ✅ HEADER IDENTIQUE -->
 <header>
   <nav>
     <div class="logo">
@@ -26,7 +163,20 @@
   </nav>
 </header>
 
-<!-- ✅ CONTENU -->
+<!-- ✅ HERO -->
+<section class="hero-depannage">
+  <div class="hero-content">
+    <h1>Entretien & Dépannage</h1>
+    <p>Intervention rapide, diagnostic précis, tranquillité assurée</p>
+
+    <div class="hero-btns">
+      <a href="contact.html" class="btn">📞 Intervention rapide</a>
+      <a href="contact.html" class="btn">📩 Demander un devis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ CONTRATS -->
 <section class="contrats">
     <h2>Nos contrats d’entretien</h2>
     <p class="subtitle">Des solutions claires, sans surprise, adaptées à vos besoins</p>
@@ -34,7 +184,7 @@
     <div class="cards">
 
         <!-- ESSENTIEL -->
-        <div class="card essentiel">
+        <div class="card">
             <h3>Essentiel</h3>
             <p class="desc">L’entretien indispensable pour assurer la performance de votre installation</p>
 
@@ -46,43 +196,46 @@
         </div>
 
         <!-- PRIVILEGE -->
-        <div class="card privilege">
+        <div class="card">
             <div class="badge">OFFRE VIP</div>
 
             <h3>Privilège</h3>
-            <p class="desc">La formule haut de gamme pour une tranquillité totale toute l’année</p>
+            <p class="desc">La formule haut de gamme pour une tranquillité totale</p>
 
             <ul>
                 <li>✔ Entretien annuel complet</li>
-                <li>✔ Contrôle sécurité</li>
-                <li>✔ Nettoyage & réglages</li>
                 <li>✔ Dépannage illimité</li>
-                <li>✔ Intervention prioritaire en moins de 24h</li>
-                <li>✔ 15% de remise sur les pièces détachées</li>
+                <li>✔ Intervention prioritaire -24h</li>
+                <li>✔ Remise sur pièces</li>
             </ul>
 
-            <a href="contact.html" class="btn">Choisir cette formule</a>
+            <a href="contact.html" class="btn">Choisir</a>
         </div>
 
         <!-- CONFORT -->
-        <div class="card confort">
+        <div class="card">
             <h3>Confort</h3>
-            <p class="desc">Un équilibre parfait entre entretien et assistance</p>
+            <p class="desc">Le bon équilibre entre entretien et assistance</p>
 
             <ul>
-                <li>✔ Entretien annuel complet</li>
-                <li>✔ Contrôle sécurité</li>
-                <li>✔ Nettoyage & réglages</li>
-                <li>✔ 1 dépannage inclus / an</li>
+                <li>✔ Entretien annuel</li>
+                <li>✔ 1 dépannage inclus</li>
             </ul>
 
-            <a href="contact.html" class="btn">Demander un devis</a>
+            <a href="contact.html" class="btn">Devis</a>
         </div>
 
     </div>
 </section>
 
-<!-- ✅ SCRIPT SCROLL HEADER -->
+<!-- ✅ URGENCE -->
+<section class="urgence">
+    <h2>🚨 Une panne ? Une fuite ?</h2>
+    <p>J’interviens rapidement pour sécuriser votre installation</p>
+    <a href="contact.html" class="btn">Intervention immédiate</a>
+</section>
+
+<!-- ✅ SCRIPT HEADER -->
 <script>
 window.addEventListener("scroll", function() {
   const header = document.querySelector("header");
