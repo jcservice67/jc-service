@@ -8,6 +8,197 @@
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* SCROLL SMOOTH */
+html{
+scroll-behavior:smooth;
+}
+
+/* HERO */
+
+.hero-contact{
+height:70vh;
+background:url('hero-energie.png') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+text-align:center;
+color:#fff;
+}
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(6px);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:800px;
+padding:20px;
+}
+
+.hero-content h1{
+font-size:52px;
+margin-bottom:15px;
+}
+
+.hero-content p{
+font-size:20px;
+}
+
+/* TABS */
+
+.tabs{
+background:#fff;
+position:sticky;
+top:70px;
+z-index:999;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.tabs-container{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+}
+
+.tab{
+text-decoration:none;
+color:#111;
+font-weight:600;
+position:relative;
+}
+
+.tab::after{
+content:"";
+position:absolute;
+bottom:-5px;
+left:0;
+width:0;
+height:2px;
+background:#007BFF;
+transition:0.3s;
+}
+
+.tab:hover::after{
+width:100%;
+}
+
+/* IMAGE */
+
+.hero-image-section img{
+width:100%;
+display:block;
+}
+
+/* CONTACT INFO */
+
+.contact-info{
+text-align:center;
+padding:40px 20px;
+font-size:18px;
+font-weight:600;
+}
+
+/* FORM */
+
+.contact-section{
+padding:80px 20px;
+background:#f9f9f9;
+}
+
+.contact-container{
+max-width:600px;
+margin:auto;
+text-align:center;
+}
+
+.contact-container h2{
+margin-bottom:40px;
+font-size:32px;
+}
+
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:15px;
+border:none;
+border-radius:8px;
+font-family:'Poppins', sans-serif;
+background:#fff;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-group textarea{
+height:150px;
+resize:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+outline:none;
+box-shadow:0 0 0 2px #007BFF;
+}
+
+/* BUTTON */
+
+.btn-primary{
+display:inline-block;
+padding:15px 30px;
+background:#007BFF;
+color:#fff;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+border:none;
+cursor:pointer;
+}
+
+.btn-primary:hover{
+background:#0056b3;
+}
+
+/* CTA BAS */
+
+.cta-bottom{
+background:#111;
+color:#fff;
+padding:80px 20px;
+text-align:center;
+}
+
+.cta-content{
+max-width:700px;
+margin:auto;
+}
+
+.cta-content h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+.cta-content p{
+margin-bottom:30px;
+opacity:0.8;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -18,27 +209,40 @@
 <!-- HERO -->
 <section class="hero-contact">
   <div class="hero-overlay"></div>
-
   <div class="hero-content">
     <h1>Un projet ? Contactez-nous</h1>
-    <p>Appelez-nous au <strong>06 85 30 69 73</strong> ou envoyez-nous un message.</p>
+    <p>Appelez-nous au <strong>06 85 30 69 73</strong> ou envoyez-nous un message</p>
   </div>
 </section>
 
-<!-- IMAGE HERO -->
-<section class="hero-image-section">
+<!-- ONGLET -->
+<section class="tabs">
+  <div class="tabs-container">
+    <a href="#infos" class="tab">Contact</a>
+    <a href="#formulaire" class="tab">Formulaire</a>
+  </div>
+</section>
+
+<!-- IMAGE -->
+<section id="infos" class="hero-image-section">
   <img src="hero-energie.png" alt="Energie">
 </section>
 
+<!-- INFOS -->
+<div class="contact-info">
+  📞 06 85 30 69 73<br>
+  ✉️ instal.jcservice@gmail.com<br><br>
+  <a href="tel:0685306973" class="btn-primary">Appeler maintenant</a>
+</div>
+
 <!-- FORMULAIRE -->
-<section class="contact-section">
+<section id="formulaire" class="contact-section">
   <div class="contact-container">
 
     <h2>Demande de contact</h2>
 
     <form action="https://formsubmit.co/instal.jcservice@gmail.com" method="POST">
 
-      <!-- CONFIG FORMSUBMIT -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="Nouveau message - JC Service">
       <input type="hidden" name="_template" value="table">
@@ -66,7 +270,7 @@
   </div>
 </section>
 
-<!-- BANDEAU BAS -->
+<!-- CTA BAS -->
 <section class="cta-bottom">
   <div class="cta-content">
     <h2>Un projet ? Parlons-en</h2>
@@ -75,10 +279,10 @@
   </div>
 </section>
 
-<!-- SCRIPT HEADER -->
+<!-- HEADER SCRIPT -->
 <script>
 fetch("header.html")
-  .then(response => response.text())
+  .then(res => res.text())
   .then(data => document.getElementById("header").innerHTML = data);
 </script>
 
