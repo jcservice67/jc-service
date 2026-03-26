@@ -519,3 +519,17 @@ text-align:center;
 .service-container{
   gap:80px; /* un peu plus d’espace = plus premium */
 }
+.service-image{
+  position:relative;
+}
+
+.service-image::after{
+  content:"";
+  position:absolute;
+  top:20%;
+  left:10%;
+  width:80%;
+  height:60%;
+  background:radial-gradient(circle, rgba(0,150,255,0.15) 0%, transparent 70%);
+  pointer-events:none;
+}
