@@ -10,7 +10,7 @@
 
 <style>
 
-/* HERO */
+/* HERO AVEC FLOU */
 .hero-depannage{
 height:60vh;
 background:url('hero-energie.png') center/cover no-repeat;
@@ -20,6 +20,20 @@ justify-content:center;
 text-align:center;
 color:#fff;
 position:relative;
+overflow:hidden;
+}
+
+.hero-depannage::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:inherit;
+filter:blur(8px);
+transform:scale(1.1);
+z-index:0;
 }
 
 .hero-depannage::after{
@@ -29,7 +43,8 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.55);
+z-index:1;
 }
 
 .hero-content{
@@ -51,19 +66,43 @@ opacity:0.9;
 margin-top:20px;
 }
 
+/* BOUTONS */
 .btn{
 display:inline-block;
-padding:12px 25px;
-background:#00bcd4;
-color:#fff;
+padding:14px 28px;
 border-radius:30px;
 text-decoration:none;
 margin:5px;
+font-weight:600;
 transition:0.3s;
 }
 
-.btn:hover{
-background:#0097a7;
+/* URGENCE */
+.btn-urgence{
+background:#ff3b3b;
+color:#fff;
+box-shadow:0 0 15px rgba(255,59,59,0.6);
+animation:pulse 1.5s infinite;
+}
+
+.btn-urgence:hover{
+background:#ff0000;
+}
+
+/* DEVIS */
+.btn-devis{
+background:#ff9800;
+color:#fff;
+}
+
+.btn-devis:hover{
+background:#e68900;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 10px rgba(255,59,59,0.6);}
+50%{box-shadow:0 0 25px rgba(255,59,59,1);}
+100%{box-shadow:0 0 10px rgba(255,59,59,0.6);}
 }
 
 /* SECTION CONTRATS */
@@ -91,19 +130,53 @@ justify-content:center;
 
 .card{
 background:#fff;
-padding:30px;
+padding:35px;
 border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 width:300px;
+transition:0.4s;
 position:relative;
-transition:0.3s;
+border:2px solid transparent;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-10px) scale(1.02);
+}
+
+/* CARTE VIP */
+.card.vip{
+transform:scale(1.08);
+border:2px solid #ff9800;
+box-shadow:0 20px 50px rgba(255,152,0,0.3);
+z-index:2;
+}
+
+.card.vip::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:5px;
+background:linear-gradient(90deg,#ff9800,#ff3b3b);
+}
+
+/* BADGE */
+.badge{
+position:absolute;
+top:-12px;
+right:-12px;
+background:#ff9800;
+color:#fff;
+padding:8px 15px;
+border-radius:30px;
+font-size:12px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 .card h3{
+font-size:22px;
 margin-bottom:10px;
 }
 
@@ -114,18 +187,12 @@ text-align:left;
 }
 
 .card ul li{
-margin:10px 0;
+margin:12px 0;
 }
 
-.badge{
-position:absolute;
-top:-10px;
-right:-10px;
-background:#ff9800;
-color:#fff;
-padding:5px 10px;
-border-radius:20px;
-font-size:12px;
+.card .btn{
+margin-top:15px;
+display:block;
 }
 
 /* URGENCE */
@@ -147,7 +214,6 @@ margin-bottom:10px;
 
 <body>
 
-<!-- ✅ HEADER IDENTIQUE -->
 <header>
   <nav>
     <div class="logo">
@@ -163,20 +229,20 @@ margin-bottom:10px;
   </nav>
 </header>
 
-<!-- ✅ HERO -->
+<!-- HERO -->
 <section class="hero-depannage">
   <div class="hero-content">
     <h1>Entretien & Dépannage</h1>
     <p>Intervention rapide, diagnostic précis, tranquillité assurée</p>
 
     <div class="hero-btns">
-      <a href="contact.html" class="btn">📞 Intervention rapide</a>
-      <a href="contact.html" class="btn">📩 Demander un devis</a>
+      <a href="contact.html" class="btn btn-urgence">🚨 Intervention rapide</a>
+      <a href="contact.html" class="btn btn-devis">📩 Demander un devis</a>
     </div>
   </div>
 </section>
 
-<!-- ✅ CONTRATS -->
+<!-- CONTRATS -->
 <section class="contrats">
     <h2>Nos contrats d’entretien</h2>
     <p class="subtitle">Des solutions claires, sans surprise, adaptées à vos besoins</p>
@@ -186,7 +252,7 @@ margin-bottom:10px;
         <!-- ESSENTIEL -->
         <div class="card">
             <h3>Essentiel</h3>
-            <p class="desc">L’entretien indispensable pour assurer la performance de votre installation</p>
+            <p class="desc">L’entretien indispensable</p>
 
             <ul>
                 <li>✔ Entretien annuel complet</li>
@@ -196,11 +262,11 @@ margin-bottom:10px;
         </div>
 
         <!-- PRIVILEGE -->
-        <div class="card">
-            <div class="badge">OFFRE VIP</div>
+        <div class="card vip">
+            <div class="badge">⭐ RECOMMANDÉ</div>
 
             <h3>Privilège</h3>
-            <p class="desc">La formule haut de gamme pour une tranquillité totale</p>
+            <p class="desc">Tranquillité totale toute l’année</p>
 
             <ul>
                 <li>✔ Entretien annuel complet</li>
@@ -209,33 +275,32 @@ margin-bottom:10px;
                 <li>✔ Remise sur pièces</li>
             </ul>
 
-            <a href="contact.html" class="btn">Choisir</a>
+            <a href="contact.html" class="btn btn-devis">Choisir cette formule</a>
         </div>
 
         <!-- CONFORT -->
         <div class="card">
             <h3>Confort</h3>
-            <p class="desc">Le bon équilibre entre entretien et assistance</p>
+            <p class="desc">Le bon équilibre</p>
 
             <ul>
                 <li>✔ Entretien annuel</li>
                 <li>✔ 1 dépannage inclus</li>
             </ul>
 
-            <a href="contact.html" class="btn">Devis</a>
+            <a href="contact.html" class="btn btn-devis">Demander un devis</a>
         </div>
 
     </div>
 </section>
 
-<!-- ✅ URGENCE -->
+<!-- URGENCE -->
 <section class="urgence">
     <h2>🚨 Une panne ? Une fuite ?</h2>
     <p>J’interviens rapidement pour sécuriser votre installation</p>
-    <a href="contact.html" class="btn">Intervention immédiate</a>
+    <a href="contact.html" class="btn btn-urgence">Intervention immédiate</a>
 </section>
 
-<!-- ✅ SCRIPT HEADER -->
 <script>
 window.addEventListener("scroll", function() {
   const header = document.querySelector("header");
