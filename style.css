@@ -5,6 +5,7 @@ margin:0;
 font-family:'Poppins', sans-serif;
 background:#ffffff;
 color:#111;
+padding-top:80px; /* FIX HEADER */
 }
 
 /* HEADER */
@@ -14,11 +15,11 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-z-index:1000;
+z-index:9999;
 transition:0.3s;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
 /* NAVIGATION */
@@ -107,6 +108,7 @@ align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
+margin-top:-80px; /* FIX */
 }
 
 .small-hero{
@@ -144,6 +146,28 @@ font-size:18px;
 line-height:1.6;
 }
 
+/* HERO CONTACT */
+
+.contact-hero{
+margin-top:-80px;
+height:40vh;
+background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/hero-energie.png") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#fff;
+}
+
+.contact-hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.contact-hero p{
+font-size:18px;
+}
+
 /* BOUTON */
 
 .btn{
@@ -163,7 +187,7 @@ background:#e65c00;
 transform:translateY(-2px);
 }
 
-/* SERVICES ACCUEIL */
+/* SERVICES */
 
 .services{
 padding:120px 60px;
@@ -201,83 +225,12 @@ justify-content:center;
 min-height:220px;
 }
 
-.service-card::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-transition:0.6s;
-}
-
-.service-card:hover::before{
-left:100%;
-}
-
-.service-card::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:4px;
-background:linear-gradient(90deg, #ff6600, #ff8c42);
-opacity:0;
-transition:0.3s;
-}
-
-.service-card:hover::after{
-opacity:1;
-}
-
 .service-card:hover{
 transform:translateY(-10px) scale(1.02);
 box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
-.service-emoji{
-font-size:42px;
-margin-bottom:15px;
-transition:0.3s;
-}
-
-.service-card:hover .service-emoji{
-transform:scale(1.15);
-}
-
-.service-card h3{
-font-size:18px;
-margin-bottom:8px;
-}
-
-.service-card p{
-font-size:14px;
-color:#666;
-}
-
-/* HIGHLIGHT */
-
-.service-card.highlight{
-background:linear-gradient(135deg,#0f172a,#1e293b);
-color:white;
-}
-
-.service-card.highlight h3{
-color:#22c55e;
-}
-
-.service-card.highlight p{
-color:#cbd5e1;
-}
-
-.service-card.highlight::after{
-background:linear-gradient(90deg,#22c55e,#4ade80);
-opacity:1;
-}
-
-/* 🔥 SERVICES PAGE PREMIUM */
+/* SERVICES PAGE */
 
 .service-block{
 padding:100px 20px;
@@ -290,7 +243,7 @@ background:#f8f9fb;
 .service-container{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:60px;
+gap:80px;
 max-width:1200px;
 margin:auto;
 align-items:center;
@@ -304,61 +257,25 @@ direction:rtl;
 direction:ltr;
 }
 
-.service-text h2{
-font-size:32px;
-margin-bottom:15px;
-}
-
-.service-text p{
-color:#555;
-margin-bottom:15px;
-line-height:1.6;
-}
-
-.service-text ul{
-margin-bottom:20px;
-padding-left:20px;
-}
-
-.service-text ul li{
-margin-bottom:8px;
-}
-
 /* IMAGE */
+
+.service-image{
+width:100%;
+height:350px;
+overflow:hidden;
+border-radius:20px;
+position:relative;
+}
 
 .service-image img{
 width:100%;
-border-radius:20px;
-box-shadow:0 20px 50px rgba(0,0,0,0.15);
+height:100%;
+object-fit:cover;
 transition:0.4s;
 }
 
 .service-image img:hover{
-transform:scale(1.03);
-}
-
-/* SECTION ÉNERGIE */
-
-.renewable{
-padding:120px 20px;
-text-align:center;
-color:white;
-background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
-background-size:cover;
-background-position:center;
-}
-
-.renewable h2{
-font-size:36px;
-margin-bottom:20px;
-}
-
-.renewable p{
-font-size:18px;
-max-width:650px;
-margin:auto;
-line-height:1.6;
+transform:scale(1.05);
 }
 
 /* CONTACT */
@@ -366,34 +283,57 @@ line-height:1.6;
 .contact-section{
 padding:120px 60px;
 background:#f9fafb;
+position:relative;
+z-index:1;
 }
 
-.contact-container{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
+.contact-wrapper{
+display:flex;
+gap:50px;
 max-width:1200px;
 margin:auto;
-align-items:center;
+padding:80px 20px;
+flex-wrap:wrap;
 }
 
-.contact-text h2{
-font-size:32px;
-margin-bottom:20px;
+.contact-info{
+flex:1;
+min-width:300px;
 }
 
-.contact-text p{
-font-size:16px;
-line-height:1.6;
-margin-bottom:10px;
-}
-
-.contact-map iframe{
-width:100%;
-height:320px;
-border-radius:18px;
-border:none;
+.contact-form{
+flex:1;
+min-width:300px;
+background:#fff;
+padding:30px;
+border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-form form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+/* MERCI PAGE */
+
+.thank-you{
+min-height:60vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px 20px;
 }
 
 /* FOOTER */
@@ -421,19 +361,6 @@ font-size:13px;
 color:#94a3b8;
 }
 
-/* ANIMATION */
-
-.reveal{
-opacity:0;
-transform:translateY(60px);
-transition:0.8s all ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
 /* CTA FLOTTANT */
 
 .floating-devis{
@@ -448,12 +375,6 @@ text-decoration:none;
 font-weight:600;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
 z-index:999;
-transition:0.3s;
-}
-
-.floating-devis:hover{
-background:#e65c00;
-transform:translateY(-2px);
 }
 
 /* MOBILE */
@@ -472,25 +393,8 @@ margin-left:20px;
 font-size:36px;
 }
 
-.hero-subtitle{
-font-size:18px;
-}
-
-.services{
-padding:80px 20px;
-}
-
-.service-container{
-grid-template-columns:1fr;
-}
-
-.contact-container{
-grid-template-columns:1fr;
-gap:30px;
-}
-
-.renewable{
-padding:80px 20px;
+.contact-wrapper{
+flex-direction:column;
 }
 
 .footer-container{
@@ -498,125 +402,4 @@ flex-direction:column;
 text-align:center;
 }
 
-}
-.service-image{
-  width:100%;
-  height:350px;
-  overflow:hidden;
-  border-radius:20px;
-}
-
-.service-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:0.4s;
-}
-
-.service-image img:hover{
-  transform:scale(1.05);
-}
-.service-container{
-  gap:80px; /* un peu plus d’espace = plus premium */
-}
-.service-image{
-  position:relative;
-}
-
-.service-image::after{
-  content:"";
-  position:absolute;
-  top:20%;
-  left:10%;
-  width:80%;
-  height:60%;
-  background:radial-gradient(circle, rgba(0,150,255,0.15) 0%, transparent 70%);
-  pointer-events:none;
-}
-/* HERO CONTACT */
-
-.contact-hero{
-height:40vh;
-background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/hero-energie.png") center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:#fff;
-}
-
-.contact-hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.contact-hero p{
-font-size:18px;
-}
-
-/* LAYOUT */
-
-.contact-wrapper{
-display:flex;
-gap:50px;
-max-width:1200px;
-margin:auto;
-padding:80px 20px;
-flex-wrap:wrap;
-}
-
-/* INFO */
-
-.contact-info{
-flex:1;
-min-width:300px;
-}
-
-.contact-info h2{
-margin-bottom:20px;
-}
-
-.contact-info ul{
-list-style:none;
-padding:0;
-}
-
-.contact-info li{
-margin-bottom:15px;
-font-size:16px;
-}
-
-.contact-direct{
-margin-top:30px;
-font-size:18px;
-}
-
-/* FORM */
-
-.contact-form{
-flex:1;
-min-width:300px;
-background:#fff;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-.contact-form form{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea{
-padding:12px;
-border:1px solid #ddd;
-border-radius:8px;
-font-family:'Poppins', sans-serif;
-}
-
-.contact-form h3{
-margin-bottom:10px;
 }
