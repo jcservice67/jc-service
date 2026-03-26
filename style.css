@@ -422,3 +422,131 @@ body:not(.home) header.scrolled .logo,
 body:not(.home) header.scrolled nav ul li a{
 color:white !important;
 }
+/* HERO CONTACT */
+
+.hero-contact{
+height:60vh;
+background:url('hero-energie.png') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+text-align:center;
+color:#fff;
+}
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(4px);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:800px;
+padding:20px;
+}
+
+.hero-content h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:18px;
+opacity:0.9;
+}
+
+/* IMAGE HERO */
+
+.hero-image-section img{
+width:100%;
+display:block;
+}
+
+/* CONTACT */
+
+.contact-section{
+padding:80px 20px;
+background:#f9f9f9;
+}
+
+.contact-container{
+max-width:600px;
+margin:auto;
+text-align:center;
+}
+
+.contact-container h2{
+margin-bottom:40px;
+font-size:32px;
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:15px;
+border:none;
+border-radius:8px;
+font-family:'Poppins', sans-serif;
+font-size:14px;
+background:#fff;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-group textarea{
+height:150px;
+resize:none;
+}
+
+/* CTA BAS */
+
+.cta-bottom{
+background:#111;
+color:#fff;
+padding:80px 20px;
+text-align:center;
+}
+
+.cta-content{
+max-width:700px;
+margin:auto;
+}
+
+.cta-content h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+.cta-content p{
+margin-bottom:30px;
+opacity:0.8;
+}
+
+/* BOUTON */
+
+.btn-primary{
+display:inline-block;
+padding:15px 30px;
+background:#007BFF;
+color:#fff;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-primary:hover{
+background:#0056b3;
+}
