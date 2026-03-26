@@ -574,3 +574,39 @@ transition:0.3s;
 border-color:#007BFF;
 outline:none;
 }
+/* HERO CONTACT */
+
+.hero-contact{
+height:60vh;
+background:url('hero-energie.png') center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#fff;
+}
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero-content h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero-content p{
+font-size:18px;
+opacity:0.9;
+}
