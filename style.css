@@ -64,7 +64,7 @@ nav ul li a.active{
 color:#ff6600;
 }
 
-/* HEADER FIX */
+/* HEADER FIX (toujours sombre hors home) */
 
 body:not(.home) header.scrolled{
 background:rgba(0,0,0,0.7);
@@ -89,7 +89,6 @@ text-align:center;
 color:#fff;
 background:url("hero-energie.png") center/cover no-repeat;
 margin-top:-80px;
-overflow:hidden;
 }
 
 .hero{
@@ -101,7 +100,7 @@ height:100vh;
 height:60vh;
 }
 
-/* OVERLAY + FLOU */
+/* OVERLAY UNIFIÉ */
 
 .hero-overlay{
 position:absolute;
@@ -152,33 +151,21 @@ background:#e65c00;
 transform:translateY(-2px);
 }
 
-/* 🔥 BOUTON URGENCE */
-.btn-urgence{
-background:#ff3b3b;
+.btn-primary{
+display:inline-block;
+padding:15px 30px;
+background:#007BFF;
 color:#fff;
-box-shadow:0 0 15px rgba(255,59,59,0.6);
-animation:pulse 1.5s infinite;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+border:none;
+cursor:pointer;
 }
 
-.btn-urgence:hover{
-background:#ff0000;
-}
-
-/* 🟠 BOUTON DEVIS */
-.btn-devis{
-background:#ff9800;
-color:#fff;
-}
-
-.btn-devis:hover{
-background:#e68900;
-}
-
-/* ANIMATION */
-@keyframes pulse{
-0%{box-shadow:0 0 10px rgba(255,59,59,0.6);}
-50%{box-shadow:0 0 25px rgba(255,59,59,1);}
-100%{box-shadow:0 0 10px rgba(255,59,59,0.6);}
+.btn-primary:hover{
+background:#0056b3;
 }
 
 /* ================= SERVICES ================= */
@@ -215,62 +202,164 @@ transform:translateY(-10px);
 box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
-/* ================= CARTES CONTRATS PREMIUM ================= */
+/* PAGE SERVICES */
 
-.cards{
-display:flex;
-flex-wrap:wrap;
-gap:30px;
-justify-content:center;
+.service-block{
+padding:100px 20px;
 }
 
-.card{
-background:#fff;
-padding:35px;
+.service-block.alt{
+background:#f8f9fb;
+}
+
+.service-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+max-width:1200px;
+margin:auto;
+align-items:center;
+}
+
+.service-container.reverse{
+direction:rtl;
+}
+
+.service-container.reverse .service-text{
+direction:ltr;
+}
+
+.service-image{
+height:350px;
+overflow:hidden;
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-width:300px;
-transition:0.4s;
-position:relative;
-border:2px solid transparent;
 }
 
-.card:hover{
-transform:translateY(-10px) scale(1.02);
-}
-
-/* 💎 VIP */
-.card.vip{
-transform:scale(1.08);
-border:2px solid #ff9800;
-box-shadow:0 20px 50px rgba(255,152,0,0.3);
-z-index:2;
-}
-
-.card.vip::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
+.service-image img{
 width:100%;
-height:5px;
-background:linear-gradient(90deg,#ff9800,#ff3b3b);
+height:100%;
+object-fit:cover;
+transition:0.4s;
 }
 
-.badge{
-position:absolute;
-top:-12px;
-right:-12px;
-background:#ff9800;
-color:#fff;
-padding:8px 15px;
-border-radius:30px;
-font-size:12px;
-font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+.service-image img:hover{
+transform:scale(1.05);
 }
 
 /* ================= CONTACT ================= */
+
+.contact-section{
+padding:80px 20px;
+background:#f9f9f9;
+}
+
+.contact-wrapper{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.contact-form{
+background:#fff;
+padding:40px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:20px;
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+margin-bottom:5px;
+font-weight:600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+width:100%;
+padding:15px;
+border:none;
+border-radius:8px;
+background:#f5f5f5;
+font-family:'Poppins', sans-serif;
+}
+
+.form-group textarea{
+height:150px;
+resize:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+outline:none;
+background:#fff;
+box-shadow:0 0 0 2px #007BFF;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+background:#0f172a;
+color:#cbd5e1;
+padding:40px 20px 20px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:20px;
+max-width:1200px;
+margin:auto;
+font-size:14px;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:20px;
+font-size:13px;
+color:#94a3b8;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+nav{
+padding:15px 20px;
+}
+
+nav ul li{
+margin-left:20px;
+}
+
+.hero-content h1{
+font-size:36px;
+}
+
+.contact-wrapper{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.footer-container{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
+/* ================= CONTACT SECTION AMÉLIORÉ ================= */
 
 .contact-section{
 padding:100px 20px;
@@ -290,9 +379,21 @@ margin:auto;
 .contact-text{
 background:rgba(255,255,255,0.8);
 backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
 padding:40px;
 border-radius:20px;
 box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+.contact-text h2{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.contact-text p{
+font-size:16px;
+margin-bottom:10px;
+color:#333;
 }
 
 .contact-text h2::after{
@@ -305,28 +406,98 @@ margin:15px auto 0;
 border-radius:2px;
 }
 
-/* ================= FOOTER ================= */
-
-.footer{
-background:#0f172a;
-color:#cbd5e1;
-padding:40px 20px 20px;
+.contact-map iframe{
+width:100%;
+max-width:700px;
+height:350px;
+border:none;
+border-radius:20px;
+box-shadow:0 15px 50px rgba(0,0,0,0.12);
+transition:0.3s;
 }
 
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-nav{
-padding:15px 20px;
+.contact-map iframe:hover{
+transform:scale(1.02);
 }
 
-nav ul li{
-margin-left:20px;
+/* ================= AJOUT PAGE ENTRETIEN & DEPANNAGE ================= */
+
+/* HERO FLOU */
+.hero-depannage{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#fff;
+background:url("hero-energie.png") center/cover no-repeat;
+height:60vh;
+margin-top:-80px;
+overflow:hidden;
 }
 
-.hero-content h1{
-font-size:36px;
+.hero-depannage::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:inherit;
+filter:blur(8px);
+transform:scale(1.1);
+z-index:0;
 }
 
+.hero-depannage::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+z-index:1;
+}
+
+.hero-depannage .hero-content{
+position:relative;
+z-index:2;
+}
+
+/* BOUTONS */
+.btn-urgence{
+background:#ff3b3b;
+color:#fff;
+box-shadow:0 0 15px rgba(255,59,59,0.6);
+animation:pulse 1.5s infinite;
+}
+
+.btn-devis{
+background:#ff9800;
+color:#fff;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 10px rgba(255,59,59,0.6);}
+50%{box-shadow:0 0 25px rgba(255,59,59,1);}
+100%{box-shadow:0 0 10px rgba(255,59,59,0.6);}
+}
+
+/* CARTES */
+.card.vip{
+transform:scale(1.08);
+border:2px solid #ff9800;
+box-shadow:0 20px 50px rgba(255,152,0,0.3);
+z-index:2;
+}
+
+.card.vip::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:5px;
+background:linear-gradient(90deg,#ff9800,#ff3b3b);
 }
