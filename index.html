@@ -105,46 +105,75 @@ Chaudières – Pompes à chaleur – Énergies renouvelables
 </div>
 </section>
 
-<!-- SECTION ÉNERGIE (NOUVELLE) -->
-<section class="renewable reveal">
-
-<div class="renewable-content">
-<h2>Passez aux énergies renouvelables</h2>
-<p>
-Réduisez vos factures et gagnez en confort avec des équipements modernes et performants.
-</p>
-<a href="contact.html" class="btn">Demander un devis</a>
-</div>
-
-</section>
-
 <!-- SECTION EXPERT REFAITE -->
 <section class="contact-section reveal">
 
-<div class="contact-container">
+  <div class="contact-container">
 
-<div class="contact-text">
-<h2>Intervention rapide en Alsace</h2>
+    <div class="contact-text">
+      <h2>Intervention rapide en Alsace</h2>
 
-<p>
-Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute l’Alsace
-pour vos besoins en chauffage, climatisation et dépannage.
-</p>
+      <p>
+        Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute l’Alsace
+        pour vos besoins en chauffage, climatisation et dépannage.
+      </p>
 
-<p><strong>📞 06 85 30 69 73</strong></p>
-<p><strong>✉️ instal.jcservice@gmail.com</strong></p>
+      <p><strong>📞 06 85 30 69 73</strong></p>
+      <p><strong>✉️ instal.jcservice@gmail.com</strong></p>
+    </div>
 
-</div>
+    <div class="contact-map">
+      <iframe
+        src="https://maps.google.com/maps?q=9a%20route%20de%20Paris%2067117%20Ittenheim&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
 
-<div class="contact-map">
-<iframe
-src="https://maps.google.com/maps?q=9a%20route%20de%20Paris%2067117%20Ittenheim&t=&z=15&ie=UTF8&iwloc=&output=embed"
-loading="lazy">
-</iframe>
-</div>
+  </div>
 
-</div>
 </section>
+
+<style>
+
+/* SECTION CONTACT */
+.contact-section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+/* CONTAINER CENTRÉ */
+.contact-container {
+  display: flex;
+  flex-direction: column; /* empile texte + carte */
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* TEXTE */
+.contact-text h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.contact-text p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* CARTE */
+.contact-map iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+</style>
 
 <!-- FOOTER -->
 <footer class="footer">
