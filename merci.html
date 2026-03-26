@@ -8,12 +8,85 @@
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* SECTION MERCI */
+
+.merci-section{
+min-height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f9fafb;
+padding:40px 20px;
+text-align:center;
+}
+
+.merci-container{
+max-width:600px;
+background:#fff;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.merci-container h1{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.merci-text{
+font-size:16px;
+margin-bottom:30px;
+opacity:0.8;
+}
+
+.merci-box{
+background:#f5f5f5;
+padding:20px;
+border-radius:12px;
+margin-bottom:30px;
+}
+
+.merci-contact p{
+margin-bottom:10px;
+font-weight:600;
+}
+
+.retour{
+display:inline-block;
+margin-top:20px;
+text-decoration:none;
+color:#007BFF;
+font-weight:600;
+}
+
+.retour:hover{
+text-decoration:underline;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<!-- ✅ HEADER COMMUN -->
-<div id="header"></div>
+<!-- HEADER FIXE -->
+<header>
+<nav>
+<div class="logo">
+<span class="logo-jc">JC</span> Service
+</div>
+
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="entretien-depannage.html">Entretien & Dépannage</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
 
 <section class="merci-section">
 
@@ -35,7 +108,7 @@ Nous vous recontactons rapidement pour étudier votre besoin et vous proposer la
 </p>
 
 <p>
-👉 En général, nous répondons sous <strong>24h</strong>.
+👉 Réponse sous <strong>24h maximum</strong>
 </p>
 
 </div>
@@ -44,33 +117,15 @@ Nous vous recontactons rapidement pour étudier votre besoin et vous proposer la
 
 <p>Besoin d’une réponse immédiate ?</p>
 
-<a href="tel:0685306973" class="btn">Appeler maintenant</a>
+<a href="tel:0685306973" class="btn">📞 Appeler maintenant</a>
 
 </div>
-
-<br><br>
 
 <a href="index.html" class="retour">← Retour à l'accueil</a>
 
 </div>
 
 </section>
-
-<!-- ✅ SCRIPT HEADER -->
-<script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-
-    const links = document.querySelectorAll("nav a");
-    links.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add("active");
-      }
-    });
-  });
-</script>
 
 </body>
 </html>
