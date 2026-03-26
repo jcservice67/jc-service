@@ -500,14 +500,22 @@ text-align:center;
 
 }
 .service-image{
-width:100%;
-height:350px;
-overflow:hidden;
-border-radius:20px;
+  width:100%;
+  height:350px;
+  overflow:hidden;
+  border-radius:20px;
 }
 
 .service-image img{
-width:100%;
-height:100%;
-object-fit:cover;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.service-image img:hover{
+  transform:scale(1.05);
+}
+.service-container{
+  gap:80px; /* un peu plus d’espace = plus premium */
 }
