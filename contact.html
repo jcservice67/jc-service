@@ -141,7 +141,6 @@ text-align:center;
 
 <body>
 
-<!-- HEADER IDENTIQUE -->
 <header>
 <nav>
 <div class="logo">
@@ -157,7 +156,6 @@ text-align:center;
 </nav>
 </header>
 
-<!-- TITRE -->
 <section class="hero-contact">
   <div class="hero-overlay"></div>
   
@@ -167,12 +165,10 @@ text-align:center;
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact-section">
 
 <div class="contact-wrapper">
 
-<!-- GAUCHE -->
 <div class="contact-left">
 <h2>Contactez-nous</h2>
 
@@ -188,13 +184,18 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 <a href="tel:0685306973" class="btn">Appeler maintenant</a>
 </div>
 
-<!-- DROITE FORM -->
 <div class="contact-right">
 
 <form action="https://formsubmit.co/instal.jcservice@gmail.com" method="POST">
 
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" value="Nouveau message - JC Service">
+
+<!-- ✅ REDIRECTION -->
+<input type="hidden" name="_next" value="https://tonpseudo.github.io/tonrepo/merci.html">
+
+<!-- ✅ AUTO REPONSE CLIENT -->
+<input type="hidden" name="_autoresponse" value="Merci pour votre message, nous vous recontactons rapidement.">
 
 <div class="form-group">
 <input type="text" name="Nom" placeholder="Votre nom" required>
@@ -236,7 +237,6 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
 
 <div class="footer-container">
@@ -261,7 +261,6 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 
 </footer>
 
-<!-- SCRIPT HEADER -->
 <script>
 window.addEventListener("scroll", function() {
 const header = document.querySelector("header");
