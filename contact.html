@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demande de devis - JC Service</title>
+<title>Contact - JC Service</title>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,123 +12,74 @@
 
 <body>
 
+<!-- HEADER -->
 <div id="header"></div>
 
-<!-- ✅ HERO -->
-<section class="contact-hero">
+<!-- HERO -->
+<section class="hero-contact">
+  <div class="hero-overlay"></div>
+
   <div class="hero-content">
-    <h1>Un projet ? Parlons-en</h1>
-    <p>Recevez votre devis gratuitement sous 24h</p>
+    <h1>Un projet ? Contactez-nous</h1>
+    <p>Appelez-nous au <strong>06 85 30 69 73</strong> ou envoyez-nous un message.</p>
   </div>
 </section>
 
-<!-- ✅ SECTION PRINCIPALE -->
+<!-- IMAGE HERO -->
+<section class="hero-image-section">
+  <img src="hero-energie.png" alt="Energie">
+</section>
+
+<!-- FORMULAIRE -->
 <section class="contact-section">
+  <div class="contact-container">
 
-<div class="contact-wrapper">
-
-  <!-- 🧱 BLOC GAUCHE -->
-  <div class="contact-info">
-
-    <h2>Pourquoi nous choisir ?</h2>
-
-    <ul>
-      <li>⚡ Intervention rapide</li>
-      <li>🛠️ Travail soigné et garanti</li>
-      <li>📍 Entreprise locale à Strasbourg</li>
-      <li>🤝 Accompagnement personnalisé</li>
-    </ul>
-
-    <div class="contact-direct">
-      <p><strong>📞 06 XX XX XX XX</strong></p>
-      <p>Réponse immédiate</p>
-    </div>
-
-  </div>
-
-  <!-- 🧾 FORMULAIRE -->
-  <div class="contact-form">
+    <h2>Demande de contact</h2>
 
     <form action="https://formsubmit.co/instal.jcservice@gmail.com" method="POST">
 
+      <!-- CONFIG FORMSUBMIT -->
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
-      <input type="hidden" name="_subject" value="Nouvelle demande de devis JC Service">
+      <input type="hidden" name="_subject" value="Nouveau message - JC Service">
+      <input type="hidden" name="_template" value="table">
 
-      <h3>Demande de devis</h3>
+      <div class="form-group">
+        <input type="text" name="Nom" placeholder="Votre nom" required>
+      </div>
 
-      <input type="text" name="Nom" placeholder="Nom / Prénom" required>
-      <input type="tel" name="Téléphone" placeholder="Téléphone" required>
-      <input type="email" name="Email" placeholder="Email" required>
+      <div class="form-group">
+        <input type="email" name="Email" placeholder="Votre email" required>
+      </div>
 
-      <select name="Service" required>
-        <option value="">Type de demande</option>
-        <option>Installation</option>
-        <option>Entretien</option>
-        <option>Dépannage</option>
-        <option>Rénovation</option>
-      </select>
+      <div class="form-group">
+        <input type="tel" name="Téléphone" placeholder="Votre téléphone">
+      </div>
 
-      <textarea name="Message" placeholder="Décrivez votre projet..." rows="5" required></textarea>
+      <div class="form-group">
+        <textarea name="Message" placeholder="Votre message..." required></textarea>
+      </div>
 
-      <button type="submit" class="btn">Envoyer la demande</button>
+      <button type="submit" class="btn-primary">Envoyer la demande</button>
 
     </form>
 
   </div>
-
-</div>
-
 </section>
 
-<!-- ✅ FOOTER -->
-<footer class="footer">
+<!-- BANDEAU BAS -->
+<section class="cta-bottom">
+  <div class="cta-content">
+    <h2>Un projet ? Parlons-en</h2>
+    <p>Installation, rénovation ou dépannage — on vous accompagne de A à Z.</p>
+    <a href="contact.html" class="btn-primary">Demander un devis</a>
+  </div>
+</section>
 
-<div class="footer-container">
-
-<div class="footer-col">
-<h3>JC Service</h3>
-<p>Plomberie • Chauffage • Climatisation</p>
-<p>Intervention rapide et travail soigné.</p>
-</div>
-
-<div class="footer-col">
-<h4>Navigation</h4>
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="contact.html">Devis</a></li>
-</ul>
-</div>
-
-<div class="footer-col">
-<h4>Contact</h4>
-<p>📞 06 XX XX XX XX</p>
-<p>📍 Strasbourg et alentours</p>
-<p>✉️ instal.jcservice@gmail.com</p>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-<p>© 2026 JC Service - Tous droits réservés</p>
-</div>
-
-</footer>
-
+<!-- SCRIPT HEADER -->
 <script>
 fetch("header.html")
   .then(response => response.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-
-    const links = document.querySelectorAll("nav a");
-    links.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add("active");
-      }
-    });
-  });
+  .then(data => document.getElementById("header").innerHTML = data);
 </script>
 
 </body>
