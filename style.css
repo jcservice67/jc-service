@@ -708,10 +708,11 @@ background:linear-gradient(90deg,#ff9800,#ff3b3b);
 .hero-about {
   position: relative;
   height: 60vh;
-  background: url('images/chantier.jpg') center/cover no-repeat;
+  background: url('images/Hero-about.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 /* OVERLAY FLOU + SOMBRE */
