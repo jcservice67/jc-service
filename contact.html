@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - JC Service</title>
+<title>Demande de devis - JC Service</title>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,58 +12,76 @@
 
 <body>
 
-<!-- ✅ HEADER -->
 <div id="header"></div>
 
-<!-- ✅ SECTION CONTACT -->
+<!-- ✅ HERO -->
+<section class="contact-hero">
+  <div class="hero-content">
+    <h1>Un projet ? Parlons-en</h1>
+    <p>Recevez votre devis gratuitement sous 24h</p>
+  </div>
+</section>
+
+<!-- ✅ SECTION PRINCIPALE -->
 <section class="contact-section">
 
-<div class="contact-container">
+<div class="contact-wrapper">
 
-<h2>Demande de devis</h2>
-<p>Remplissez ce formulaire, nous vous recontactons rapidement.</p>
+  <!-- 🧱 BLOC GAUCHE -->
+  <div class="contact-info">
 
-<form action="https://formsubmit.co/instal.jcservice@gmail.com" method="POST">
+    <h2>Pourquoi nous choisir ?</h2>
 
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
-<input type="hidden" name="_subject" value="Nouvelle demande de devis JC Service">
+    <ul>
+      <li>⚡ Intervention rapide</li>
+      <li>🛠️ Travail soigné et garanti</li>
+      <li>📍 Entreprise locale à Strasbourg</li>
+      <li>🤝 Accompagnement personnalisé</li>
+    </ul>
 
-<div class="form-group">
-<input type="text" name="Nom" placeholder="Nom / Prénom" required>
-</div>
+    <div class="contact-direct">
+      <p><strong>📞 06 XX XX XX XX</strong></p>
+      <p>Réponse immédiate</p>
+    </div>
 
-<div class="form-group">
-<input type="tel" name="Téléphone" placeholder="Téléphone" required>
-</div>
+  </div>
 
-<div class="form-group">
-<input type="email" name="Email" placeholder="Adresse email" required>
-</div>
+  <!-- 🧾 FORMULAIRE -->
+  <div class="contact-form">
 
-<div class="form-group">
-<select name="Service" required>
-<option value="">Type de demande</option>
-<option>Installation</option>
-<option>Entretien</option>
-<option>Dépannage</option>
-<option>Rénovation</option>
-</select>
-</div>
+    <form action="https://formsubmit.co/instal.jcservice@gmail.com" method="POST">
 
-<div class="form-group">
-<textarea name="Message" placeholder="Décrivez votre besoin..." rows="5" required></textarea>
-</div>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
+      <input type="hidden" name="_subject" value="Nouvelle demande de devis JC Service">
 
-<button type="submit" class="btn">Envoyer la demande</button>
+      <h3>Demande de devis</h3>
 
-</form>
+      <input type="text" name="Nom" placeholder="Nom / Prénom" required>
+      <input type="tel" name="Téléphone" placeholder="Téléphone" required>
+      <input type="email" name="Email" placeholder="Email" required>
+
+      <select name="Service" required>
+        <option value="">Type de demande</option>
+        <option>Installation</option>
+        <option>Entretien</option>
+        <option>Dépannage</option>
+        <option>Rénovation</option>
+      </select>
+
+      <textarea name="Message" placeholder="Décrivez votre projet..." rows="5" required></textarea>
+
+      <button type="submit" class="btn">Envoyer la demande</button>
+
+    </form>
+
+  </div>
 
 </div>
 
 </section>
 
-<!-- ✅ FOOTER (IDENTIQUE ACCUEIL / SERVICES) -->
+<!-- ✅ FOOTER -->
 <footer class="footer">
 
 <div class="footer-container">
@@ -98,7 +116,6 @@
 
 </footer>
 
-<!-- ✅ SCRIPT HEADER -->
 <script>
 fetch("header.html")
   .then(response => response.text())
