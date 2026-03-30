@@ -15,34 +15,111 @@ margin:0;
 background:#f9f9f9;
 }
 
-/* HERO */
-.hero{
-background:linear-gradient(135deg,#111,#333);
-color:white;
-text-align:center;
-padding:80px 20px;
+/* HEADER */
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+transition:0.3s;
 }
 
-.hero h1{
-font-size:40px;
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:white;
+}
+
+.logo-jc{
+color:#ff7a00;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:500;
+}
+
+header.scrolled{
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+header.scrolled .logo,
+header.scrolled nav ul li a{
+color:#111;
+}
+
+/* HERO FLOU */
+.hero-formules{
+position:relative;
+height:60vh;
+background:url('hero-energie.png') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+.hero-formules::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:inherit;
+filter:blur(8px);
+transform:scale(1.1);
+z-index:0;
+}
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:1;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero-content h1{
+font-size:42px;
 margin-bottom:10px;
 }
 
-.hero p{
+.hero-content p{
+font-size:18px;
 opacity:0.9;
-margin-bottom:20px;
 }
 
-.trust{
-font-size:14px;
-opacity:0.8;
-}
-
-/* TABLE */
+/* SECTION */
 .section{
 padding:60px 20px;
 }
 
+/* TABLE */
 .table-container{
 overflow-x:auto;
 }
@@ -75,7 +152,6 @@ font-weight:700;
 background:#f5f5f5;
 }
 
-/* COLONNES */
 .col{
 opacity:0.6;
 transition:0.3s;
@@ -86,7 +162,6 @@ background:#ff7a00;
 color:white;
 opacity:1;
 transform:scale(1.03);
-z-index:2;
 }
 
 .col.active .btn{
@@ -168,12 +243,30 @@ font-weight:600;
 
 <body>
 
+<!-- HEADER -->
+<header>
+<nav>
+<div class="logo">
+<span class="logo-jc">JC</span> Service
+</div>
+
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="entretien-depannage.html">Entretien & Dépannage</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="qui-sommes-nous?.html">Qui sommes-nous</a></li>
+</ul>
+</nav>
+</header>
+
 <!-- HERO -->
-<section class="hero">
-<h1>Choisissez votre tranquillité</h1>
-<p>Entretien, dépannage et sérénité toute l’année</p>
-<div class="trust">
-✔ +500 clients satisfaits • ✔ Intervention rapide • ✔ Entreprise locale
+<section class="hero-formules">
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+<h1>Nos formules d’entretien</h1>
+<p>Choisissez la solution adaptée à votre installation</p>
 </div>
 </section>
 
@@ -188,69 +281,61 @@ font-weight:600;
 <div class="cell header col" data-plan="confort">Confort</div>
 <div class="cell header col" data-plan="privilege">Privilège</div>
 
-<!-- GAZ -->
 <div class="cell feature">Chaudière gaz</div>
 <div class="cell col" data-plan="essentiel">140€</div>
 <div class="cell col" data-plan="confort">170€</div>
 <div class="cell col" data-plan="privilege">200€</div>
 
-<!-- FIOUL -->
 <div class="cell feature">Chaudière fioul</div>
 <div class="cell col" data-plan="essentiel">160€</div>
 <div class="cell col" data-plan="confort">190€</div>
 <div class="cell col" data-plan="privilege">220€</div>
 
-<!-- PAC -->
 <div class="cell feature">Pompe à chaleur</div>
 <div class="cell col" data-plan="essentiel">160€</div>
 <div class="cell col" data-plan="confort">190€</div>
 <div class="cell col" data-plan="privilege">220€</div>
 
-<!-- BALLON -->
 <div class="cell feature">Ballon thermodynamique</div>
 <div class="cell col" data-plan="essentiel">100€</div>
 <div class="cell col" data-plan="confort">130€</div>
 <div class="cell col" data-plan="privilege">160€</div>
 
-<!-- CLIM -->
 <div class="cell feature">Climatisation</div>
 <div class="cell col" data-plan="essentiel">140€*</div>
 <div class="cell col" data-plan="confort">170€*</div>
 <div class="cell col" data-plan="privilege">200€*</div>
 
-<!-- ADOUCISSEUR -->
 <div class="cell feature">Adoucisseur</div>
 <div class="cell col" data-plan="essentiel">130€</div>
 <div class="cell col" data-plan="confort">160€</div>
 <div class="cell col" data-plan="privilege">190€</div>
 
-<!-- AVANTAGES -->
 <div class="cell feature">Détail des prestations</div>
 
 <div class="cell col" data-plan="essentiel">
-✔ 1 entretien annuel<br>
-✔ Vérification rendement et émissions<br>
-✔ Attestation remise après intervention
+✔ Entretien annuel<br>
+✔ Vérification complète<br>
+✔ Attestation remise
 </div>
 
 <div class="cell col" data-plan="confort">
-✔ 1 entretien annuel<br>
-✔ Vérification rendement et émissions<br>
-✔ Attestation remise après intervention<br>
-✔ <strong>1 dépannage inclus / an</strong>
+✔ Entretien annuel<br>
+✔ Vérification complète<br>
+✔ Attestation remise<br>
+✔ <strong>1 dépannage inclus</strong>
 </div>
 
 <div class="cell col" data-plan="privilege">
-✔ 1 entretien annuel<br>
-✔ Vérification rendement et émissions<br>
-✔ Attestation remise après intervention<br>
+✔ Entretien annuel<br>
+✔ Vérification complète<br>
+✔ Attestation remise<br>
 ✔ <strong>Dépannage illimité</strong><br>
-✔ <strong>Intervention prioritaire &lt; 24h</strong><br>
-✔ <strong>-15% sur les pièces</strong><br>
-✔ <strong>Zéro stress toute l’année</strong>
+✔ <strong>Intervention &lt; 24h</strong><br>
+✔ <strong>-15% pièces</strong><br>
+✔ <strong>Zéro stress</strong>
 </div>
 
-<!-- CTA -->
 <div class="cell"></div>
 
 <div class="cell col" data-plan="essentiel">
@@ -273,7 +358,7 @@ font-weight:600;
 <!-- PSYCHO -->
 <section class="warning">
 <h2>Une panne peut coûter <strong>150€ à 400€</strong></h2>
-<p>Avec la formule Confort ou Privilège, vous êtes couvert et évitez les mauvaises surprises.</p>
+<p>Avec Confort ou Privilège, vous évitez les mauvaises surprises.</p>
 </section>
 
 <!-- CHOIX -->
@@ -283,31 +368,41 @@ font-weight:600;
 
 <div class="choice">
 <h3>Essentiel</h3>
-<p>Le strict minimum obligatoire</p>
+<p>Le strict minimum</p>
 </div>
 
 <div class="choice">
 <h3>Confort</h3>
-<p>Le bon équilibre entre prix et sécurité</p>
+<p>Le bon équilibre</p>
 </div>
 
 <div class="choice highlight">
 <div class="badge">Le plus choisi</div>
 <h3>Privilège</h3>
-<p>Aucun stress, tout est pris en charge toute l’année</p>
+<p>Aucun stress, tout est inclus</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- CTA FINAL -->
+<!-- CTA -->
 <section class="cta">
 <h2>Choisissez votre formule maintenant</h2>
-<a href="contact.html?plan=privilege">Souscrire en ligne</a>
+<a href="contact.html?plan=privilege">Souscrire</a>
 </section>
 
 <script>
+window.addEventListener("scroll", function() {
+const header = document.querySelector("header");
+
+if(window.scrollY > 50){
+header.classList.add("scrolled");
+} else{
+header.classList.remove("scrolled");
+}
+});
+
 const params = new URLSearchParams(window.location.search);
 const plan = params.get("plan");
 
