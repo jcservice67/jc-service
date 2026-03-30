@@ -178,7 +178,20 @@ box-shadow:0 5px 15px rgba(0,0,0,0.2);
 
 .card h3{
 font-size:22px;
+margin-bottom:5px;
+}
+
+/* PRIX */
+.price{
+font-size:20px;
+font-weight:700;
+color:#ff9800;
 margin-bottom:10px;
+}
+
+.card.vip .price{
+color:#ff3b3b;
+font-size:22px;
 }
 
 .card ul{
@@ -254,6 +267,7 @@ margin-bottom:10px;
         <!-- ESSENTIEL -->
         <div class="card">
             <h3>Essentiel</h3>
+            <p class="price">À partir de 140€</p>
             <p class="desc">L’entretien indispensable</p>
 
             <ul>
@@ -269,6 +283,7 @@ margin-bottom:10px;
             <div class="badge">⭐ RECOMMANDÉ</div>
 
             <h3>Privilège</h3>
+            <p class="price">À partir de 200€</p>
             <p class="desc">Tranquillité totale toute l’année</p>
 
             <ul>
@@ -284,6 +299,7 @@ margin-bottom:10px;
         <!-- CONFORT -->
         <div class="card">
             <h3>Confort</h3>
+            <p class="price">À partir de 170€</p>
             <p class="desc">Le bon équilibre</p>
 
             <ul>
@@ -317,9 +333,7 @@ window.addEventListener("scroll", function() {
 });
 </script>
 
-  <!-- FOOTER -->
 <footer class="footer">
-
 <div class="footer-container">
 
 <div class="footer-left">
@@ -339,7 +353,6 @@ window.addEventListener("scroll", function() {
 <div class="footer-bottom">
 © 2026 JC Service – Tous droits réservés
 </div>
-
 </footer>
 
 </body>
