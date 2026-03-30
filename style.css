@@ -1,7 +1,15 @@
 /* ================= GLOBAL ================= */
 
-body{
+*,
+*::before,
+*::after{
+box-sizing:border-box;
+}
+
+html,body{
 margin:0;
+padding:0;
+overflow-x:hidden;
 font-family:'Poppins', sans-serif;
 background:#ffffff;
 color:#111;
@@ -64,19 +72,7 @@ nav ul li a.active{
 color:#ff6600;
 }
 
-/* HEADER FIX (toujours sombre hors home) */
-
-body:not(.home) header.scrolled{
-background:rgba(0,0,0,0.7);
-box-shadow:none;
-}
-
-body:not(.home) header.scrolled .logo,
-body:not(.home) header.scrolled nav ul li a{
-color:white;
-}
-
-/* ================= HERO GLOBAL ================= */
+/* ================= HERO ================= */
 
 .hero,
 .hero-contact,
@@ -100,8 +96,6 @@ height:100vh;
 height:60vh;
 }
 
-/* OVERLAY UNIFIÉ */
-
 .hero-overlay{
 position:absolute;
 top:0;
@@ -110,10 +104,7 @@ width:100%;
 height:100%;
 background:rgba(0,0,0,0.35);
 backdrop-filter:blur(8px);
--webkit-backdrop-filter:blur(8px);
 }
-
-/* CONTENU HERO */
 
 .hero-content{
 position:relative;
@@ -152,20 +143,14 @@ transform:translateY(-2px);
 }
 
 .btn-primary{
-display:inline-block;
 padding:15px 30px;
 background:#007BFF;
 color:#fff;
 border-radius:50px;
 text-decoration:none;
 font-weight:600;
-transition:0.3s;
 border:none;
 cursor:pointer;
-}
-
-.btn-primary:hover{
-background:#0056b3;
 }
 
 /* ================= SERVICES ================= */
@@ -194,22 +179,12 @@ background:white;
 padding:35px 25px;
 border-radius:18px;
 box-shadow:0 10px 30px rgba(0,0,0,0.06);
-transition:0.4s;
 }
 
-.service-card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 50px rgba(0,0,0,0.12);
-}
-
-/* PAGE SERVICES */
+/* ================= SERVICE PAGE ================= */
 
 .service-block{
 padding:100px 20px;
-}
-
-.service-block.alt{
-background:#f8f9fb;
 }
 
 .service-container{
@@ -219,14 +194,6 @@ gap:80px;
 max-width:1200px;
 margin:auto;
 align-items:center;
-}
-
-.service-container.reverse{
-direction:rtl;
-}
-
-.service-container.reverse .service-text{
-direction:ltr;
 }
 
 .service-image{
@@ -239,11 +206,6 @@ border-radius:20px;
 width:100%;
 height:100%;
 object-fit:cover;
-transition:0.4s;
-}
-
-.service-image img:hover{
-transform:scale(1.05);
 }
 
 /* ================= CONTACT ================= */
@@ -259,51 +221,12 @@ margin:auto;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
-align-items:center;
 }
 
 .contact-form{
 background:#fff;
 padding:40px;
 border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* FORM */
-
-.form-group{
-margin-bottom:20px;
-display:flex;
-flex-direction:column;
-}
-
-.form-group label{
-margin-bottom:5px;
-font-weight:600;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-width:100%;
-padding:15px;
-border:none;
-border-radius:8px;
-background:#f5f5f5;
-font-family:'Poppins', sans-serif;
-}
-
-.form-group textarea{
-height:150px;
-resize:none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus{
-outline:none;
-background:#fff;
-box-shadow:0 0 0 2px #007BFF;
 }
 
 /* ================= FOOTER ================= */
@@ -311,738 +234,104 @@ box-shadow:0 0 0 2px #007BFF;
 .footer{
 background:#0f172a;
 color:#cbd5e1;
-padding:40px 20px 20px;
+padding:40px 20px;
 }
 
 .footer-container{
 display:flex;
 justify-content:space-between;
 flex-wrap:wrap;
-gap:20px;
 max-width:1200px;
 margin:auto;
-font-size:14px;
 }
 
-.footer-bottom{
-text-align:center;
-margin-top:20px;
-font-size:13px;
-color:#94a3b8;
-}
+/* ================= MOBILE CLEAN ================= */
 
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
+@media (max-width:768px){
 
 nav{
 padding:15px 20px;
 }
 
+nav ul{
+flex-direction:column;
+align-items:center;
+gap:10px;
+}
+
 nav ul li{
-margin-left:20px;
+margin-left:0;
+}
+
+/* HERO */
+.hero{
+height:auto;
+min-height:100vh;
+padding:100px 20px 60px;
 }
 
 .hero-content h1{
-font-size:36px;
+font-size:28px;
 }
 
+.hero-content p{
+font-size:16px;
+}
+
+/* SERVICES */
+.services{
+padding:60px 20px;
+}
+
+.services-container{
+grid-template-columns:1fr;
+}
+
+/* SERVICE PAGE */
+.service-container{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.service-image{
+height:250px;
+}
+
+/* CONTACT */
 .contact-wrapper{
 grid-template-columns:1fr;
 text-align:center;
 }
 
+.contact-form{
+padding:25px;
+}
+
+/* FOOTER */
 .footer-container{
 flex-direction:column;
 text-align:center;
 }
 
-}
-
-/* ================= CONTACT SECTION AMÉLIORÉ ================= */
-
-.contact-section{
-padding:100px 20px;
-background:linear-gradient(135deg, #f5f7fa, #e8edf3);
-}
-
-.contact-container{
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-gap:40px;
-max-width:900px;
-margin:auto;
-}
-
-.contact-text{
-background:rgba(255,255,255,0.8);
-backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 40px rgba(0,0,0,0.08);
-}
-
-.contact-text h2{
-font-size:32px;
-margin-bottom:15px;
-}
-
-.contact-text p{
-font-size:16px;
-margin-bottom:10px;
-color:#333;
-}
-
-.contact-text h2::after{
-content:"";
-display:block;
-width:60px;
-height:4px;
-background:#ff6600;
-margin:15px auto 0;
-border-radius:2px;
-}
-
-.contact-map iframe{
-width:100%;
-max-width:700px;
-height:350px;
-border:none;
-border-radius:20px;
-box-shadow:0 15px 50px rgba(0,0,0,0.12);
-transition:0.3s;
-}
-
-.contact-map iframe:hover{
-transform:scale(1.02);
-}
-
-/* ================= AJOUT PAGE ENTRETIEN & DEPANNAGE ================= */
-
-/* HERO FLOU */
-.hero-depannage{
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:#fff;
-background:url("hero-energie.png") center/cover no-repeat;
-height:60vh;
-margin-top:-80px;
-overflow:hidden;
-}
-
-.hero-depannage::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:inherit;
-filter:blur(8px);
-transform:scale(1.1);
-z-index:0;
-}
-
-.hero-depannage::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-z-index:1;
-}
-
-.hero-depannage .hero-content{
-position:relative;
-z-index:2;
-}
-
 /* BOUTONS */
-.btn-urgence{
-background:#ff3b3b;
-color:#fff;
-box-shadow:0 0 15px rgba(255,59,59,0.6);
-animation:pulse 1.5s infinite;
-}
-
-.btn-devis{
-background:#ff9800;
-color:#fff;
-}
-
-@keyframes pulse{
-0%{box-shadow:0 0 10px rgba(255,59,59,0.6);}
-50%{box-shadow:0 0 25px rgba(255,59,59,1);}
-100%{box-shadow:0 0 10px rgba(255,59,59,0.6);}
-}
-
-/* CARTES */
-.card.vip{
-transform:scale(1.08);
-border:2px solid #ff9800;
-box-shadow:0 20px 50px rgba(255,152,0,0.3);
-z-index:2;
-}
-
-.card.vip::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
+.btn,
+.btn-primary{
 width:100%;
-height:5px;
-background:linear-gradient(90deg,#ff9800,#ff3b3b);
+text-align:center;
 }
-.contact-map {
-  width: 100%;
-  margin: 0;
-  border-radius: 0;
-}
-
-.contact-map iframe {
-  width: 100%;
-  height: 500px;
-  border: 0;
-}
-/* SECTION */
-.map-section {
-  padding: 80px 20px;
-  background: #f9f9f9;
-}
-
-/* CONTAINER */
-.map-container {
-  max-width: 1400px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-/* TEXTE */
-.map-info {
-  flex: 1;
-}
-
-.map-info h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.map-info p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-/* BOUTON */
-.btn-map {
-  display: inline-block;
-  padding: 14px 28px;
-  background: #000;
-  color: #fff;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-map:hover {
-  background: #333;
-}
-
-/* CARTE */
-.contact-map {
-  flex: 1.5;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
-
-.contact-map iframe {
-  width: 100%;
-  height: 450px;
-  border: 0;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .map-container {
-    flex-direction: column;
-  }
-
-  .contact-map iframe {
-    height: 350px;
-  }
-}
-/* HERO */
-.hero-about {
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #111;
-  color: #fff;
-  text-align: center;
-}
-
-.hero-about h1 {
-  font-size: 3rem;
-}
-
-/* SECTION */
-.about-section {
-  padding: 100px 20px;
-  background: linear-gradient(to bottom, #ffffff, #f8f9fb);
-}
-
-.about-container {
-  max-width: 1400px;
-  margin: auto;
-  display: flex;
-  gap: 60px;
-  align-items: center;
-}
-
-.about-text {
-  flex: 1;
-}
-
-.about-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.about-text p {
-  color: #555;
-  margin-bottom: 20px;
-}
-
-/* BOUTON */
-.btn-primary {
-  display: inline-block;
-  padding: 14px 30px;
-  background: #000;
-  color: #fff;
-  border-radius: 30px;
-  text-decoration: none;
-}
-
-/* CARDS */
-.about-cards {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.about-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .about-container {
-    flex-direction: column;
-  }
-}
-/* HERO PREMIUM */
-.hero-about {
-  position: relative;
-  height: 60vh;
-  background: url('images/hero-about.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* OVERLAY FLOU + SOMBRE */
-.hero-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(6px);
-  background: rgba(0,0,0,0.5);
-}
-
-/* TEXTE HERO */
-.hero-content {
-  position: relative;
-  text-align: center;
-  color: #fff;
-  z-index: 2;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-/* HERO ABOUT */
-.hero-about {
-  position: relative;
-  height: 60vh;
-  background: url('images/qsn.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-/* OVERLAY FLOU + SOMBRE */
-.hero-about .hero-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(6px);
-  background: rgba(0,0,0,0.5);
-}
-
-/* TEXTE */
-.hero-about .hero-content {
-  position: relative;
-  color: white;
-  text-align: center;
-}
-
-.hero-about h1 {
-  font-size: 3rem;
-}
-
-.hero-about p {
-  margin-top: 10px;
-  opacity: 0.9;
-}
-/* =========================================
-   HISTORIQUE - VERSION MOBILE PREMIUM
-========================================= */
-@media (max-width: 768px){
-
-  /* SECTION */
-  .history-section{
-    padding: 40px 20px;
-  }
-
-  /* TITRE */
-  .history-section h2{
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  /* CONTENEUR */
-  .history-container{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  /* ITEM (CARTE) */
-  .history-item{
-    position: relative;
-    display: flex;
-    flex-direction: column !important;
-    background: #ffffff;
-    padding: 18px;
-    border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease;
-  }
-
-  .history-item:active{
-    transform: scale(0.98);
-  }
-
-  /* PETIT TRAIT TIMELINE */
-  .history-item::before{
-    content: "";
-    position: absolute;
-    left: -10px;
-    top: 20px;
-    width: 4px;
-    height: 40px;
-    background: #c59d5f;
-    border-radius: 2px;
-  }
-
-  /* IMAGE */
-  .history-item img{
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 12px;
-  }
-
-  /* DATE */
-  .history-date{
-    font-size: 13px;
-    font-weight: 600;
-    color: #c59d5f;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-  }
-
-  /* TITRE */
-  .history-text h3{
-    font-size: 17px;
-    margin-bottom: 6px;
-    color: #111;
-  }
-
-  /* TEXTE */
-  .history-text p{
-    font-size: 14px;
-    line-height: 1.6;
-    color: #555;
-  }
-
-  /* SUPPRIME LE ZIGZAG */
-  .history-item.reverse{
-    flex-direction: column !important;
-  }
 
 }
 
+/* SMALL MOBILE */
 
-/* =========================================
-   ULTRA PETIT ÉCRAN (iPhone SE etc)
-========================================= */
-@media (max-width: 480px){
+@media (max-width:480px){
 
-  .history-section{
-    padding: 30px 15px;
-  }
-
-  .history-item{
-    padding: 15px;
-  }
-
-  .history-item img{
-    height: 160px;
-  }
-
-  .history-text h3{
-    font-size: 16px;
-  }
-
-  .history-text p{
-    font-size: 13.5px;
-  }
-
+.hero-content h1{
+font-size:24px;
 }
 
-
-/* =========================================
-   BONUS FLUIDITÉ (tous écrans)
-========================================= */
-
-.history-item{
-  will-change: transform;
+.hero-content p{
+font-size:15px;
 }
 
-.history-item img{
-  transition: transform 0.3s ease;
-}
-
-.history-item:hover img{
-  transform: scale(1.03);
-}
-/* =========================================
-   BASE PROPRE (INDISPENSABLE)
-========================================= */
-
-*,
-*::before,
-*::after{
-  box-sizing: border-box;
-}
-
-html, body{
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-/* Médias fluides */
-img, video, iframe{
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-/* =========================================
-   CONTENEURS
-========================================= */
-
-.container,
-.wrapper,
-.section{
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-
-/* =========================================
-   CORRECTION FLEX / GRID GLOBAL
-========================================= */
-
-.flex{
-  display: flex;
-  gap: 20px;
-}
-
-.grid{
-  display: grid;
-  gap: 20px;
-}
-
-
-/* =========================================
-   MOBILE FIRST (TABLETTE & TEL)
-========================================= */
-
-@media (max-width: 768px){
-
-  /* STRUCTURE → TOUT PASSE EN COLONNE */
-  .flex,
-  .grid,
-  .row,
-  .grid-2,
-  .grid-3,
-  .grid-4{
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  /* COLONNES */
-  .col,
-  .column,
-  .left,
-  .right{
-    width: 100% !important;
-  }
-
-  /* TITRES */
-  h1{
-    font-size: 26px !important;
-    line-height: 1.3;
-  }
-
-  h2{
-    font-size: 22px !important;
-  }
-
-  h3{
-    font-size: 18px !important;
-  }
-
-  /* TEXTE */
-  p{
-    font-size: 15px !important;
-    line-height: 1.6;
-  }
-
-  /* HERO / BANNIÈRES */
-  .hero,
-  .hero-about,
-  .banner{
-    height: auto !important;
-    padding: 60px 20px !important;
-    text-align: center;
-  }
-
-  /* NAVIGATION SIMPLE */
-  nav ul{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0;
-  }
-
-  /* BOUTONS */
-  .btn{
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 14px;
-  }
-
-  /* FORMULAIRES */
-  input,
-  textarea,
-  select{
-    width: 100%;
-    font-size: 16px;
-  }
-
-  /* TABLEAUX */
-  table{
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-}
-
-
-/* =========================================
-   PETITS ÉCRANS (iPhone SE etc)
-========================================= */
-
-@media (max-width: 480px){
-
-  h1{ font-size: 22px !important; }
-  h2{ font-size: 20px !important; }
-
-  .container,
-  .wrapper,
-  .section{
-    padding: 0 15px;
-  }
-
-}
-
-
-/* =========================================
-   SÉCURITÉ ANTI-DÉBORDEMENT
-========================================= */
-
-/* Évite les éléments trop larges */
-[style*="width"]{
-  max-width: 100% !important;
-}
-
-/* Long mots / URLs */
-p, h1, h2, h3, span{
-  word-wrap: break-word;
 }
