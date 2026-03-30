@@ -12,36 +12,50 @@
 body{
 font-family:'Poppins', sans-serif;
 margin:0;
-padding:40px 20px;
 background:#f9f9f9;
 }
 
-h1{
+/* HERO */
+.hero{
+background:linear-gradient(135deg,#111,#333);
+color:white;
 text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:40px;
 margin-bottom:10px;
 }
 
-.subtitle{
-text-align:center;
-opacity:0.7;
-margin-bottom:40px;
+.hero p{
+opacity:0.9;
+margin-bottom:20px;
 }
 
-/* TABLEAU */
+.trust{
+font-size:14px;
+opacity:0.8;
+}
+
+/* TABLE */
+.section{
+padding:60px 20px;
+}
 
 .table-container{
 overflow-x:auto;
 }
 
-.pricing-table{
+.table{
 display:grid;
-grid-template-columns:220px repeat(3, 1fr);
-max-width:1000px;
+grid-template-columns:220px repeat(3,1fr);
+max-width:1100px;
 margin:auto;
 background:white;
 border-radius:15px;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
 }
 
 .cell{
@@ -50,28 +64,28 @@ border-bottom:1px solid #eee;
 text-align:center;
 }
 
-.header{
-font-weight:700;
-background:#f5f5f5;
-}
-
 .feature{
 text-align:left;
 font-weight:600;
 background:#fafafa;
 }
 
+.header{
+font-weight:700;
+background:#f5f5f5;
+}
+
 /* COLONNES */
 .col{
-transition:0.3s;
 opacity:0.6;
+transition:0.3s;
 }
 
 .col.active{
 background:#ff7a00;
 color:white;
 opacity:1;
-transform:scale(1.02);
+transform:scale(1.03);
 z-index:2;
 }
 
@@ -80,11 +94,6 @@ background:white;
 color:#ff7a00;
 }
 
-.price{
-font-weight:bold;
-}
-
-/* BOUTON */
 .btn{
 display:inline-block;
 padding:10px 15px;
@@ -92,17 +101,66 @@ background:black;
 color:white;
 border-radius:6px;
 text-decoration:none;
-margin:10px 0;
+margin-top:10px;
 }
 
-/* RESPONSIVE */
-@media(max-width:800px){
-.pricing-table{
-grid-template-columns:1fr;
+/* BLOC PSYCHO */
+.warning{
+background:#111;
+color:white;
+text-align:center;
+padding:50px 20px;
 }
-.feature{
-display:none;
+
+.warning strong{
+color:#ff7a00;
 }
+
+/* CHOIX */
+.choices{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.choice{
+background:white;
+padding:25px;
+border-radius:12px;
+width:280px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.choice.highlight{
+border:2px solid #ff7a00;
+transform:scale(1.05);
+}
+
+.badge{
+background:#ff3b3b;
+color:white;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+display:inline-block;
+margin-bottom:10px;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+padding:60px 20px;
+}
+
+.cta a{
+padding:15px 30px;
+background:#ff7a00;
+color:white;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
 }
 
 </style>
@@ -110,94 +168,136 @@ display:none;
 
 <body>
 
-<h1>Nos formules d’entretien</h1>
-<p class="subtitle">Choisissez votre formule selon votre équipement</p>
+<!-- HERO -->
+<section class="hero">
+<h1>Choisissez votre tranquillité</h1>
+<p>Entretien, dépannage et sérénité toute l’année</p>
+<div class="trust">
+✔ +500 clients satisfaits • ✔ Intervention rapide • ✔ Entreprise locale
+</div>
+</section>
+
+<!-- TABLEAU -->
+<section class="section">
 
 <div class="table-container">
+<div class="table">
 
-<div class="pricing-table">
-
-<!-- HEADER -->
 <div class="cell header"></div>
 <div class="cell header col" data-plan="essentiel">Essentiel</div>
 <div class="cell header col" data-plan="confort">Confort</div>
 <div class="cell header col" data-plan="privilege">Privilège</div>
 
-<!-- GAZ -->
 <div class="cell feature">Chaudière gaz</div>
 <div class="cell col" data-plan="essentiel">140€</div>
 <div class="cell col" data-plan="confort">170€</div>
 <div class="cell col" data-plan="privilege">200€</div>
 
-<!-- FIOUL -->
-<div class="cell feature">Chaudière fioul</div>
+<div class="cell feature">Fioul / PAC</div>
 <div class="cell col" data-plan="essentiel">160€</div>
 <div class="cell col" data-plan="confort">190€</div>
 <div class="cell col" data-plan="privilege">220€</div>
 
-<!-- PAC -->
-<div class="cell feature">Pompe à chaleur</div>
-<div class="cell col" data-plan="essentiel">160€</div>
-<div class="cell col" data-plan="confort">190€</div>
-<div class="cell col" data-plan="privilege">220€</div>
-
-<!-- BALLON -->
 <div class="cell feature">Ballon thermodynamique</div>
 <div class="cell col" data-plan="essentiel">100€</div>
 <div class="cell col" data-plan="confort">130€</div>
 <div class="cell col" data-plan="privilege">160€</div>
 
-<!-- CLIM -->
 <div class="cell feature">Climatisation</div>
 <div class="cell col" data-plan="essentiel">140€*</div>
 <div class="cell col" data-plan="confort">170€*</div>
 <div class="cell col" data-plan="privilege">200€*</div>
 
-<!-- ADOUCISSEUR -->
 <div class="cell feature">Adoucisseur</div>
 <div class="cell col" data-plan="essentiel">130€</div>
 <div class="cell col" data-plan="confort">160€</div>
 <div class="cell col" data-plan="privilege">190€</div>
 
-<!-- BOUTONS -->
-<div class="cell"></div>
+<!-- AVANTAGES -->
+<div class="cell feature">Avantages</div>
 
 <div class="cell col" data-plan="essentiel">
-<a href="contact.html?plan=essentiel" class="btn">Valider</a>
+✔ Entretien obligatoire<br>
+✔ Sécurité
 </div>
 
 <div class="cell col" data-plan="confort">
-<a href="contact.html?plan=confort" class="btn">Valider</a>
+✔ 1 dépannage inclus<br>
+✔ Évite les imprévus<br>
+✔ Économique
 </div>
 
 <div class="cell col" data-plan="privilege">
-<a href="contact.html?plan=privilege" class="btn">Valider</a>
+✔ Dépannage illimité<br>
+✔ Prioritaire<br>
+✔ Sérénité totale
+</div>
+
+<!-- CTA -->
+<div class="cell"></div>
+
+<div class="cell col" data-plan="essentiel">
+<a href="contact.html?plan=essentiel" class="btn">Choisir</a>
+</div>
+
+<div class="cell col" data-plan="confort">
+<a href="contact.html?plan=confort" class="btn">Choisir</a>
+</div>
+
+<div class="cell col" data-plan="privilege">
+<a href="contact.html?plan=privilege" class="btn">Choisir</a>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- PSYCHO -->
+<section class="warning">
+<h2>Une panne peut coûter <strong>150€ à 400€</strong></h2>
+<p>Avec la formule Confort, vous êtes déjà couvert.</p>
+</section>
+
+<!-- CHOIX -->
+<section class="section">
+
+<div class="choices">
+
+<div class="choice">
+<h3>Essentiel</h3>
+<p>Le minimum obligatoire</p>
+</div>
+
+<div class="choice highlight">
+<div class="badge">Le plus choisi</div>
+<h3>Confort</h3>
+<p>Le meilleur équilibre prix / tranquillité</p>
+</div>
+
+<div class="choice">
+<h3>Privilège</h3>
+<p>Zéro stress toute l’année</p>
 </div>
 
 </div>
 
-</div>
+</section>
 
-<p style="text-align:center; margin-top:15px; font-size:14px;">
-* +40€ par unité supplémentaire (à partir de la 2e)
-</p>
+<!-- CTA FINAL -->
+<section class="cta">
+<h2>Choisissez votre formule maintenant</h2>
+<a href="contact.html?plan=confort">Souscrire en ligne</a>
+</section>
 
 <script>
 const params = new URLSearchParams(window.location.search);
 const plan = params.get("plan");
 
 if(plan){
-  document.querySelectorAll(`.col[data-plan="${plan}"]`).forEach(el=>{
-    el.classList.add("active");
-  });
-
-  const first = document.querySelector(`.col[data-plan="${plan}"]`);
-  if(first){
-    first.scrollIntoView({
-      behavior:"smooth",
-      block:"center"
-    });
-  }
+document.querySelectorAll(`.col[data-plan="${plan}"]`).forEach(el=>{
+el.classList.add("active");
+});
 }
 </script>
 
