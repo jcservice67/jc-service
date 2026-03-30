@@ -13,6 +13,7 @@ body{
 font-family:'Poppins', sans-serif;
 margin:0;
 background:#f9f9f9;
+overflow-x:hidden;
 }
 
 /* HEADER */
@@ -117,6 +118,14 @@ opacity:0.9;
 /* SECTION */
 .section{
 padding:60px 20px;
+opacity:0;
+transform:translateY(40px);
+transition:0.8s;
+}
+
+.section.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 /* TABLE */
@@ -152,16 +161,27 @@ font-weight:700;
 background:#f5f5f5;
 }
 
+/* COLONNES */
 .col{
 opacity:0.6;
 transition:0.3s;
+}
+
+.col:hover{
+transform:scale(1.02);
 }
 
 .col.active{
 background:#ff7a00;
 color:white;
 opacity:1;
-transform:scale(1.03);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 rgba(255,122,0,0.4);}
+50%{box-shadow:0 0 20px rgba(255,122,0,0.6);}
+100%{box-shadow:0 0 0 rgba(255,122,0,0.4);}
 }
 
 .col.active .btn{
@@ -177,6 +197,11 @@ color:white;
 border-radius:6px;
 text-decoration:none;
 margin-top:10px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
 }
 
 /* BLOC PSYCHO */
@@ -206,6 +231,11 @@ padding:25px;
 border-radius:12px;
 width:280px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.choice:hover{
+transform:translateY(-5px);
 }
 
 .choice.highlight{
@@ -236,6 +266,11 @@ color:white;
 border-radius:30px;
 text-decoration:none;
 font-weight:600;
+transition:0.3s;
+}
+
+.cta a:hover{
+transform:scale(1.05);
 }
 
 </style>
@@ -243,7 +278,6 @@ font-weight:600;
 
 <body>
 
-<!-- HEADER -->
 <header>
 <nav>
 <div class="logo">
@@ -260,18 +294,15 @@ font-weight:600;
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero-formules">
 <div class="hero-overlay"></div>
-
 <div class="hero-content">
 <h1>Nos formules d’entretien</h1>
 <p>Choisissez la solution adaptée à votre installation</p>
 </div>
 </section>
 
-<!-- TABLEAU -->
-<section class="section">
+<section class="section reveal">
 
 <div class="table-container">
 <div class="table">
@@ -355,14 +386,12 @@ font-weight:600;
 
 </section>
 
-<!-- PSYCHO -->
-<section class="warning">
+<section class="warning reveal">
 <h2>Une panne peut coûter <strong>150€ à 400€</strong></h2>
 <p>Avec Confort ou Privilège, vous évitez les mauvaises surprises.</p>
 </section>
 
-<!-- CHOIX -->
-<section class="section">
+<section class="section reveal">
 
 <div class="choices">
 
@@ -386,23 +415,24 @@ font-weight:600;
 
 </section>
 
-<!-- CTA -->
-<section class="cta">
+<section class="cta reveal">
 <h2>Choisissez votre formule maintenant</h2>
 <a href="contact.html?plan=privilege">Souscrire</a>
 </section>
 
 <script>
+
+// HEADER SCROLL
 window.addEventListener("scroll", function() {
 const header = document.querySelector("header");
-
 if(window.scrollY > 50){
 header.classList.add("scrolled");
-} else{
+}else{
 header.classList.remove("scrolled");
 }
 });
 
+// PLAN ACTIVE
 const params = new URLSearchParams(window.location.search);
 const plan = params.get("plan");
 
@@ -411,6 +441,19 @@ document.querySelectorAll(`.col[data-plan="${plan}"]`).forEach(el=>{
 el.classList.add("active");
 });
 }
+
+// ANIMATION SCROLL
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", ()=>{
+reveals.forEach(el=>{
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+el.classList.add("visible");
+}
+});
+});
+
 </script>
 
 </body>
