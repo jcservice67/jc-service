@@ -12,7 +12,8 @@
 
 <style>
 
-/* HEADER SPACING */
+/* (TON CSS INCHANGÉ) */
+
 .page-intro{
 padding:120px 20px 40px;
 text-align:center;
@@ -27,8 +28,6 @@ margin-bottom:10px;
 opacity:0.7;
 }
 
-/* CONTACT SECTION */
-
 .contact-section{
 padding:80px 20px;
 background:#f9f9f9;
@@ -42,8 +41,6 @@ grid-template-columns:1fr 1fr;
 gap:40px;
 align-items:center;
 }
-
-/* INFOS */
 
 .contact-left{
 text-align:left;
@@ -63,8 +60,6 @@ font-size:16px;
 font-weight:600;
 margin-bottom:20px;
 }
-
-/* FORM */
 
 .contact-right{
 background:#fff;
@@ -124,14 +119,18 @@ transition:0.3s;
 background:#0056b3;
 }
 
-/* MESSAGE FORMULE */
 .plan-message{
 color:#ff7a00;
 font-weight:600;
 margin-bottom:10px;
 }
 
-/* RESPONSIVE */
+/* NOUVEAU : PRIX */
+.prix-info{
+margin-top:10px;
+font-weight:600;
+color:#ff7a00;
+}
 
 @media(max-width:900px){
 .contact-wrapper{
@@ -198,7 +197,6 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" value="Nouvelle demande entretien - JC Service">
-
 <input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
 <input type="hidden" name="_autoresponse" value="Merci pour votre demande, nous vous recontactons rapidement.">
 
@@ -225,6 +223,22 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 </select>
 </div>
 
+<!-- NOUVEAU : ÉQUIPEMENT -->
+<div class="form-group">
+<label for="equipement">Type d’équipement</label>
+<select id="equipement" name="Équipement" required>
+  <option value="">-- Sélectionner --</option>
+  <option>Chaudière gaz</option>
+  <option>Chaudière fioul</option>
+  <option>Pompe à chaleur</option>
+  <option>Ballon thermodynamique</option>
+  <option>Climatisation</option>
+  <option>Adoucisseur</option>
+</select>
+
+<div id="prix-info" class="prix-info"></div>
+</div>
+
 <!-- URGENCE -->
 <div class="form-group">
 <label for="urgence">Demande urgente ?</label>
@@ -234,13 +248,11 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 </select>
 </div>
 
-<!-- DATE -->
 <div class="form-group">
 <label>Date souhaitée</label>
 <input type="date" name="Date souhaitée" required>
 </div>
 
-<!-- HEURE -->
 <div class="form-group">
 <label>Heure souhaitée</label>
 <input type="time" name="Heure souhaitée">
@@ -261,7 +273,6 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 </section>
 
 <footer class="footer">
-
 <div class="footer-container">
 
 <div class="footer-left">
@@ -281,45 +292,65 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 <div class="footer-bottom">
 © 2026 JC Service – Tous droits réservés
 </div>
-
 </footer>
 
 <script>
-
-// HEADER SCROLL
-window.addEventListener("scroll", function() {
-const header = document.querySelector("header");
-
-if(window.scrollY > 50){
-header.classList.add("scrolled");
-} else{
-header.classList.remove("scrolled");
-}
-});
 
 // AUTO FORMULE
 const params = new URLSearchParams(window.location.search);
 const plan = params.get("plan");
 
-if (plan) {
-  const select = document.getElementById("planSelect");
+const mapping = {
+  essentiel: "Essentiel",
+  confort: "Confort",
+  privilege: "Privilège"
+};
 
-  const mapping = {
-    essentiel: "Essentiel",
-    confort: "Confort",
-    privilege: "Privilège"
-  };
+if (mapping[plan]) {
+  document.getElementById("planSelect").value = mapping[plan];
+}
 
-  if (mapping[plan]) {
-    select.value = mapping[plan];
+// PRIX AUTO
+const tarifs = {
+  "Essentiel": {
+    "Chaudière gaz": "140€",
+    "Chaudière fioul": "160€",
+    "Pompe à chaleur": "160€",
+    "Ballon thermodynamique": "100€",
+    "Climatisation": "140€",
+    "Adoucisseur": "130€"
+  },
+  "Confort": {
+    "Chaudière gaz": "170€",
+    "Chaudière fioul": "190€",
+    "Pompe à chaleur": "190€",
+    "Ballon thermodynamique": "130€",
+    "Climatisation": "170€",
+    "Adoucisseur": "160€"
+  },
+  "Privilège": {
+    "Chaudière gaz": "200€",
+    "Chaudière fioul": "220€",
+    "Pompe à chaleur": "220€",
+    "Ballon thermodynamique": "160€",
+    "Climatisation": "200€",
+    "Adoucisseur": "190€"
+  }
+};
 
-    const msg = document.createElement("div");
-    msg.className = "plan-message";
-    msg.innerText = "✔ Formule sélectionnée : " + mapping[plan];
+function updatePrix(){
+  const f = document.getElementById("planSelect").value;
+  const e = document.getElementById("equipement").value;
 
-    select.parentNode.insertBefore(msg, select);
+  if(tarifs[f] && tarifs[f][e]){
+    document.getElementById("prix-info").innerHTML = "💰 Tarif estimé : " + tarifs[f][e];
+  } else {
+    document.getElementById("prix-info").innerHTML = "";
   }
 }
+
+document.getElementById("planSelect").addEventListener("change", updatePrix);
+document.getElementById("equipement").addEventListener("change", updatePrix);
 
 </script>
 
