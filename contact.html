@@ -124,6 +124,13 @@ transition:0.3s;
 background:#0056b3;
 }
 
+/* MESSAGE FORMULE */
+.plan-message{
+color:#ff7a00;
+font-weight:600;
+margin-bottom:10px;
+}
+
 /* RESPONSIVE */
 
 @media(max-width:900px){
@@ -192,9 +199,7 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" value="Nouveau message - JC Service">
 
-<!-- ✅ REDIRECTION -->
 <input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
-<!-- ✅ AUTO REPONSE CLIENT -->
 <input type="hidden" name="_autoresponse" value="Merci pour votre message, nous vous recontactons rapidement.">
 
 <div class="form-group">
@@ -207,6 +212,17 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 
 <div class="form-group">
 <input type="tel" name="Téléphone" placeholder="Votre téléphone">
+</div>
+
+<!-- ✅ NOUVEAU : FORMULE -->
+<div class="form-group">
+<label for="planSelect">Formule choisie</label>
+<select id="planSelect" name="Formule">
+  <option value="">Choisir une formule</option>
+  <option value="Essentiel">Essentiel</option>
+  <option value="Confort">Confort</option>
+  <option value="Privilège">Privilège</option>
+</select>
 </div>
 
 <div class="form-group">
@@ -262,6 +278,7 @@ Basé à Ittenheim, JC Service intervient rapidement à Strasbourg et dans toute
 </footer>
 
 <script>
+// HEADER SCROLL
 window.addEventListener("scroll", function() {
 const header = document.querySelector("header");
 
@@ -271,6 +288,31 @@ header.classList.add("scrolled");
 header.classList.remove("scrolled");
 }
 });
+
+// ✅ SCRIPT FORMULE AUTO
+const params = new URLSearchParams(window.location.search);
+const plan = params.get("plan");
+
+if (plan) {
+  const select = document.getElementById("planSelect");
+
+  const mapping = {
+    essentiel: "Essentiel",
+    confort: "Confort",
+    privilege: "Privilège"
+  };
+
+  if (mapping[plan]) {
+    select.value = mapping[plan];
+
+    // message visuel
+    const msg = document.createElement("div");
+    msg.className = "plan-message";
+    msg.innerText = "✔ Formule sélectionnée : " + mapping[plan];
+
+    select.parentNode.insertBefore(msg, select);
+  }
+}
 </script>
 
 </body>
