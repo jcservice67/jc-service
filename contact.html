@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Demande de devis - JC Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <section class="contact">
+    <h1>Demande de devis</h1>
+    <p>Remplissez le formulaire, nous vous recontactons rapidement.</p>
+
+    <form action="https://formsubmit.co/instal.jcservice@gmail.com" method="POST">
+
+      <input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" name="Nom et prénom" placeholder="Nom et prénom" required>
+
+      <input type="tel" name="Téléphone" placeholder="Téléphone" required>
+
+      <input type="email" name="Email" placeholder="Email" required>
+
+      <select name="Type de demande" required>
+        <option value="">Type de demande</option>
+        <option>Salle de bain</option>
+        <option>Chauffage</option>
+        <option>Climatisation</option>
+        <option>Entretien</option>
+      </select>
+
+      <textarea name="Message" placeholder="Décrivez votre projet..."></textarea>
+
+      <button type="submit">Envoyer la demande</button>
+
+    </form>
+
+    <a href="index.html" style="display:block; margin-top:20px;">← Retour à l'accueil</a>
+
+  </section>
+
+</body>
+</html>
