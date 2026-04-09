@@ -17,40 +17,6 @@ margin:0;
 background:#ffffff;
 }
 
-/* INTRO */
-.intro-premium{
-text-align:center;
-padding:40px 20px;
-}
-
-.intro-premium h2{
-font-family:'Playfair Display', serif;
-font-size:32px;
-margin-bottom:10px;
-}
-
-.intro-text{
-opacity:0.7;
-max-width:600px;
-margin:auto;
-margin-bottom:30px;
-}
-
-.benefits{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-}
-
-.benefit{
-background:#fff;
-padding:12px 18px;
-border-radius:30px;
-font-size:14px;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-
 /* TABLE */
 .table-container{
 padding:60px 20px;
@@ -100,20 +66,6 @@ color:white;
 opacity:1;
 }
 
-/* BADGE */
-.col[data-plan="privilege"].active::after{
-content:"RECOMMANDÉ";
-position:absolute;
-top:-12px;
-left:50%;
-transform:translateX(-50%);
-background:#fff;
-color:#1C1C1C;
-padding:5px 12px;
-font-size:11px;
-border-radius:20px;
-}
-
 /* BOUTONS */
 .btn{
 display:inline-block;
@@ -136,13 +88,7 @@ background:#fff;
 color:#1C1C1C;
 }
 
-.warning{
-background:#1C1C1C;
-color:white;
-text-align:center;
-padding:60px 20px 40px;
-}
-
+/* URGENCE BUTTON */
 .urgence-btn{
 position:fixed;
 bottom:20px;
@@ -152,6 +98,30 @@ color:#fff;
 padding:12px 18px;
 border-radius:30px;
 text-decoration:none;
+font-size:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* FOOTER */
+footer{
+background:#f5f5f5;
+padding:40px 20px;
+margin-top:60px;
+text-align:center;
+}
+
+.footer-container{
+max-width:600px;
+margin:auto;
+}
+
+.footer-sub{
+opacity:0.6;
+margin-bottom:10px;
+}
+
+.contact{
+margin-top:10px;
 }
 
 </style>
@@ -243,6 +213,23 @@ text-decoration:none;
 </div>
 
 </section>
+
+<!-- BOUTON URGENCE -->
+<a href="tel:+33685306973" class="urgence-btn">
+📞 Une urgence ? Appelez-nous
+</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <h3>JC Service</h3>
+    <p class="footer-sub">Salle de bain • Chauffage • Climatisation</p>
+    <p>9a route de Paris<br>67117 Ittenheim</p>
+    <p class="contact">📞 06 85 30 69 73<br>✉️ instal.jcservice@gmail.com</p>
+    <hr>
+    <p>© 2026 JC Service — Tous droits réservés</p>
+  </div>
+</footer>
 
 <script>
 const params = new URLSearchParams(window.location.search);
