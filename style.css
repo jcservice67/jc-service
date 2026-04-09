@@ -141,3 +141,96 @@ footer hr {
     font-size: 24px;
   }
 }
+/* PAGE CONTACT PREMIUM */
+
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+  padding: 40px 20px;
+}
+
+.contact-box {
+  width: 100%;
+  max-width: 480px;
+  background: #FFFFFF;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* LOGO */
+.contact-logo {
+  max-width: 200px;
+  margin-bottom: 25px;
+}
+
+/* TITRES */
+.contact-box h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #6B7280;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+/* FORMULAIRE */
+.contact-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-box input,
+.contact-box select,
+.contact-box textarea {
+  padding: 14px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.contact-box input:focus,
+.contact-box select:focus,
+.contact-box textarea:focus {
+  border-color: #C8A96A;
+  outline: none;
+}
+
+/* TEXTAREA */
+.contact-box textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* BOUTON */
+.contact-box button {
+  background: #C8A96A;
+  color: #1C1C1C;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-box button:hover {
+  background: #b89658;
+}
+
+/* RETOUR */
+.back {
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #1C1C1C;
+}
