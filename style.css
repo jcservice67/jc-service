@@ -578,3 +578,21 @@ footer hr {
 .back-home:hover {
   background: #F5F5F5;
 }
+.back-home {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  text-decoration: none;
+  color: #1C1C1C;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 8px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.back-home:hover {
+  border-color: #C8A96A;
+  color: #C8A96A;
+}
