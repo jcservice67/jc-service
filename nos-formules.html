@@ -70,7 +70,6 @@ overflow:hidden;
 box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
 
-/* CELLULES */
 .cell{
 padding:18px;
 border-bottom:1px solid #eee;
@@ -137,61 +136,22 @@ background:#fff;
 color:#1C1C1C;
 }
 
-/* WARNING */
 .warning{
 background:#1C1C1C;
 color:white;
 text-align:center;
 padding:60px 20px 40px;
-margin-bottom:0;
 }
 
-/* URGENCE BUTTON */
 .urgence-btn{
 position:fixed;
 bottom:20px;
 right:20px;
-z-index:999;
 background:#1C1C1C;
 color:#fff;
 padding:12px 18px;
 border-radius:30px;
 text-decoration:none;
-font-size:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* MOBILE */
-@media (max-width:768px){
-
-.table-container{
-padding:30px 10px;
-}
-
-.cell{
-padding:12px;
-font-size:13px;
-}
-
-.intro-premium h2{
-font-size:24px;
-}
-
-}
-
-.table-container::after{
-content:"👉 Faites défiler";
-display:block;
-text-align:center;
-font-size:12px;
-opacity:0.5;
-margin-top:10px;
-}
-
-@media (min-width:769px){
-.table-container::after{
-display:none;
-}
 }
 
 </style>
@@ -204,23 +164,6 @@ display:none;
 <section class="hero">
   <img src="logo.png" class="logo">
   <h1>Nos formules d’entretien</h1>
-  <p>Choisissez la solution adaptée à votre installation</p>
-</section>
-
-<section class="intro-premium">
-  <h2>Choisissez votre niveau de tranquillité</h2>
-
-  <p class="intro-text">
-    Un entretien régulier permet d’éviter les pannes, améliorer les performances
-    et réduire votre consommation d’énergie.
-  </p>
-
-  <div class="benefits">
-    <div class="benefit">💰 Moins de réparations</div>
-    <div class="benefit">🔧 Moins de pannes</div>
-    <div class="benefit">🌱 Économies d’énergie</div>
-    <div class="benefit">🛠️ Durée de vie prolongée</div>
-  </div>
 </section>
 
 <section class="table-container">
@@ -232,11 +175,59 @@ display:none;
 <div class="cell header col" data-plan="confort">Confort</div>
 <div class="cell header col" data-plan="privilege">Privilège</div>
 
-<!-- ... (tableau inchangé) ... -->
+<div class="cell feature">Chaudière gaz</div>
+<div class="cell col" data-plan="essentiel">140€</div>
+<div class="cell col" data-plan="confort">170€</div>
+<div class="cell col" data-plan="privilege">200€</div>
+
+<div class="cell feature">Chaudière fioul</div>
+<div class="cell col" data-plan="essentiel">160€</div>
+<div class="cell col" data-plan="confort">190€</div>
+<div class="cell col" data-plan="privilege">220€</div>
+
+<div class="cell feature">Pompe à chaleur</div>
+<div class="cell col" data-plan="essentiel">160€</div>
+<div class="cell col" data-plan="confort">190€</div>
+<div class="cell col" data-plan="privilege">220€</div>
+
+<div class="cell feature">Ballon thermodynamique</div>
+<div class="cell col" data-plan="essentiel">100€</div>
+<div class="cell col" data-plan="confort">130€</div>
+<div class="cell col" data-plan="privilege">160€</div>
+
+<div class="cell feature">Climatisation</div>
+<div class="cell col" data-plan="essentiel">140€</div>
+<div class="cell col" data-plan="confort">170€</div>
+<div class="cell col" data-plan="privilege">200€</div>
+
+<div class="cell feature">Adoucisseur</div>
+<div class="cell col" data-plan="essentiel">130€</div>
+<div class="cell col" data-plan="confort">160€</div>
+<div class="cell col" data-plan="privilege">190€</div>
+
+<div class="cell feature">Prestations</div>
+
+<div class="cell col" data-plan="essentiel">
+✔ Entretien annuel<br>
+✔ Vérification<br>
+✔ Attestation
+</div>
+
+<div class="cell col" data-plan="confort">
+✔ Entretien annuel<br>
+✔ Vérification<br>
+✔ 1 dépannage inclus
+</div>
+
+<div class="cell col" data-plan="privilege">
+✔ Entretien annuel<br>
+✔ Dépannage illimité<br>
+✔ Intervention prioritaire<br>
+✔ -15% pièces
+</div>
 
 <div class="cell"></div>
 
-<!-- 🔥 ICI LA CORRECTION -->
 <div class="cell col" data-plan="essentiel">
 <a class="btn" href="contact-sav.html?plan=essentiel">Choisir</a>
 </div>
@@ -253,35 +244,13 @@ display:none;
 
 </section>
 
-<section class="warning">
-<h2>Une panne peut coûter entre 150€ et 400€</h2>
-<p>Un entretien régulier vous évite ces dépenses et sécurise votre installation.</p>
-</section>
-
-<a href="tel:+33685306973" class="urgence-btn">
-  📞 Une urgence ? Appelez-nous
-</a>
-
-<footer>
-  <div class="footer-container">
-    <h3>JC Service</h3>
-    <p class="footer-sub">Salle de bain • Chauffage • Climatisation</p>
-    <p>9a route de Paris<br>67117 Ittenheim</p>
-    <p class="contact">📞 06 85 30 69 73<br>✉️ instal.jcservice@gmail.com</p>
-    <hr>
-    <p class="copyright">© 2026 JC Service — Tous droits réservés</p>
-  </div>
-</footer>
-
 <script>
 const params = new URLSearchParams(window.location.search);
 const plan = params.get("plan");
 
 if(plan){
-const elements = document.querySelectorAll(`.col[data-plan="${plan}"]`);
-elements.forEach(el=>{
-el.classList.add("active");
-});
+document.querySelectorAll(`.col[data-plan="${plan}"]`)
+.forEach(el=> el.classList.add("active"));
 }
 </script>
 
