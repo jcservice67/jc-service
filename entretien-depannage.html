@@ -6,13 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-/* HERO AVEC FLOU */
+/* HERO */
 .hero-depannage{
-height:60vh;
+height:55vh;
 background:url('hero-energie.png') center/cover no-repeat;
 display:flex;
 align-items:center;
@@ -20,20 +21,6 @@ justify-content:center;
 text-align:center;
 color:#fff;
 position:relative;
-overflow:hidden;
-}
-
-.hero-depannage::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:inherit;
-filter:blur(8px);
-transform:scale(1.1);
-z-index:0;
 }
 
 .hero-depannage::after{
@@ -43,8 +30,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.55);
-z-index:1;
+background:rgba(0,0,0,0.5);
 }
 
 .hero-content{
@@ -53,71 +39,60 @@ z-index:2;
 }
 
 .hero-content h1{
+font-family:'Playfair Display', serif;
 font-size:42px;
 margin-bottom:10px;
 }
 
 .hero-content p{
+font-family:'Inter', sans-serif;
 font-size:18px;
 opacity:0.9;
-}
-
-.hero-btns{
-margin-top:20px;
 }
 
 /* BOUTONS */
 .btn{
 display:inline-block;
-padding:14px 28px;
+padding:12px 26px;
 border-radius:30px;
 text-decoration:none;
-margin:5px;
-font-weight:600;
+font-family:'Inter', sans-serif;
 transition:0.3s;
 }
 
-/* URGENCE */
 .btn-urgence{
-background:#ff3b3b;
+background:#1C1C1C;
 color:#fff;
-box-shadow:0 0 15px rgba(255,59,59,0.6);
-animation:pulse 1.5s infinite;
 }
 
 .btn-urgence:hover{
-background:#ff0000;
-transform:scale(1.05);
+opacity:0.8;
 }
 
-/* DEVIS */
 .btn-devis{
-background:#ff9800;
-color:#fff;
+background:#f5f5f5;
+color:#1C1C1C;
+border:1px solid #ddd;
 }
 
 .btn-devis:hover{
-background:#e68900;
+background:#eee;
 }
 
-@keyframes pulse{
-0%{box-shadow:0 0 10px rgba(255,59,59,0.6);}
-50%{box-shadow:0 0 25px rgba(255,59,59,1);}
-100%{box-shadow:0 0 10px rgba(255,59,59,0.6);}
-}
-
-/* SECTION CONTRATS */
+/* CONTRATS */
 .contrats{
 padding:80px 20px;
 text-align:center;
 }
 
 .contrats h2{
+font-family:'Playfair Display', serif;
 font-size:32px;
 margin-bottom:10px;
 }
 
 .subtitle{
+font-family:'Inter', sans-serif;
 opacity:0.7;
 margin-bottom:40px;
 }
@@ -131,94 +106,63 @@ justify-content:center;
 
 .card{
 background:#fff;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
 width:300px;
-transition:0.4s;
-position:relative;
-border:2px solid transparent;
+transition:0.3s;
+border:1px solid #eee;
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.02);
+transform:translateY(-5px);
 }
 
-/* CARTE VIP */
 .card.vip{
-transform:scale(1.08);
-border:2px solid #ff9800;
-box-shadow:0 20px 50px rgba(255,152,0,0.3);
-z-index:2;
+border:1px solid #1C1C1C;
 }
 
-.card.vip::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:5px;
-background:linear-gradient(90deg,#ff9800,#ff3b3b);
-}
-
-/* BADGE */
 .badge{
 position:absolute;
-top:-12px;
-right:-12px;
-background:#ff9800;
+top:15px;
+right:15px;
+background:#1C1C1C;
 color:#fff;
-padding:8px 15px;
-border-radius:30px;
-font-size:12px;
-font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+padding:5px 10px;
+font-size:11px;
+border-radius:20px;
 }
 
 .card h3{
-font-size:22px;
-margin-bottom:5px;
-}
-
-/* PRIX */
-.price{
-font-size:20px;
-font-weight:700;
-color:#ff9800;
+font-family:'Playfair Display', serif;
 margin-bottom:10px;
 }
 
-.card.vip .price{
-color:#ff3b3b;
-font-size:22px;
+.price{
+font-weight:600;
+margin-bottom:10px;
 }
 
 .card ul{
 list-style:none;
 padding:0;
 text-align:left;
+font-family:'Inter', sans-serif;
 }
 
 .card ul li{
-margin:12px 0;
+margin:10px 0;
 }
 
-.card .btn{
-margin-top:15px;
-display:block;
-}
-
-/* URGENCE SECTION */
+/* URGENCE */
 .urgence{
-background:#111;
-color:#fff;
+background:#f8f8f8;
 text-align:center;
 padding:60px 20px;
 }
 
 .urgence h2{
-font-size:28px;
+font-family:'Playfair Display', serif;
 margin-bottom:10px;
 }
 
@@ -228,30 +172,16 @@ margin-bottom:10px;
 
 <body>
 
-<header>
-<nav>
-<div class="logo">
-<span class="logo-jc">JC</span> Service
-</div>
-
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="entretien-depannage.html">Entretien & Dépannage</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="qui-sommes-nous?.html">Qui sommes-nous</a></li>
-</ul>
-</nav>
-</header>
+<a href="index.html" class="back-home">← Accueil</a>
 
 <!-- HERO -->
 <section class="hero-depannage">
   <div class="hero-content">
     <h1>Entretien & Dépannage</h1>
-    <p>Intervention rapide, diagnostic précis, tranquillité assurée</p>
+    <p>Préservez vos installations et gagnez en sérénité</p>
 
-    <div class="hero-btns">
-      <a href="tel:+33685306973" class="btn btn-urgence">🚨 Intervention rapide</a>
+    <div style="margin-top:20px;">
+      <a href="tel:+33685306973" class="btn btn-urgence">Appeler</a>
     </div>
   </div>
 </section>
@@ -259,7 +189,7 @@ margin-bottom:10px;
 <!-- CONTRATS -->
 <section class="contrats">
     <h2>Nos contrats d’entretien</h2>
-    <p class="subtitle">Des solutions claires, sans surprise, adaptées à vos besoins</p>
+    <p class="subtitle">Des solutions simples, fiables et adaptées à votre usage</p>
 
     <div class="cards">
 
@@ -273,24 +203,22 @@ margin-bottom:10px;
                 <li>✔ Contrôle sécurité</li>
             </ul>
 
-            <a href="nos-formules.html?plan=essentiel" class="btn btn-devis">Choisir cette formule</a>
+            <a href="contact.html" class="btn btn-devis">Choisir</a>
         </div>
 
         <div class="card vip">
-            <div class="badge">⭐ RECOMMANDÉ</div>
-
             <h3>Privilège</h3>
             <p class="price">À partir de 160€</p>
-            <p class="desc">Tranquillité totale toute l’année</p>
+            <p class="desc">Tranquillité toute l’année</p>
 
             <ul>
-                <li>✔ Entretien annuel complet</li>
+                <li>✔ Entretien annuel</li>
                 <li>✔ Dépannage illimité</li>
-                <li>✔ Intervention prioritaire -24h</li>
-                <li>✔ 15% de remise sur pièces</li>
+                <li>✔ Intervention prioritaire</li>
+                <li>✔ Remise sur pièces</li>
             </ul>
 
-            <a href="nos-formules.html?plan=privilege" class="btn btn-devis">Choisir cette formule</a>
+            <a href="contact.html" class="btn btn-devis">Choisir</a>
         </div>
 
         <div class="card">
@@ -301,53 +229,32 @@ margin-bottom:10px;
             <ul>
                 <li>✔ Entretien annuel</li>
                 <li>✔ Contrôle sécurité</li>
-                <li>✔ 1 Dépannage inclus</li>
+                <li>✔ 1 dépannage inclus</li>
             </ul>
 
-            <a href="nos-formules.html?plan=confort" class="btn btn-devis">Choisir cette formule</a>
+            <a href="contact.html" class="btn btn-devis">Choisir</a>
         </div>
 
     </div>
 </section>
 
+<!-- URGENCE -->
 <section class="urgence">
-    <h2>🚨 Une panne ? Une fuite ?</h2>
+    <h2>Une panne ?</h2>
     <p>Nous intervenons rapidement pour sécuriser votre installation</p>
-    <a href="tel:+33685306973" class="btn btn-urgence">Intervention immédiate</a>
+    <a href="tel:+33685306973" class="btn btn-urgence">Intervention rapide</a>
 </section>
 
-<script>
-window.addEventListener("scroll", function() {
-  const header = document.querySelector("header");
-
-  if(window.scrollY > 50){
-    header.classList.add("scrolled");
-  } else{
-    header.classList.remove("scrolled");
-  }
-});
-</script>
-
-<footer class="footer">
-<div class="footer-container">
-
-<div class="footer-left">
-<strong>JC Service</strong> • Chauffage & Énergie & Sanitaire 
-</div>
-
-<div class="footer-center">
-📞 06 85 30 69 73 • ✉️ instal.jcservice@gmail.com
-</div>
-
-<div class="footer-right">
-📍 Zone d’intervention : Ittenheim • Strasbourg • Kochersberg • Bas-Rhin • Alsace • Moselle • Eurométropole
-</div>
-
-</div>
-
-<div class="footer-bottom">
-© 2026 JC Service – Tous droits réservés
-</div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <h3>JC Service</h3>
+    <p class="footer-sub">Salle de bain • Chauffage • Climatisation</p>
+    <p>9a route de Paris<br>67117 Ittenheim</p>
+    <p class="contact">📞 06 85 30 69 73<br>✉️ instal.jcservice@gmail.com</p>
+    <hr>
+    <p class="copyright">© 2026 JC Service — Tous droits réservés</p>
+  </div>
 </footer>
 
 </body>
