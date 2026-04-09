@@ -5,132 +5,43 @@
 <title>Nos formules - JC Service</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-font-family:'Poppins', sans-serif;
+font-family:'Inter', sans-serif;
 margin:0;
-background:#f9f9f9;
-overflow-x:hidden;
+background:#f8f8f8;
 }
 
-/* HEADER */
-header{
-position:fixed;
-top:0;
-width:100%;
-z-index:1000;
-transition:0.3s;
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
+/* HERO (comme les autres pages) */
+.hero{
+text-align:center;
+padding:100px 20px 60px;
 }
 
 .logo{
-font-size:22px;
-font-weight:700;
-color:white;
+max-width:200px;
+margin-bottom:20px;
 }
 
-.logo-jc{
-color:#ff7a00;
-}
-
-nav ul{
-list-style:none;
-display:flex;
-gap:25px;
-}
-
-nav ul li a{
-text-decoration:none;
-color:white;
-font-weight:500;
-}
-
-header.scrolled{
-background:white;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-header.scrolled .logo,
-header.scrolled nav ul li a{
-color:#111;
-}
-
-/* HERO FLOU */
-.hero-formules{
-position:relative;
-height:60vh;
-background:url('hero-energie.png') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-overflow:hidden;
-}
-
-.hero-formules::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:inherit;
-filter:blur(8px);
-transform:scale(1.1);
-z-index:0;
-}
-
-.hero-overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.55);
-z-index:1;
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-}
-
-.hero-content h1{
+.hero h1{
+font-family:'Playfair Display', serif;
 font-size:42px;
 margin-bottom:10px;
 }
 
-.hero-content p{
-font-size:18px;
-opacity:0.9;
-}
-
-/* SECTION */
-.section{
-padding:60px 20px;
-opacity:0;
-transform:translateY(40px);
-transition:0.8s;
-}
-
-.section.visible{
-opacity:1;
-transform:translateY(0);
+.hero p{
+opacity:0.7;
 }
 
 /* TABLE */
 .table-container{
 overflow-x:auto;
+padding:40px 20px;
 }
 
 .table{
@@ -141,7 +52,7 @@ margin:auto;
 background:white;
 border-radius:15px;
 overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,0.1);
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 .cell{
@@ -152,85 +63,81 @@ text-align:center;
 
 .feature{
 text-align:left;
-font-weight:600;
+font-weight:500;
 background:#fafafa;
 }
 
 .header{
-font-weight:700;
+font-weight:600;
 background:#f5f5f5;
 }
 
 /* COLONNES */
 .col{
+transition:0.4s;
 opacity:0.6;
-transition:0.3s;
 }
 
 .col:hover{
-transform:scale(1.02);
+transform:translateY(-3px);
 }
 
 .col.active{
-background:#ff7a00;
+background:#1C1C1C;
 color:white;
 opacity:1;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{box-shadow:0 0 0 rgba(255,122,0,0.4);}
-50%{box-shadow:0 0 20px rgba(255,122,0,0.6);}
-100%{box-shadow:0 0 0 rgba(255,122,0,0.4);}
+transform:scale(1.03);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
 .col.active .btn{
 background:white;
-color:#ff7a00;
+color:#1C1C1C;
 }
 
+/* BOUTONS */
 .btn{
 display:inline-block;
 padding:10px 15px;
-background:black;
+background:#1C1C1C;
 color:white;
-border-radius:6px;
+border-radius:20px;
 text-decoration:none;
 margin-top:10px;
 transition:0.3s;
 }
 
 .btn:hover{
-transform:scale(1.05);
+opacity:0.8;
 }
 
-/* BLOC PSYCHO */
+/* WARNING */
 .warning{
-background:#111;
+background:#1C1C1C;
 color:white;
 text-align:center;
 padding:50px 20px;
 }
 
 .warning strong{
-color:#ff7a00;
+color:#fff;
 }
 
-/* CHOIX */
+/* CHOICES */
 .choices{
 display:flex;
 gap:20px;
 justify-content:center;
 flex-wrap:wrap;
-margin-top:40px;
+margin:60px 0;
 }
 
 .choice{
 background:white;
 padding:25px;
 border-radius:12px;
-width:280px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+width:260px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
 transition:0.3s;
 }
 
@@ -239,62 +146,12 @@ transform:translateY(-5px);
 }
 
 .choice.highlight{
-border:2px solid #ff7a00;
-transform:scale(1.05);
+border:1px solid #1C1C1C;
 }
 
-.badge{
-background:#ff3b3b;
-color:white;
-padding:5px 10px;
-border-radius:20px;
-font-size:12px;
-display:inline-block;
-margin-bottom:10px;
-}
-
-/* CTA */
-.cta{
-text-align:center;
-padding:60px 20px;
-}
-
-.cta a{
-padding:15px 30px;
-background:#ff7a00;
-color:white;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
-}
-
-.cta a:hover{
-transform:scale(1.05);
-}
-
-/* FOOTER AJOUTÉ */
-.footer{
-background:#0d1b2a;
-color:white;
-padding:40px 20px 20px;
-}
-
-.footer-container{
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:20px;
-max-width:1100px;
-margin:auto;
-font-size:14px;
-}
-
-.footer-bottom{
-text-align:center;
-margin-top:20px;
-opacity:0.6;
-font-size:13px;
+/* FOOTER */
+footer{
+margin-top:60px;
 }
 
 </style>
@@ -302,33 +159,19 @@ font-size:13px;
 
 <body>
 
-<header>
-<nav>
-<div class="logo">
-<span class="logo-jc">JC</span> Service
-</div>
+<a href="index.html" class="back-home">← Accueil</a>
 
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="entretien-depannage.html">Entretien & Dépannage</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="qui-sommes-nous?.html">Qui sommes-nous</a></li>
-</ul>
-</nav>
-</header>
+<!-- HERO -->
+<section class="hero">
+<img src="logo.png" class="logo">
 
-<section class="hero-formules">
-<div class="hero-overlay"></div>
-<div class="hero-content">
 <h1>Nos formules d’entretien</h1>
 <p>Choisissez la solution adaptée à votre installation</p>
-</div>
 </section>
 
-<section class="section reveal">
+<!-- TABLE -->
+<section class="table-container">
 
-<div class="table-container">
 <div class="table">
 
 <div class="cell header"></div>
@@ -351,150 +194,90 @@ font-size:13px;
 <div class="cell col" data-plan="confort">190€</div>
 <div class="cell col" data-plan="privilege">220€</div>
 
-<div class="cell feature">Ballon thermodynamique</div>
-<div class="cell col" data-plan="essentiel">100€</div>
-<div class="cell col" data-plan="confort">130€</div>
-<div class="cell col" data-plan="privilege">160€</div>
-
 <div class="cell feature">Climatisation</div>
-<div class="cell col" data-plan="essentiel">140€*</div>
-<div class="cell col" data-plan="confort">170€*</div>
-<div class="cell col" data-plan="privilege">200€*</div>
-
-<div class="cell feature">Adoucisseur</div>
-<div class="cell col" data-plan="essentiel">130€</div>
-<div class="cell col" data-plan="confort">160€</div>
-<div class="cell col" data-plan="privilege">190€</div>
+<div class="cell col" data-plan="essentiel">140€</div>
+<div class="cell col" data-plan="confort">170€</div>
+<div class="cell col" data-plan="privilege">200€</div>
 
 <div class="cell feature">Détail des prestations</div>
 
 <div class="cell col" data-plan="essentiel">
 ✔ Entretien annuel<br>
-✔ Vérification complète<br>
-✔ Attestation remise
+✔ Vérification<br>
+✔ Attestation
 </div>
 
 <div class="cell col" data-plan="confort">
 ✔ Entretien annuel<br>
-✔ Vérification complète<br>
-✔ Attestation remise<br>
-✔ <strong>1 dépannage inclus</strong>
+✔ Vérification<br>
+✔ 1 dépannage inclus
 </div>
 
 <div class="cell col" data-plan="privilege">
 ✔ Entretien annuel<br>
-✔ Vérification complète<br>
-✔ Attestation remise<br>
-✔ <strong>Dépannage illimité</strong><br>
-✔ <strong>Intervention &lt; 24h</strong><br>
-✔ <strong>-15% pièces</strong><br>
+✔ Dépannage illimité<br>
+✔ Prioritaire<br>
+✔ -15% pièces
 </div>
 
 <div class="cell"></div>
 
 <div class="cell col" data-plan="essentiel">
-<a class="btn" href="demande-entretien.html?plan=essentiel">Choisir</a>
+<a class="btn" href="contact.html">Choisir</a>
 </div>
 
 <div class="cell col" data-plan="confort">
-<a class="btn" href="demande-entretien.html?plan=essentiel">Choisir</a>
+<a class="btn" href="contact.html">Choisir</a>
 </div>
 
 <div class="cell col" data-plan="privilege">
-<a class="btn" href="demande-entretien.html?plan=confort">Choisir</a>
-
+<a class="btn" href="contact.html">Choisir</a>
 </div>
 
 </div>
 
 </section>
 
-<section class="warning reveal">
-<h2>Une panne peut coûter <strong>150€ à 400€</strong></h2>
-<p>Avec Confort ou Privilège, vous évitez les mauvaises surprises.</p>
-</section>
-
-<section class="section reveal">
-
-<div class="choices">
-
-<div class="choice">
-<h3>Essentiel</h3>
-<p>Le strict minimum</p>
-</div>
-
-<div class="choice">
-<h3>Confort</h3>
-<p>Le bon équilibre</p>
-</div>
-
-<div class="choice highlight">
-<div class="badge">Le plus choisi</div>
-<h3>Privilège</h3>
-<p>Aucun stress, tout est inclus</p>
-</div>
-
-</div>
-
-
+<!-- WARNING -->
+<section class="warning">
+<h2>Une panne peut coûter 150€ à 400€</h2>
+<p>Un entretien régulier vous évite ces coûts.</p>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-<div class="footer-container">
-
-<div class="footer-left">
-<strong>JC Service</strong> • Chauffage & Énergie & Sanitaire 
-</div>
-
-<div class="footer-center">
-📞 06 85 30 69 73 • ✉️ instal.jcservice@gmail.com
-</div>
-
-<div class="footer-right">
-📍 Zone d’intervention : Ittenheim • Strasbourg • Kochersberg • Bas-Rhin • Alsace • Moselle • Eurométropole
-</div>
-
-</div>
-
-<div class="footer-bottom">
-© 2026 JC Service – Tous droits réservés
-</div>
+<footer>
+  <div class="footer-container">
+    <h3>JC Service</h3>
+    <p class="footer-sub">Salle de bain • Chauffage • Climatisation</p>
+    <p>9a route de Paris<br>67117 Ittenheim</p>
+    <p class="contact">📞 06 85 30 69 73<br>✉️ instal.jcservice@gmail.com</p>
+    <hr>
+    <p class="copyright">© 2026 JC Service — Tous droits réservés</p>
+  </div>
 </footer>
 
 <script>
 
-// HEADER SCROLL
-window.addEventListener("scroll", function() {
-const header = document.querySelector("header");
-if(window.scrollY > 50){
-header.classList.add("scrolled");
-}else{
-header.classList.remove("scrolled");
-}
-});
-
-// PLAN ACTIVE
+/* PLAN ACTIVE + SCROLL */
 const params = new URLSearchParams(window.location.search);
 const plan = params.get("plan");
 
 if(plan){
-document.querySelectorAll(`.col[data-plan="${plan}"]`).forEach(el=>{
+const elements = document.querySelectorAll(`.col[data-plan="${plan}"]`);
+
+elements.forEach(el=>{
 el.classList.add("active");
 });
-}
 
-// ANIMATION SCROLL
-const reveals = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", ()=>{
-reveals.forEach(el=>{
-const top = el.getBoundingClientRect().top;
-if(top < window.innerHeight - 100){
-el.classList.add("visible");
+/* SCROLL AUTO */
+setTimeout(()=>{
+elements[0].scrollIntoView({
+behavior: "smooth",
+block: "center",
+inline: "center"
+});
+}, 300);
 }
-});
-});
 
 </script>
 
