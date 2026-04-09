@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Entretien & SAV - JC Service</title>
+<title>Demande d’entretien - JC Service</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
@@ -10,17 +10,131 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-.price-box{
-margin-top:20px;
-font-weight:600;
-font-size:18px;
+
+body{
+font-family:'Inter', sans-serif;
+margin:0;
+background:#f7f7f7;
+}
+
+/* RETOUR */
+.back-home{
+position:absolute;
+top:20px;
+left:20px;
+text-decoration:none;
+color:#1C1C1C;
+font-size:14px;
+}
+
+/* CONTAINER */
+.contact-page{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:80px 20px;
+}
+
+.contact-box{
+background:#fff;
+padding:40px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+max-width:500px;
+width:100%;
 text-align:center;
 }
+
+/* LOGO */
+.contact-logo{
+width:140px;
+margin-bottom:20px;
+}
+
+/* TITRES */
+h1{
+font-family:'Playfair Display', serif;
+margin-bottom:10px;
+}
+
+.subtitle{
+opacity:0.6;
+margin-bottom:30px;
+}
+
+/* INPUTS */
+input, select, textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #ddd;
+font-family:'Inter', sans-serif;
+}
+
+/* CHECKBOX */
+.checkbox-group{
+text-align:left;
+margin-bottom:20px;
+}
+
+.checkbox-group label{
+display:block;
+margin:8px 0;
+}
+
+/* PRIX */
+.price-box{
+margin:20px 0;
+font-size:20px;
+font-weight:600;
+}
+
+/* BOUTON */
+button{
+width:100%;
+padding:14px;
+border:none;
+background:#1C1C1C;
+color:#fff;
+border-radius:30px;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+opacity:0.85;
+}
+
+/* URGENCE */
+.urgence-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#1C1C1C;
+color:#fff;
+padding:14px 18px;
+border-radius:30px;
+text-decoration:none;
+font-size:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.contact-box{
+padding:25px;
+}
+}
+
 </style>
 
 </head>
 
 <body>
+
+<a href="index.html" class="back-home">← Accueil</a>
 
 <section class="contact-page">
 
@@ -29,22 +143,17 @@ text-align:center;
 <img src="logo.png" class="contact-logo">
 
 <h1>Demande d’entretien</h1>
-
-<p class="subtitle">
-Réponse rapide sous 24h
-</p>
+<p class="subtitle">Réponse rapide sous 24h</p>
 
 <form action="https://formsubmit.co/sav@jcservice.fr" method="POST">
 
 <input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
 <input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_subject" value="Demande entretien JC Service">
 
 <input type="text" name="Nom" placeholder="Nom et prénom" required>
 <input type="tel" name="Téléphone" placeholder="Téléphone" required>
 <input type="email" name="Email" placeholder="Email">
 
-<!-- FORMULE -->
 <select name="Formule" id="formule" required>
 <option value="">Choisir une formule</option>
 <option value="essentiel">Essentiel</option>
@@ -52,23 +161,17 @@ Réponse rapide sous 24h
 <option value="privilege">Privilège</option>
 </select>
 
-<!-- APPAREILS -->
-<label style="display:block;margin-top:15px;text-align:left;">Type d’appareil :</label>
-
-<div style="text-align:left;">
-
-<label><input type="checkbox" value="chaudiere_gaz"> Chaudière gaz</label><br>
-<label><input type="checkbox" value="chaudiere_fioul"> Chaudière fioul</label><br>
-<label><input type="checkbox" value="pac"> Pompe à chaleur</label><br>
-<label><input type="checkbox" value="ballon"> Ballon thermodynamique</label><br>
-<label><input type="checkbox" value="clim"> Climatisation</label><br>
+<div class="checkbox-group">
+<label><input type="checkbox" value="chaudiere_gaz"> Chaudière gaz</label>
+<label><input type="checkbox" value="chaudiere_fioul"> Chaudière fioul</label>
+<label><input type="checkbox" value="pac"> Pompe à chaleur</label>
+<label><input type="checkbox" value="ballon"> Ballon thermodynamique</label>
+<label><input type="checkbox" value="clim"> Climatisation</label>
 <label><input type="checkbox" value="adoucisseur"> Adoucisseur</label>
-
 </div>
 
-<!-- PRIX -->
 <div class="price-box" id="priceBox">
-Prix estimé : —
+Prix : —
 </div>
 
 <textarea name="Message" placeholder="Précisions si besoin..." rows="4"></textarea>
@@ -77,94 +180,54 @@ Prix estimé : —
 
 </form>
 
-<a href="index.html" class="back">← Retour à l'accueil</a>
-
 </div>
 
 </section>
 
-<section class="cta">
-  <h2>Besoin d’une réponse rapide ?</h2>
-  <a href="tel:0685306973" class="btn">Appeler maintenant</a>
-</section>
-
-<footer>
-  <div class="footer-container">
-    <h3>JC Service</h3>
-    <p class="footer-sub">Salle de bain • Chauffage • Climatisation</p>
-    <p>9a route de Paris<br>67117 Ittenheim</p>
-    <p class="contact">📞 06 85 30 69 73<br>✉️ instal.jcservice@gmail.com</p>
-    <hr>
-    <p class="copyright">© 2026 JC Service</p>
-  </div>
-</footer>
+<!-- BOUTON URGENCE -->
+<a href="tel:+33685306973" class="urgence-btn">
+📞 Urgence ? Appelez-nous
+</a>
 
 <script>
 
-// PRIX PAR FORMULE
 const prices = {
-  essentiel: {
-    chaudiere_gaz:140,
-    chaudiere_fioul:160,
-    pac:160,
-    ballon:100,
-    clim:140,
-    adoucisseur:130
-  },
-  confort: {
-    chaudiere_gaz:170,
-    chaudiere_fioul:190,
-    pac:190,
-    ballon:130,
-    clim:170,
-    adoucisseur:160
-  },
-  privilege: {
-    chaudiere_gaz:200,
-    chaudiere_fioul:220,
-    pac:220,
-    ballon:160,
-    clim:200,
-    adoucisseur:190
-  }
+  essentiel:{chaudiere_gaz:140, chaudiere_fioul:160, pac:160, ballon:100, clim:140, adoucisseur:130},
+  confort:{chaudiere_gaz:170, chaudiere_fioul:190, pac:190, ballon:130, clim:170, adoucisseur:160},
+  privilege:{chaudiere_gaz:200, chaudiere_fioul:220, pac:220, ballon:160, clim:200, adoucisseur:190}
 };
 
-const formuleSelect = document.getElementById("formule");
+const formule = document.getElementById("formule");
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const priceBox = document.getElementById("priceBox");
 
 function updatePrice(){
+let total = 0;
+const f = formule.value;
 
-  const formule = formuleSelect.value;
-  let total = 0;
-
-  if(!formule){
-    priceBox.innerText = "Prix estimé : —";
-    return;
-  }
-
-  checkboxes.forEach(cb=>{
-    if(cb.checked){
-      total += prices[formule][cb.value];
-    }
-  });
-
-  priceBox.innerText = total > 0 
-    ? "Prix estimé : " + total + "€"
-    : "Sélectionnez un appareil";
+if(!f){
+priceBox.innerText = "Prix estimé : —";
+return;
 }
 
-formuleSelect.addEventListener("change", updatePrice);
 checkboxes.forEach(cb=>{
-  cb.addEventListener("change", updatePrice);
+if(cb.checked){
+total += prices[f][cb.value];
+}
 });
 
-// AUTO SELECT PLAN (depuis page précédente)
+priceBox.innerText = total ? "Prix estimé : " + total + "€" : "Sélectionnez un appareil";
+}
+
+formule.addEventListener("change", updatePrice);
+checkboxes.forEach(cb=> cb.addEventListener("change", updatePrice));
+
+/* AUTO PLAN */
 const params = new URLSearchParams(window.location.search);
 const plan = params.get("plan");
 
 if(plan){
-formuleSelect.value = plan;
+formule.value = plan;
 updatePrice();
 }
 
