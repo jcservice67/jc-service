@@ -40,6 +40,7 @@ transform:translateY(-5px);
 
 .card.vip{
 border:1px solid #1C1C1C;
+transform:scale(1.05);
 }
 
 .card h3{
@@ -76,13 +77,10 @@ padding:60px 20px;
 
 <body>
 
-<!-- NAV HAUT -->
 <a href="index.html" class="back-home">← Accueil</a>
 
-<!-- HERO STANDARD (COMME LES AUTRES) -->
 <section class="hero">
   <img src="logo.png" class="logo">
-
   <h1>Entretien & Dépannage</h1>
   <p>Préservez vos installations et gagnez en sérénité</p>
 </section>
@@ -95,13 +93,13 @@ padding:60px 20px;
   Un entretien régulier permet d’améliorer les performances, réduire les pannes et prolonger la durée de vie de vos équipements.
 </p>
 
-<!-- CONTRATS -->
 <section class="contrats">
     <h2>Nos contrats d’entretien</h2>
     <p class="subtitle">Des solutions simples, fiables et adaptées à votre usage</p>
 
     <div class="cards">
 
+        <!-- ESSENTIEL -->
         <div class="card">
             <h3>Essentiel</h3>
             <p class="price">À partir de 100€</p>
@@ -112,9 +110,10 @@ padding:60px 20px;
                 <li>✔ Contrôle sécurité</li>
             </ul>
 
-            <a href="nos-formules.html" class="btn">Choisir</a>
+            <a href="nos-formules.html?plan=essentiel" class="btn">Choisir</a>
         </div>
 
+        <!-- PRIVILEGE -->
         <div class="card vip">
             <h3>Privilège</h3>
             <p class="price">À partir de 160€</p>
@@ -127,9 +126,10 @@ padding:60px 20px;
                 <li>✔ Remise sur pièces</li>
             </ul>
 
-            <a href="nos-formules.html" class="btn">Choisir</a>
+            <a href="nos-formules.html?plan=privilege" class="btn">Choisir</a>
         </div>
 
+        <!-- CONFORT -->
         <div class="card">
             <h3>Confort</h3>
             <p class="price">À partir de 130€</p>
@@ -141,20 +141,18 @@ padding:60px 20px;
                 <li>✔ 1 dépannage inclus</li>
             </ul>
 
-            <a href="nos-formules.html" class="btn">Choisir</a>
+            <a href="nos-formules.html?plan=confort" class="btn">Choisir</a>
         </div>
 
     </div>
 </section>
 
-<!-- URGENCE -->
 <section class="cta">
   <h2>Une panne ?</h2>
   <p>Nous intervenons rapidement pour sécuriser votre installation</p>
   <a href="tel:+33685306973" class="btn">Appeler maintenant</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-container">
     <h3>JC Service</h3>
