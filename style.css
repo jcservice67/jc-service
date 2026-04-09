@@ -311,3 +311,20 @@ footer hr {
   color: inherit;
   display: block;
 }
+.content {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+}
+
+.container ul {
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
