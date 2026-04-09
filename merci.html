@@ -7,59 +7,88 @@
 <title>Merci - JC Service</title>
 
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 /* SECTION MERCI */
 
 .merci-section{
-min-height:80vh;
+min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-background:#f9fafb;
+background:#F9F9F9;
 padding:40px 20px;
 text-align:center;
 }
 
 .merci-container{
 max-width:600px;
-background:#fff;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+background:#FFFFFF;
+padding:50px 40px;
+border-radius:16px;
+box-shadow:0 15px 40px rgba(0,0,0,0.06);
 }
 
+/* LOGO */
+.merci-logo{
+max-width:220px;
+margin-bottom:30px;
+}
+
+/* TITRE */
 .merci-container h1{
+font-family:'Playfair Display', serif;
 font-size:32px;
 margin-bottom:20px;
 }
 
+/* TEXTE */
 .merci-text{
 font-size:16px;
 margin-bottom:30px;
-opacity:0.8;
+color:#6B7280;
 }
 
+/* BOX INFO */
 .merci-box{
-background:#f5f5f5;
-padding:20px;
+background:#F5F5F5;
+padding:25px;
 border-radius:12px;
 margin-bottom:30px;
 }
 
+/* CONTACT */
 .merci-contact p{
-margin-bottom:10px;
-font-weight:600;
+margin-bottom:15px;
+font-weight:500;
 }
 
+/* BOUTON */
+.btn{
+background:#C8A96A;
+color:#1C1C1C;
+padding:14px 30px;
+border-radius:6px;
+text-decoration:none;
+font-weight:500;
+display:inline-block;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#b89658;
+}
+
+/* RETOUR */
 .retour{
 display:inline-block;
-margin-top:20px;
+margin-top:25px;
 text-decoration:none;
-color:#007BFF;
-font-weight:600;
+color:#1C1C1C;
+font-weight:500;
 }
 
 .retour:hover{
@@ -72,27 +101,14 @@ text-decoration:underline;
 
 <body>
 
-<!-- HEADER FIXE -->
-<header>
-<nav>
-<div class="logo">
-<span class="logo-jc">JC</span> Service
-</div>
-
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="entretien-depannage.html">Entretien & Dépannage</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
-
 <section class="merci-section">
 
 <div class="merci-container">
 
-<h1>✅ Demande envoyée</h1>
+<!-- LOGO -->
+<img src="logo.png" alt="JC Service" class="merci-logo">
+
+<h1>Demande envoyée</h1>
 
 <p class="merci-text">
 Merci pour votre confiance.<br>
@@ -101,14 +117,14 @@ Votre demande a bien été prise en compte.
 
 <div class="merci-box">
 
-<p><strong>📞 Prochaine étape :</strong></p>
+<p><strong>Prochaine étape :</strong></p>
 
 <p>
 Nous vous recontactons rapidement pour étudier votre besoin et vous proposer la solution la plus adaptée.
 </p>
 
 <p>
-👉 Réponse sous <strong>24h maximum</strong>
+Réponse sous <strong>24h maximum</strong>
 </p>
 
 </div>
@@ -117,7 +133,7 @@ Nous vous recontactons rapidement pour étudier votre besoin et vous proposer la
 
 <p>Besoin d’une réponse immédiate ?</p>
 
-<a href="tel:0685306973" class="btn">📞 Appeler maintenant</a>
+<a href="tel:0685306973" class="btn">Appeler maintenant</a>
 
 </div>
 
