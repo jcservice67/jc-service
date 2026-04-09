@@ -54,11 +54,14 @@ box-shadow:0 5px 15px rgba(0,0,0,0.05);
 /* TABLE */
 .table-container{
 padding:60px 20px;
+overflow-x:auto;
+-webkit-overflow-scrolling:touch;
 }
 
 .table{
 display:grid;
 grid-template-columns:220px repeat(3,1fr);
+min-width:800px; /* IMPORTANT POUR MOBILE */
 max-width:1100px;
 margin:auto;
 background:white;
@@ -96,6 +99,26 @@ background:#f5f5f5;
 transition:0.4s;
 opacity:0.6;
 position:relative;
+overflow:hidden;
+}
+
+/* ✨ EFFET LUMIÈRE */
+.col::before{
+content:"";
+position:absolute;
+top:var(--y, 50%);
+left:var(--x, 50%);
+transform:translate(-50%, -50%);
+width:200px;
+height:200px;
+background:radial-gradient(circle, rgba(255,255,255,0.25), transparent 60%);
+opacity:0;
+transition:opacity 0.3s ease;
+pointer-events:none;
+}
+
+.col:hover::before{
+opacity:1;
 }
 
 .col.active{
@@ -173,6 +196,44 @@ transform:translateY(-2px);
 box-shadow:0 15px 30px rgba(0,0,0,0.2);
 }
 
+/* 📱 MOBILE OPTIMISÉ */
+@media (max-width:768px){
+
+.table-container{
+padding:30px 10px;
+}
+
+.table{
+border-radius:12px;
+}
+
+.cell{
+padding:12px;
+font-size:13px;
+}
+
+.intro-premium h2{
+font-size:24px;
+}
+
+}
+
+/* Petit hint scroll */
+.table-container::after{
+content:"👉 Faites défiler";
+display:block;
+text-align:center;
+font-size:12px;
+opacity:0.5;
+margin-top:10px;
+}
+
+@media (min-width:769px){
+.table-container::after{
+display:none;
+}
+}
+
 </style>
 </head>
 
@@ -180,14 +241,12 @@ box-shadow:0 15px 30px rgba(0,0,0,0.2);
 
 <a href="index.html" class="back-home">← Accueil</a>
 
-<!-- HERO IDENTIQUE AUX AUTRES -->
 <section class="hero">
   <img src="logo.png" class="logo">
   <h1>Nos formules d’entretien</h1>
   <p>Choisissez la solution adaptée à votre installation</p>
 </section>
 
-<!-- INTRO -->
 <section class="intro-premium">
   <h2>Choisissez votre niveau de tranquillité</h2>
 
@@ -204,7 +263,6 @@ box-shadow:0 15px 30px rgba(0,0,0,0.2);
   </div>
 </section>
 
-<!-- TABLE -->
 <section class="table-container">
 
 <div class="table">
@@ -283,18 +341,15 @@ box-shadow:0 15px 30px rgba(0,0,0,0.2);
 
 </section>
 
-<!-- WARNING -->
 <section class="warning">
 <h2>Une panne peut coûter entre 150€ et 400€</h2>
 <p>Un entretien régulier vous évite ces dépenses et sécurise votre installation.</p>
 </section>
 
-<!-- BOUTON URGENCE -->
 <a href="tel:+33685306973" class="urgence-btn">
   📞 Une urgence ? Appelez-nous
 </a>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-container">
     <h3>JC Service</h3>
@@ -307,6 +362,20 @@ box-shadow:0 15px 30px rgba(0,0,0,0.2);
 </footer>
 
 <script>
+
+/* ✨ EFFET LUMIÈRE SUIVI SOURIS */
+document.querySelectorAll('.col').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    card.style.setProperty('--x', x + 'px');
+    card.style.setProperty('--y', y + 'px');
+  });
+});
+
+/* AUTO SELECT PLAN */
 const params = new URLSearchParams(window.location.search);
 const plan = params.get("plan");
 
@@ -324,6 +393,7 @@ block:"center"
 });
 },300);
 }
+
 </script>
 
 </body>
