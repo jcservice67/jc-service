@@ -14,29 +14,7 @@
 body{
 font-family:'Inter', sans-serif;
 margin:0;
-background:#f8f8f8;
-}
-
-/* HERO PREMIUM (FIX LOGO) */
-.hero-premium{
-padding:120px 20px 60px;
-display:flex;
-justify-content:center;
-}
-
-.hero-inner{
-background:#fff;
-padding:40px 60px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.05);
-text-align:center;
-max-width:700px;
-width:100%;
-}
-
-.hero-inner .logo{
-max-width:180px;
-margin-bottom:20px;
+background:#ffffff;
 }
 
 /* INTRO */
@@ -174,8 +152,25 @@ padding:60px 20px 40px;
 margin-bottom:0;
 }
 
-footer{
-margin-top:0;
+/* URGENCE BUTTON */
+.urgence-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:999;
+background:#1C1C1C;
+color:#fff;
+padding:12px 18px;
+border-radius:30px;
+text-decoration:none;
+font-size:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.urgence-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 15px 30px rgba(0,0,0,0.2);
 }
 
 </style>
@@ -185,13 +180,11 @@ margin-top:0;
 
 <a href="index.html" class="back-home">← Accueil</a>
 
-<!-- HERO PREMIUM -->
-<section class="hero-premium">
-  <div class="hero-inner">
-    <img src="logo.png" class="logo">
-    <h1>Nos formules d’entretien</h1>
-    <p>Choisissez la solution adaptée à votre installation</p>
-  </div>
+<!-- HERO IDENTIQUE AUX AUTRES -->
+<section class="hero">
+  <img src="logo.png" class="logo">
+  <h1>Nos formules d’entretien</h1>
+  <p>Choisissez la solution adaptée à votre installation</p>
 </section>
 
 <!-- INTRO -->
@@ -295,6 +288,11 @@ margin-top:0;
 <h2>Une panne peut coûter entre 150€ et 400€</h2>
 <p>Un entretien régulier vous évite ces dépenses et sécurise votre installation.</p>
 </section>
+
+<!-- BOUTON URGENCE -->
+<a href="tel:+33685306973" class="urgence-btn">
+  📞 Une urgence ? Appelez-nous
+</a>
 
 <!-- FOOTER -->
 <footer>
