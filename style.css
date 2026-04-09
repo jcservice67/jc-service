@@ -328,3 +328,57 @@ footer hr {
   padding-left: 20px;
   margin-bottom: 30px;
 }
+/* PARCOURS CLIENT PREMIUM */
+
+.process {
+  padding: 100px 20px;
+  background: #FFFFFF;
+  text-align: center;
+}
+
+.process h2 {
+  margin-bottom: 60px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.step {
+  background: #F9F9F9;
+  border-radius: 16px;
+  padding: 30px 25px;
+  width: 240px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* NUMÉRO */
+.step h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #1C1C1C;
+}
+
+.step h3::before {
+  content: attr(data-step);
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #C8A96A;
+  margin-bottom: 10px;
+}
+
+/* TEXTE */
+.step p {
+  font-size: 14px;
+  color: #6B7280;
+}
