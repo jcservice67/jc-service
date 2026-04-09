@@ -330,3 +330,44 @@ footer hr {
   .logo { max-width: 240px; }
   .hero h1 { font-size: 24px; }
 }
+.contact-box {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 40px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.contact-logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.contact-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-box input,
+.contact-box select,
+.contact-box textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-box button {
+  padding: 14px;
+  border: none;
+  background: #1C1C1C;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-box button:hover {
+  opacity: 0.85;
+}
