@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Entretien & SAV - JC Service</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+.price-box{
+margin-top:20px;
+font-weight:600;
+font-size:18px;
+text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+
+<section class="contact-page">
+
+<div class="contact-box">
+
+<img src="logo.png" class="contact-logo">
+
+<h1>Demande d’entretien</h1>
+
+<p class="subtitle">
+Réponse rapide sous 24h
+</p>
+
+<form action="https://formsubmit.co/sav@jcservice.fr" method="POST">
+
+<input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Demande entretien JC Service">
+
+<input type="text" name="Nom" placeholder="Nom et prénom" required>
+<input type="tel" name="Téléphone" placeholder="Téléphone" required>
+<input type="email" name="Email" placeholder="Email">
+
+<!-- FORMULE -->
+<select name="Formule" id="formule" required>
+<option value="">Choisir une formule</option>
+<option value="essentiel">Essentiel</option>
+<option value="confort">Confort</option>
+<option value="privilege">Privilège</option>
+</select>
+
+<!-- APPAREILS -->
+<label style="display:block;margin-top:15px;text-align:left;">Type d’appareil :</label>
+
+<div style="text-align:left;">
+
+<label><input type="checkbox" value="chaudiere_gaz"> Chaudière gaz</label><br>
+<label><input type="checkbox" value="chaudiere_fioul"> Chaudière fioul</label><br>
+<label><input type="checkbox" value="pac"> Pompe à chaleur</label><br>
+<label><input type="checkbox" value="ballon"> Ballon thermodynamique</label><br>
+<label><input type="checkbox" value="clim"> Climatisation</label><br>
+<label><input type="checkbox" value="adoucisseur"> Adoucisseur</label>
+
+</div>
+
+<!-- PRIX -->
+<div class="price-box" id="priceBox">
+Prix estimé : —
+</div>
+
+<textarea name="Message" placeholder="Précisions si besoin..." rows="4"></textarea>
+
+<button type="submit">Envoyer la demande</button>
+
+</form>
+
+<a href="index.html" class="back">← Retour à l'accueil</a>
+
+</div>
+
+</section>
+
+<section class="cta">
+  <h2>Besoin d’une réponse rapide ?</h2>
+  <a href="tel:0685306973" class="btn">Appeler maintenant</a>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <h3>JC Service</h3>
+    <p class="footer-sub">Salle de bain • Chauffage • Climatisation</p>
+    <p>9a route de Paris<br>67117 Ittenheim</p>
+    <p class="contact">📞 06 85 30 69 73<br>✉️ instal.jcservice@gmail.com</p>
+    <hr>
+    <p class="copyright">© 2026 JC Service</p>
+  </div>
+</footer>
+
+<script>
+
+// PRIX PAR FORMULE
+const prices = {
+  essentiel: {
+    chaudiere_gaz:140,
+    chaudiere_fioul:160,
+    pac:160,
+    ballon:100,
+    clim:140,
+    adoucisseur:130
+  },
+  confort: {
+    chaudiere_gaz:170,
+    chaudiere_fioul:190,
+    pac:190,
+    ballon:130,
+    clim:170,
+    adoucisseur:160
+  },
+  privilege: {
+    chaudiere_gaz:200,
+    chaudiere_fioul:220,
+    pac:220,
+    ballon:160,
+    clim:200,
+    adoucisseur:190
+  }
+};
+
+const formuleSelect = document.getElementById("formule");
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const priceBox = document.getElementById("priceBox");
+
+function updatePrice(){
+
+  const formule = formuleSelect.value;
+  let total = 0;
+
+  if(!formule){
+    priceBox.innerText = "Prix estimé : —";
+    return;
+  }
+
+  checkboxes.forEach(cb=>{
+    if(cb.checked){
+      total += prices[formule][cb.value];
+    }
+  });
+
+  priceBox.innerText = total > 0 
+    ? "Prix estimé : " + total + "€"
+    : "Sélectionnez un appareil";
+}
+
+formuleSelect.addEventListener("change", updatePrice);
+checkboxes.forEach(cb=>{
+  cb.addEventListener("change", updatePrice);
+});
+
+// AUTO SELECT PLAN (depuis page précédente)
+const params = new URLSearchParams(window.location.search);
+const plan = params.get("plan");
+
+if(plan){
+formuleSelect.value = plan;
+updatePrice();
+}
+
+</script>
+
+</body>
+</html>
