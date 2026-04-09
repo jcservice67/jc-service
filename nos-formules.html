@@ -17,14 +17,14 @@ margin:0;
 background:#f8f8f8;
 }
 
-/* HERO (comme les autres pages) */
+/* HERO */
 .hero{
 text-align:center;
 padding:100px 20px 60px;
 }
 
 .logo{
-max-width:200px;
+max-width:220px;
 margin-bottom:20px;
 }
 
@@ -40,8 +40,7 @@ opacity:0.7;
 
 /* TABLE */
 .table-container{
-overflow-x:auto;
-padding:40px 20px;
+padding:60px 20px;
 }
 
 .table{
@@ -50,15 +49,16 @@ grid-template-columns:220px repeat(3,1fr);
 max-width:1100px;
 margin:auto;
 background:white;
-border-radius:15px;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
 
 .cell{
-padding:15px;
+padding:18px;
 border-bottom:1px solid #eee;
 text-align:center;
+font-size:14px;
 }
 
 .feature{
@@ -70,12 +70,14 @@ background:#fafafa;
 .header{
 font-weight:600;
 background:#f5f5f5;
+font-size:15px;
 }
 
 /* COLONNES */
 .col{
 transition:0.4s;
-opacity:0.6;
+opacity:0.65;
+position:relative;
 }
 
 .col:hover{
@@ -86,8 +88,22 @@ transform:translateY(-3px);
 background:#1C1C1C;
 color:white;
 opacity:1;
-transform:scale(1.03);
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
+transform:scale(1.04);
+z-index:2;
+box-shadow:0 20px 60px rgba(0,0,0,0.2);
+}
+
+/* effet glow subtil */
+.col.active::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+box-shadow:0 0 30px rgba(0,0,0,0.3);
+border-radius:10px;
+pointer-events:none;
 }
 
 .col.active .btn{
@@ -98,13 +114,14 @@ color:#1C1C1C;
 /* BOUTONS */
 .btn{
 display:inline-block;
-padding:10px 15px;
+padding:10px 18px;
 background:#1C1C1C;
 color:white;
-border-radius:20px;
+border-radius:25px;
 text-decoration:none;
 margin-top:10px;
 transition:0.3s;
+font-size:14px;
 }
 
 .btn:hover{
@@ -116,42 +133,16 @@ opacity:0.8;
 background:#1C1C1C;
 color:white;
 text-align:center;
-padding:50px 20px;
+padding:60px 20px;
 }
 
-.warning strong{
-color:#fff;
+.warning h2{
+font-family:'Playfair Display', serif;
 }
 
-/* CHOICES */
-.choices{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-margin:60px 0;
-}
-
-.choice{
-background:white;
-padding:25px;
-border-radius:12px;
-width:260px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-transition:0.3s;
-}
-
-.choice:hover{
-transform:translateY(-5px);
-}
-
-.choice.highlight{
-border:1px solid #1C1C1C;
-}
-
-/* FOOTER */
-footer{
-margin-top:60px;
+/* ESPACE */
+.section-spacing{
+height:40px;
 }
 
 </style>
@@ -166,7 +157,7 @@ margin-top:60px;
 <img src="logo.png" class="logo">
 
 <h1>Nos formules d’entretien</h1>
-<p>Choisissez la solution adaptée à votre installation</p>
+<p>Des solutions adaptées pour protéger vos installations et optimiser leur performance</p>
 </section>
 
 <!-- TABLE -->
@@ -194,44 +185,54 @@ margin-top:60px;
 <div class="cell col" data-plan="confort">190€</div>
 <div class="cell col" data-plan="privilege">220€</div>
 
+<div class="cell feature">Ballon thermodynamique</div>
+<div class="cell col" data-plan="essentiel">100€</div>
+<div class="cell col" data-plan="confort">130€</div>
+<div class="cell col" data-plan="privilege">160€</div>
+
 <div class="cell feature">Climatisation</div>
 <div class="cell col" data-plan="essentiel">140€</div>
 <div class="cell col" data-plan="confort">170€</div>
 <div class="cell col" data-plan="privilege">200€</div>
 
-<div class="cell feature">Détail des prestations</div>
+<div class="cell feature">Adoucisseur</div>
+<div class="cell col" data-plan="essentiel">130€</div>
+<div class="cell col" data-plan="confort">160€</div>
+<div class="cell col" data-plan="privilege">190€</div>
+
+<div class="cell feature">Prestations</div>
 
 <div class="cell col" data-plan="essentiel">
 ✔ Entretien annuel<br>
-✔ Vérification<br>
+✔ Vérification complète<br>
 ✔ Attestation
 </div>
 
 <div class="cell col" data-plan="confort">
 ✔ Entretien annuel<br>
-✔ Vérification<br>
+✔ Vérification complète<br>
 ✔ 1 dépannage inclus
 </div>
 
 <div class="cell col" data-plan="privilege">
 ✔ Entretien annuel<br>
 ✔ Dépannage illimité<br>
-✔ Prioritaire<br>
+✔ Intervention prioritaire<br>
 ✔ -15% pièces
 </div>
 
 <div class="cell"></div>
 
 <div class="cell col" data-plan="essentiel">
-<a class="btn" href="contact.html">Choisir</a>
+<a class="btn" href="demande-entretien.html?plan=essentiel">Choisir</a>
 </div>
 
 <div class="cell col" data-plan="confort">
-<a class="btn" href="contact.html">Choisir</a>
+<a class="btn" href="demande-entretien.html?plan=confort">Choisir</a>
 </div>
 
 <div class="cell col" data-plan="privilege">
-<a class="btn" href="contact.html">Choisir</a>
+<a class="btn" href="demande-entretien.html?plan=privilege">Choisir</a>
 </div>
 
 </div>
@@ -240,8 +241,8 @@ margin-top:60px;
 
 <!-- WARNING -->
 <section class="warning">
-<h2>Une panne peut coûter 150€ à 400€</h2>
-<p>Un entretien régulier vous évite ces coûts.</p>
+<h2>Une panne peut coûter entre 150€ et 400€</h2>
+<p>Un entretien régulier permet d’éviter ces dépenses et d’augmenter la durée de vie de vos équipements.</p>
 </section>
 
 <!-- FOOTER -->
@@ -269,14 +270,12 @@ elements.forEach(el=>{
 el.classList.add("active");
 });
 
-/* SCROLL AUTO */
 setTimeout(()=>{
 elements[0].scrollIntoView({
-behavior: "smooth",
-block: "center",
-inline: "center"
+behavior:"smooth",
+block:"center"
 });
-}, 300);
+},300);
 }
 
 </script>
