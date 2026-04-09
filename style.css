@@ -528,3 +528,19 @@ footer hr {
   text-transform: uppercase;
   margin-bottom: 15px;
 }
+.highlight-inline {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: #C8A96A;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+
+  text-align: center;
+}
+
+.highlight-text {
+  font-weight: 500;
+  font-size: 16px;
+
+  text-align: center;
+}
