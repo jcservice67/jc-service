@@ -560,3 +560,21 @@ footer hr {
   max-width: 600px;
   margin: auto;
 }
+/* BOUTON RETOUR ACCUEIL */
+
+.back-home {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: #1C1C1C;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.back-home:hover {
+  background: #F5F5F5;
+}
