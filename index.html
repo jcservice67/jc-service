@@ -1,92 +1,105 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>JC Service</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>JC Service</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
+<!-- HERO -->
+<section class="hero">
+
 <img src="logo.png" class="logo">
 
-<p class="baseline">Notre expérience, votre confiance</p>
-    
-    <h1>Rénovation & confort sur mesure</h1>
-    <p>Salle de bain, chauffage et climatisation avec exigence et précision</p>
-  </section>
+<p class="baseline reveal-text">Notre expérience, votre confiance</p>
 
-  <!-- SERVICES -->
-  <section class="services">
+<h1 class="reveal-text">Rénovation & confort sur mesure</h1>
 
-    <div class="card">
-  <a href="salle-de-bain.html">
-    <h3>Salle de bain</h3>
-    <p>Rénovation complète, clé en main</p>
-    <span class="card-cta">Découvrir →</span>
-  </a>
+<p class="hero-desc reveal-text">
+Salle de bain, chauffage et climatisation avec exigence et précision
+</p>
+
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+
+<div class="card">
+<a href="salle-de-bain.html">
+<h3>Salle de bain</h3>
+<p>Rénovation complète, clé en main</p>
+<span class="card-cta">Découvrir →</span>
+</a>
 </div>
 
 <div class="card">
-  <a href="chauffage.html" class="card-link">
-    <h3>Chauffage</h3>
-    <p><p>Installation, entretien et amélioration des performances pour un chauffage plus économique et écologique</p></p>
-    <span class="card-cta">Découvrir →</span>
-  </a>
+<a href="chauffage.html">
+<h3>Chauffage</h3>
+<p>Installation, entretien et optimisation pour un chauffage performant et économique</p>
+<span class="card-cta">Découvrir →</span>
+</a>
 </div>
 
 <div class="card">
-  <a href="climatisation.html" class="card-link">
-    <h3>Climatisation</h3>
-    <p>Installation, remplacement et entretien</p>
-    <span class="card-cta">Découvrir →</span>
-  </a>
+<a href="climatisation.html">
+<h3>Climatisation</h3>
+<p>Installation, remplacement et entretien pour un confort optimal toute l’année</p>
+<span class="card-cta">Découvrir →</span>
+</a>
 </div>
 
-  </section>
+</section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Un projet ? Parlons-en.</h2>
-    <a href="contact.html" class="btn">Demander un devis</a>
-  </section>
+<!-- CTA -->
+<section class="cta">
+<h2>Un projet ? Parlons-en.</h2>
+<a href="contact.html" class="btn">Demander un devis</a>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-container">
+<!-- FOOTER -->
+<footer>
+<div class="footer-container">
 
-      <h3>JC Service</h3>
+<h3>JC Service</h3>
 
-      <p class="footer-sub">
-        Salle de bain • Chauffage • Climatisation
-      </p>
+<p class="footer-sub">
+Salle de bain • Chauffage • Climatisation
+</p>
 
-      <p>
-        9a route de Paris<br>
-        67117 Ittenheim
-      </p>
+<p>
+9a route de Paris<br>
+67117 Ittenheim
+</p>
 
-      <p class="contact">
-        📞 06 85 30 69 73<br>
-        ✉️ instal.jcservice@gmail.com
-      </p>
+<p class="contact">
+📞 06 85 30 69 73<br>
+✉️ instal.jcservice@gmail.com
+</p>
 
-      <hr>
+<hr>
 
-      <p class="copyright">
-        © 2026 JC Service — Tous droits réservés
-      </p>
+<p class="copyright">
+© 2026 JC Service — Tous droits réservés
+</p>
 
-    </div>
-  </footer>
+</div>
+</footer>
+
+<!-- ANIMATION SCRIPT -->
+<script>
+document.querySelectorAll('.reveal-text').forEach(el => {
+  const words = el.innerText.split(" ");
+  el.innerHTML = words
+    .map((word, i) => `<span style="animation-delay:${i * 0.05}s">${word}</span>`)
+    .join(" ");
+});
+</script>
 
 </body>
 </html>
