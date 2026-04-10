@@ -17,11 +17,11 @@
 
 <img src="logo.png" class="logo">
 
-<p class="baseline reveal-text">Notre expérience, votre confiance</p>
+<p class="baseline">Notre expérience, votre confiance</p>
 
-<h1 class="reveal-text">Rénovation & confort sur mesure</h1>
+<h1>Rénovation & confort sur mesure</h1>
 
-<p class="hero-desc reveal-text">
+<p class="hero-desc">
 Salle de bain, chauffage et climatisation avec exigence et précision
 </p>
 
@@ -34,7 +34,7 @@ Salle de bain, chauffage et climatisation avec exigence et précision
 <a href="salle-de-bain.html">
 <h3>Salle de bain</h3>
 <p>Rénovation complète, clé en main</p>
-<span class="card-cta">Découvrir →</span>
+<span class="card-cta">En savoir plus</span>
 </a>
 </div>
 
@@ -42,7 +42,7 @@ Salle de bain, chauffage et climatisation avec exigence et précision
 <a href="chauffage.html">
 <h3>Chauffage</h3>
 <p>Installation, entretien et optimisation pour un chauffage performant et économique</p>
-<span class="card-cta">Découvrir →</span>
+<span class="card-cta">En savoir plus</span>
 </a>
 </div>
 
@@ -50,7 +50,7 @@ Salle de bain, chauffage et climatisation avec exigence et précision
 <a href="climatisation.html">
 <h3>Climatisation</h3>
 <p>Installation, remplacement et entretien pour un confort optimal toute l’année</p>
-<span class="card-cta">Découvrir →</span>
+<span class="card-cta">En savoir plus</span>
 </a>
 </div>
 
@@ -91,13 +91,28 @@ Salle de bain • Chauffage • Climatisation
 </div>
 </footer>
 
-<!-- ANIMATION SCRIPT -->
+<!-- JS INTERACTION CARTES -->
 <script>
-document.querySelectorAll('.reveal-text').forEach(el => {
-  const words = el.innerText.split(" ");
-  el.innerHTML = words
-    .map((word, i) => `<span style="animation-delay:${i * 0.05}s">${word}</span>`)
-    .join(" ");
+document.querySelectorAll('.card').forEach(card => {
+
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = (y - centerY) / 15;
+    const rotateY = (centerX - x) / 15;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = `rotateX(0) rotateY(0) scale(1)`;
+  });
+
 });
 </script>
 
