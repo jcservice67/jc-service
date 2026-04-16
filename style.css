@@ -434,21 +434,22 @@ section {
     grid-template-columns: 1fr;
   }
 }
-/* HEADER TOP */
-/* HEADER TOP FIXÉ PROPRE */
+/* HEADER TOP FIXÉ */
 .top-bar {
-  position: absolute;
+  position: fixed;   /* 🔥 change tout */
   top: 0;
   left: 0;
   width: 100%;
 
-  display: flex;
-  justify-content: space-between;
+  display: flex !important;
+  justify-content: space-between !important;
   align-items: center;
 
   padding: 20px 40px;
   box-sizing: border-box;
-  z-index: 1000;
+
+  z-index: 9999;
+  background: white; /* important pour lisibilité */
 }
 
 /* LIEN RETOUR */
@@ -458,19 +459,13 @@ section {
   color: #000;
 }
 
-/* BOUTON HAUT DROITE (STYLE IDENTIQUE CTA) */
+/* BOUTON DROITE */
 .top-btn {
   padding: 10px 18px;
   font-size: 14px;
 }
 
-/* ÉVITER QUE LE HEADER CACHE LE HERO */
+/* DÉCALAGE POUR ÉVITER CHEVAUCHEMENT */
 .hero {
-  padding-top: 120px;
-}
-.top-bar {
-  text-align: initial;
-}
-.top-bar {
-  backdrop-filter: blur(8px);
+  padding-top: 140px;
 }
