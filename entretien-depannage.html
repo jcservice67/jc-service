@@ -8,116 +8,6 @@
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-
-/* INTRO */
-.intro {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-/* PHRASE IMPACT */
-.impact {
-  font-weight: 500;
-  margin-top: 10px;
-  opacity: 0.8;
-}
-
-/* CONTRATS */
-.contrats{
-  padding:80px 20px;
-  text-align:center;
-}
-
-.cards{
-  display:flex;
-  flex-wrap:wrap;
-  gap:30px;
-  justify-content:center;
-}
-
-/* CARD */
-.card{
-  background:#fff;
-  padding:35px 30px;
-  border-radius:18px;
-  width:300px;
-  border:1px solid #eee;
-  transition:0.3s;
-  position:relative;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.08);
-}
-
-/* FORMULE STAR */
-.card.vip{
-  border:2px solid #C8A96A;
-  transform:scale(1.08);
-  box-shadow:0 25px 50px rgba(0,0,0,0.12);
-}
-
-/* BADGE RECO */
-.card.vip::before{
-  content:"LA PLUS CHOISIE";
-  position:absolute;
-  top:-12px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#C8A96A;
-  color:#1C1C1C;
-  font-size:12px;
-  padding:6px 14px;
-  border-radius:20px;
-  font-weight:600;
-}
-
-/* TEXTE */
-.card h3{
-  font-family:'Playfair Display', serif;
-  margin-bottom:10px;
-}
-
-.price{
-  font-weight:600;
-  margin-bottom:10px;
-}
-
-.card p{
-  font-size:14px;
-  color:#6B7280;
-}
-
-/* LISTE */
-.card ul{
-  list-style:none;
-  padding:0;
-  text-align:left;
-  margin:20px 0;
-}
-
-.card ul li{
-  margin:10px 0;
-}
-
-/* CTA bouton spécial */
-.vip .btn{
-  background:#1C1C1C;
-  color:#fff;
-}
-
-/* CTA urgence */
-.urgence{
-  background:#f8f8f8;
-  text-align:center;
-  padding:60px 20px;
-}
-
-</style>
-
 </head>
 
 <body>
@@ -137,15 +27,15 @@
   <h1>Évitez les pannes, gardez l’esprit tranquille</h1>
 
   <p class="hero-desc">
-    Un équipement entretenu, c’est moins de risques, moins de coûts et plus de sérénité
+    Moins de pannes, moins de coûts, plus de sérénité au quotidien
   </p>
 </section>
 
 <!-- INTRO -->
 <section class="intro">
   <p class="highlight-text">
-    Un entretien régulier permet d’éviter les pannes imprévues,
-    d’améliorer les performances et de prolonger la durée de vie de votre installation.
+    Un entretien régulier améliore les performances,
+    réduit les risques de panne et prolonge la durée de vie de votre installation.
   </p>
 
   <p class="impact">
@@ -161,12 +51,12 @@
 <section class="contrats">
 
   <h2>Choisissez votre tranquillité</h2>
-  <p class="subtitle">Une formule adaptée à votre usage et à votre niveau de sérénité</p>
+  <p class="subtitle">Des formules simples et adaptées à votre usage</p>
 
-  <div class="cards">
+  <div class="plans">
 
     <!-- ESSENTIEL -->
-    <div class="card">
+    <div class="plan">
       <h3>Essentiel</h3>
       <p class="price">À partir de 100€</p>
       <p>L’entretien minimum pour rester conforme</p>
@@ -180,14 +70,14 @@
     </div>
 
     <!-- PRIVILEGE -->
-    <div class="card vip">
+    <div class="plan vip">
       <h3>Privilège</h3>
       <p class="price">À partir de 160€</p>
       <p><strong>Vous ne vous occupez de rien, on gère tout</strong></p>
 
       <ul>
-        <li>✔ Vous êtes dépanné sans surcoût</li>
-        <li>✔ Intervention rapide en priorité</li>
+        <li>✔ Dépannage sans surcoût</li>
+        <li>✔ Intervention prioritaire</li>
         <li>✔ Entretien complet inclus</li>
         <li>✔ Remise sur pièces</li>
       </ul>
@@ -198,7 +88,7 @@
     </div>
 
     <!-- CONFORT -->
-    <div class="card">
+    <div class="plan">
       <h3>Confort</h3>
       <p class="price">À partir de 130€</p>
       <p>Le bon équilibre entre sécurité et budget</p>
@@ -213,6 +103,10 @@
     </div>
 
   </div>
+
+  <p class="proof">
+    +80% de nos clients choisissent la formule Privilège pour éviter les imprévus
+  </p>
 
 </section>
 
