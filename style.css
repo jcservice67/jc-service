@@ -468,3 +468,9 @@ section {
 .hero {
   padding-top: 120px;
 }
+.top-bar {
+  text-align: initial;
+}
+.top-bar {
+  backdrop-filter: blur(8px);
+}
