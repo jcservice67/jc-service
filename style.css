@@ -770,3 +770,93 @@ section {
   opacity:0.7;
   font-size:14px;
 }
+/* ===== PLANS ===== */
+
+.plans{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+  align-items:stretch;
+}
+
+/* CARD */
+.plan{
+  background:#fff;
+  padding:35px 30px;
+  border-radius:18px;
+  width:300px;
+  border:1px solid #eee;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  position:relative;
+  transition:0.3s;
+}
+
+.plan:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* VIP */
+.plan.vip{
+  border:2px solid #C8A96A;
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* BADGE */
+.badge{
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#C8A96A;
+  color:#1C1C1C;
+  font-size:12px;
+  padding:5px 12px;
+  border-radius:20px;
+  font-weight:600;
+}
+
+/* TEXT */
+.desc{
+  font-size:14px;
+  color:#6B7280;
+}
+
+.highlight{
+  color:#1C1C1C;
+  font-weight:500;
+}
+
+/* LIST */
+.plan ul{
+  list-style:none;
+  padding:0;
+  margin:20px 0;
+  flex-grow:1;
+}
+
+.plan ul li{
+  margin:10px 0;
+}
+
+/* CTA */
+.plan .btn{
+  margin-top:auto;
+}
+
+.plan .btn.primary{
+  background:#1C1C1C;
+  color:#fff;
+}
+
+/* PREUVE */
+.proof{
+  margin-top:30px;
+  opacity:0.7;
+  font-size:14px;
+}
