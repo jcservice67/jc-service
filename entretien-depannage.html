@@ -11,64 +11,90 @@
 
 <style>
 
+/* INTRO */
+.intro {
+  text-align: center;
+  padding: 40px 20px;
+}
+
 /* CONTRATS */
 .contrats{
-padding:80px 20px;
-text-align:center;
+  padding:80px 20px;
+  text-align:center;
 }
 
 .cards{
-display:flex;
-flex-wrap:wrap;
-gap:30px;
-justify-content:center;
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
 }
 
+/* CARD */
 .card{
-background:#fff;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-width:300px;
-transition:0.3s;
-border:1px solid #eee;
+  background:#fff;
+  padding:35px 30px;
+  border-radius:18px;
+  width:300px;
+  transition:0.3s;
+  border:1px solid #eee;
+  position:relative;
 }
 
+/* HOVER */
 .card:hover{
-transform:translateY(-5px);
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
 
+/* FORMULE STAR */
 .card.vip{
-border:1px solid #1C1C1C;
-transform:scale(1.05);
+  border:2px solid #C8A96A;
+  transform:scale(1.08);
+  box-shadow:0 25px 50px rgba(0,0,0,0.12);
 }
 
+/* BADGE */
+.card.vip::before{
+  content:"RECOMMANDÉ";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#C8A96A;
+  color:#1C1C1C;
+  font-size:12px;
+  padding:5px 12px;
+  border-radius:20px;
+  font-weight:600;
+}
+
+/* TEXTE */
 .card h3{
-font-family:'Playfair Display', serif;
-margin-bottom:10px;
+  font-family:'Playfair Display', serif;
+  margin-bottom:10px;
 }
 
 .price{
-font-weight:600;
-margin-bottom:10px;
+  font-weight:600;
+  margin-bottom:10px;
 }
 
 .card ul{
-list-style:none;
-padding:0;
-text-align:left;
-font-family:'Inter', sans-serif;
+  list-style:none;
+  padding:0;
+  text-align:left;
 }
 
 .card ul li{
-margin:10px 0;
+  margin:10px 0;
 }
 
-/* URGENCE */
+/* CTA URGENCE */
 .urgence{
-background:#f8f8f8;
-text-align:center;
-padding:60px 20px;
+  background:#f8f8f8;
+  text-align:center;
+  padding:60px 20px;
 }
 
 </style>
@@ -79,23 +105,39 @@ padding:60px 20px;
 
 <a href="index.html" class="back-home">← Accueil</a>
 
+<a href="entretien-depannage.html" class="top-btn">
+  Entretien & Dépannage
+</a>
+
+<!-- HERO -->
 <section class="hero">
   <img src="logo.png" class="logo">
-  <h1>Entretien & Dépannage</h1>
-  <p>Préservez vos installations et gagnez en sérénité</p>
+
+  <p class="baseline">Entretien & dépannage</p>
+
+  <h1>Sérénité toute l’année</h1>
+
+  <p class="hero-desc">
+    Préservez vos installations et évitez les pannes
+  </p>
 </section>
 
-<p class="highlight-inline">
-  Entretien • Dépannage • Optimisation • Durabilité
-</p>
+<!-- INTRO -->
+<section class="intro">
+  <p class="highlight-text">
+    Un entretien régulier améliore les performances,
+    réduit les risques de panne et prolonge la durée de vie de vos équipements.
+  </p>
 
-<p class="highlight-text">
-  Un entretien régulier permet d’améliorer les performances, réduire les pannes et prolonger la durée de vie de vos équipements.
-</p>
+  <p class="highlight-inline">
+    Entretien • Dépannage • Optimisation • Durabilité
+  </p>
+</section>
 
+<!-- CONTRATS -->
 <section class="contrats">
-    <h2>Nos contrats d’entretien</h2>
-    <p class="subtitle">Des solutions simples, fiables et adaptées à votre usage</p>
+    <h2>Choisissez votre niveau de tranquillité</h2>
+    <p class="subtitle">Des formules simples, adaptées à votre usage</p>
 
     <div class="cards">
 
@@ -117,7 +159,7 @@ padding:60px 20px;
         <div class="card vip">
             <h3>Privilège</h3>
             <p class="price">À partir de 160€</p>
-            <p>Tranquillité toute l’année</p>
+            <p><strong>La tranquillité totale, sans surprise</strong></p>
 
             <ul>
                 <li>✔ Entretien annuel</li>
@@ -126,7 +168,7 @@ padding:60px 20px;
                 <li>✔ Remise sur pièces</li>
             </ul>
 
-            <a href="nos-formules.html?plan=privilege" class="btn">Choisir</a>
+            <a href="nos-formules.html?plan=privilege" class="btn">Choisir cette formule</a>
         </div>
 
         <!-- CONFORT -->
@@ -147,12 +189,14 @@ padding:60px 20px;
     </div>
 </section>
 
+<!-- CTA -->
 <section class="cta">
   <h2>Une panne ?</h2>
   <p>Nous intervenons rapidement pour sécuriser votre installation</p>
   <a href="tel:+33685306973" class="btn">Appeler maintenant</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-container">
     <h3>JC Service</h3>
