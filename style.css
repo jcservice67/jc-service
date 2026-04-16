@@ -360,3 +360,77 @@ footer hr {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
+/* CONTAINER GLOBAL (IMPORTANT) */
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* INTRO BIEN CENTRÉE */
+.intro {
+  text-align: center;
+}
+
+.highlight-text {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.highlight-inline {
+  opacity: 0.7;
+  font-size: 15px;
+}
+
+/* HERO ALIGNÉ */
+.hero {
+  text-align: center;
+}
+
+/* PROCESS CENTRÉ ET PROPRE */
+.process {
+  text-align: center;
+}
+
+.process h2 {
+  margin-bottom: 10px;
+}
+
+.process-intro {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  opacity: 0.7;
+}
+
+/* STEPS EN GRILLE (LE GROS CHANGEMENT) */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* CARTE STEP */
+.step {
+  background: #f5f5f5;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+/* TITRE STEP */
+.step h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
