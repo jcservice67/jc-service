@@ -530,3 +530,73 @@ section {
   border: none;
   cursor: pointer;
 }
+/* CONTAINER */
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+  align-items:stretch; /* 🔥 important */
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  padding:35px 30px;
+  border-radius:18px;
+  width:300px;
+  border:1px solid #eee;
+  transition:0.3s;
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between; /* 🔥 aligne contenu */
+}
+
+/* HOVER */
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* VIP (SANS SCALE) */
+.card.vip{
+  border:2px solid #C8A96A;
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* BADGE */
+.card.vip::before{
+  content:"LA PLUS CHOISIE";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#C8A96A;
+  color:#1C1C1C;
+  font-size:12px;
+  padding:6px 14px;
+  border-radius:20px;
+  font-weight:600;
+}
+
+/* LISTE */
+.card ul{
+  list-style:none;
+  padding:0;
+  text-align:left;
+  margin:20px 0;
+  flex-grow:1; /* 🔥 pousse le bouton en bas */
+}
+
+/* BOUTON ALIGNÉ */
+.card .btn{
+  margin-top:auto;
+}
+
+/* VIP CTA */
+.vip .btn{
+  background:#1C1C1C;
+  color:#fff;
+}
