@@ -8,121 +8,9 @@
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-
-/* HERO */
-.hero-light{
-text-align:center;
-padding:120px 20px 40px;
-}
-
-.hero-light h1{
-font-family:'Playfair Display', serif;
-margin-bottom:10px;
-}
-
-.hero-light p{
-opacity:0.6;
-}
-
-/* CONTAINER */
-.contact-page{
-display:flex;
-justify-content:center;
-padding:20px;
-}
-
-.contact-box{
-background:#fff;
-padding:40px;
-border-radius:18px;
-box-shadow:0 20px 50px rgba(0,0,0,0.06);
-max-width:500px;
-width:100%;
-}
-
-/* LOGO */
-.contact-logo{
-width:120px;
-margin-bottom:20px;
-display:block;
-margin-left:auto;
-margin-right:auto;
-}
-
-/* INPUTS */
-input, select, textarea{
-width:100%;
-padding:14px;
-margin-bottom:15px;
-border-radius:8px;
-border:1px solid #E5E7EB;
-font-family:'Inter', sans-serif;
-}
-
-input:focus, select:focus, textarea:focus{
-outline:none;
-border-color:#C8A96A;
-}
-
-/* CHECKBOX */
-.checkbox-group{
-text-align:left;
-margin:20px 0;
-}
-
-.checkbox-group label{
-display:block;
-margin:8px 0;
-}
-
-/* PRIX */
-.price-box{
-margin:25px 0;
-font-size:20px;
-font-weight:600;
-text-align:center;
-}
-
-/* BOUTON */
-button{
-width:100%;
-padding:14px;
-border:none;
-background:#C8A96A;
-color:#1C1C1C;
-border-radius:6px;
-font-size:15px;
-cursor:pointer;
-}
-
-/* URGENCE */
-.urgence-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#1C1C1C;
-color:#fff;
-padding:14px 18px;
-border-radius:30px;
-text-decoration:none;
-font-size:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* MOBILE */
-@media(max-width:600px){
-.contact-box{
-padding:25px;
-}
-}
-
-</style>
-
 </head>
 
-<body>
+<body class="form-page">
 
 <a href="index.html" class="back-home">← Accueil</a>
 
@@ -196,6 +84,7 @@ Sélectionnez vos équipements
 
 <script>
 
+/* PRIX */
 const prices = {
   essentiel:{chaudiere_gaz:140, chaudiere_fioul:160, pac:160, ballon:100, clim:140, adoucisseur:130},
   confort:{chaudiere_gaz:170, chaudiere_fioul:190, pac:190, ballon:130, clim:170, adoucisseur:160},
@@ -206,6 +95,7 @@ const formule = document.getElementById("formule");
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const priceBox = document.getElementById("priceBox");
 
+/* UPDATE */
 function updatePrice(){
 let total = 0;
 const f = formule.value;
@@ -236,8 +126,20 @@ priceBox.innerText = "À partir de " + total + "€";
 }
 }
 
+/* PRÉ-SÉLECTION URL */
+const params = new URLSearchParams(window.location.search);
+const plan = params.get("plan");
+
+if(plan){
+formule.value = plan;
+}
+
+/* EVENTS */
 formule.addEventListener("change", updatePrice);
 checkboxes.forEach(cb=> cb.addEventListener("change", updatePrice));
+
+/* INIT */
+updatePrice();
 
 </script>
 
