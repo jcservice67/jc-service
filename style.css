@@ -860,3 +860,97 @@ section {
   opacity:0.7;
   font-size:14px;
 }
+/* ===== PAGE FORMULAIRE ENTRETIEN ===== */
+
+.form-page .hero-light{
+  text-align:center;
+  padding:120px 20px 40px;
+}
+
+.form-page .hero-light h1{
+  font-family:'Playfair Display', serif;
+  font-size:34px;
+}
+
+.form-page .hero-light p{
+  opacity:0.6;
+}
+
+/* BOX */
+.form-page .contact-box{
+  background:#fff;
+  padding:45px;
+  border-radius:20px;
+  max-width:520px;
+  width:100%;
+  margin:auto;
+  box-shadow:0 25px 60px rgba(0,0,0,0.06);
+}
+
+/* LOGO */
+.form-page .contact-logo{
+  width:120px;
+  display:block;
+  margin:0 auto 20px;
+}
+
+/* INPUTS */
+.form-page input,
+.form-page select,
+.form-page textarea{
+  width:100%;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:1px solid #E5E7EB;
+}
+
+.form-page input:focus,
+.form-page select:focus,
+.form-page textarea:focus{
+  outline:none;
+  border-color:#C8A96A;
+}
+
+/* CHECKBOX */
+.form-page .checkbox-group label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:10px 0;
+}
+
+/* PRIX */
+.form-page .price-box{
+  margin:25px 0;
+  padding:20px;
+  border-radius:12px;
+  background:#f9f9f9;
+  font-size:20px;
+  font-weight:600;
+  text-align:center;
+}
+
+/* BUTTON */
+.form-page button{
+  width:100%;
+  padding:16px;
+  border:none;
+  background:#C8A96A;
+  color:#1C1C1C;
+  border-radius:8px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+/* URGENCE */
+.form-page .urgence-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#1C1C1C;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:30px;
+  text-decoration:none;
+}
