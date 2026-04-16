@@ -12,59 +12,67 @@
 
 <body>
 
+<!-- RETOUR -->
+<a href="index.html" class="back-home">← Accueil</a>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="logo.png" class="logo">
+
+  <p class="baseline">Contact & devis</p>
+
+  <h1>Parlons de votre projet</h1>
+
+  <p class="hero-desc">
+    Réponse rapide sous 24h
+  </p>
+</section>
+
+<!-- FORMULAIRE -->
 <section class="contact-page">
 
-<div class="contact-box">
+  <div class="contact-box">
 
-<img src="logo.png" class="contact-logo" alt="JC Service">
+    <form action="https://formsubmit.co/instal.jcservice@gmail.com" method="POST">
 
-<h1>Demande de devis</h1>
+      <!-- CONFIG -->
+      <input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="Nouvelle demande de devis JC Service">
 
-<p class="subtitle">
-Réponse rapide sous 24h
-</p>
+      <!-- CHAMPS -->
+      <input type="text" name="Nom et prénom" placeholder="Nom et prénom" required>
 
-<form action="https://formsubmit.co/instal.jcservice@gmail.com" method="POST">
+      <input type="tel" name="Téléphone" placeholder="Téléphone" required>
 
-<!-- CONFIG -->
-<input type="hidden" name="_next" value="https://jcservice67.github.io/jc-service/merci.html">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_subject" value="Nouvelle demande de devis JC Service">
+      <input type="email" name="Email" placeholder="Email" required>
 
-<!-- CHAMPS -->
-<input type="text" name="Nom et prénom" placeholder="Nom et prénom" required>
+      <select name="Type de demande" required>
+        <option value="">Type de demande</option>
+        <option>Salle de bain</option>
+        <option>Chauffage</option>
+        <option>Climatisation</option>
+        <option>Entretien</option>
+      </select>
 
-<input type="tel" name="Téléphone" placeholder="Téléphone" required>
+      <textarea name="Message" placeholder="Décrivez votre projet..." rows="5"></textarea>
 
-<input type="email" name="Email" placeholder="Email" required>
+      <!-- BOUTON -->
+      <button type="submit" class="btn">Envoyer la demande</button>
 
-<select name="Type de demande" required>
-<option value="">Type de demande</option>
-<option>Salle de bain</option>
-<option>Chauffage</option>
-<option>Climatisation</option>
-<option>Entretien</option>
-</select>
+    </form>
 
-<textarea name="Message" placeholder="Décrivez votre projet..." rows="5"></textarea>
-
-<!-- BOUTON -->
-<button type="submit">Envoyer la demande</button>
-
-</form>
-
-<a href="index.html" class="back">← Retour à l'accueil</a>
-
-</div>
+  </div>
 
 </section>
 
-<!-- CTA RAPIDE (gros + business) -->
+<!-- CTA -->
 <section class="cta">
   <h2>Besoin d’une réponse rapide ?</h2>
   <a href="tel:0685306973" class="btn">Appeler maintenant</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-container">
 
