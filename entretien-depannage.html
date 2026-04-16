@@ -17,6 +17,13 @@
   padding: 40px 20px;
 }
 
+/* PHRASE IMPACT */
+.impact {
+  font-weight: 500;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
 /* CONTRATS */
 .contrats{
   padding:80px 20px;
@@ -36,12 +43,11 @@
   padding:35px 30px;
   border-radius:18px;
   width:300px;
-  transition:0.3s;
   border:1px solid #eee;
+  transition:0.3s;
   position:relative;
 }
 
-/* HOVER */
 .card:hover{
   transform:translateY(-8px);
   box-shadow:0 20px 40px rgba(0,0,0,0.08);
@@ -54,9 +60,9 @@
   box-shadow:0 25px 50px rgba(0,0,0,0.12);
 }
 
-/* BADGE */
+/* BADGE RECO */
 .card.vip::before{
-  content:"RECOMMANDÉ";
+  content:"LA PLUS CHOISIE";
   position:absolute;
   top:-12px;
   left:50%;
@@ -64,7 +70,7 @@
   background:#C8A96A;
   color:#1C1C1C;
   font-size:12px;
-  padding:5px 12px;
+  padding:6px 14px;
   border-radius:20px;
   font-weight:600;
 }
@@ -80,17 +86,30 @@
   margin-bottom:10px;
 }
 
+.card p{
+  font-size:14px;
+  color:#6B7280;
+}
+
+/* LISTE */
 .card ul{
   list-style:none;
   padding:0;
   text-align:left;
+  margin:20px 0;
 }
 
 .card ul li{
   margin:10px 0;
 }
 
-/* CTA URGENCE */
+/* CTA bouton spécial */
+.vip .btn{
+  background:#1C1C1C;
+  color:#fff;
+}
+
+/* CTA urgence */
 .urgence{
   background:#f8f8f8;
   text-align:center;
@@ -115,18 +134,22 @@
 
   <p class="baseline">Entretien & dépannage</p>
 
-  <h1>Sérénité toute l’année</h1>
+  <h1>Évitez les pannes, gardez l’esprit tranquille</h1>
 
   <p class="hero-desc">
-    Préservez vos installations et évitez les pannes
+    Un équipement entretenu, c’est moins de risques, moins de coûts et plus de sérénité
   </p>
 </section>
 
 <!-- INTRO -->
 <section class="intro">
   <p class="highlight-text">
-    Un entretien régulier améliore les performances,
-    réduit les risques de panne et prolonge la durée de vie de vos équipements.
+    Un entretien régulier permet d’éviter les pannes imprévues,
+    d’améliorer les performances et de prolonger la durée de vie de votre installation.
+  </p>
+
+  <p class="impact">
+    Les pannes arrivent souvent au pire moment — mieux vaut anticiper.
   </p>
 
   <p class="highlight-inline">
@@ -136,57 +159,61 @@
 
 <!-- CONTRATS -->
 <section class="contrats">
-    <h2>Choisissez votre niveau de tranquillité</h2>
-    <p class="subtitle">Des formules simples, adaptées à votre usage</p>
 
-    <div class="cards">
+  <h2>Choisissez votre tranquillité</h2>
+  <p class="subtitle">Une formule adaptée à votre usage et à votre niveau de sérénité</p>
 
-        <!-- ESSENTIEL -->
-        <div class="card">
-            <h3>Essentiel</h3>
-            <p class="price">À partir de 100€</p>
-            <p>L’entretien indispensable</p>
+  <div class="cards">
 
-            <ul>
-                <li>✔ Entretien annuel complet</li>
-                <li>✔ Contrôle sécurité</li>
-            </ul>
+    <!-- ESSENTIEL -->
+    <div class="card">
+      <h3>Essentiel</h3>
+      <p class="price">À partir de 100€</p>
+      <p>L’entretien minimum pour rester conforme</p>
 
-            <a href="nos-formules.html?plan=essentiel" class="btn">Choisir</a>
-        </div>
+      <ul>
+        <li>✔ Entretien annuel complet</li>
+        <li>✔ Contrôle sécurité</li>
+      </ul>
 
-        <!-- PRIVILEGE -->
-        <div class="card vip">
-            <h3>Privilège</h3>
-            <p class="price">À partir de 160€</p>
-            <p><strong>La tranquillité totale, sans surprise</strong></p>
-
-            <ul>
-                <li>✔ Entretien annuel</li>
-                <li>✔ Dépannage illimité</li>
-                <li>✔ Intervention prioritaire</li>
-                <li>✔ Remise sur pièces</li>
-            </ul>
-
-            <a href="nos-formules.html?plan=privilege" class="btn">Choisir cette formule</a>
-        </div>
-
-        <!-- CONFORT -->
-        <div class="card">
-            <h3>Confort</h3>
-            <p class="price">À partir de 130€</p>
-            <p>Le bon équilibre</p>
-
-            <ul>
-                <li>✔ Entretien annuel</li>
-                <li>✔ Contrôle sécurité</li>
-                <li>✔ 1 dépannage inclus</li>
-            </ul>
-
-            <a href="nos-formules.html?plan=confort" class="btn">Choisir</a>
-        </div>
-
+      <a href="nos-formules.html?plan=essentiel" class="btn">Choisir</a>
     </div>
+
+    <!-- PRIVILEGE -->
+    <div class="card vip">
+      <h3>Privilège</h3>
+      <p class="price">À partir de 160€</p>
+      <p><strong>Vous ne vous occupez de rien, on gère tout</strong></p>
+
+      <ul>
+        <li>✔ Vous êtes dépanné sans surcoût</li>
+        <li>✔ Intervention rapide en priorité</li>
+        <li>✔ Entretien complet inclus</li>
+        <li>✔ Remise sur pièces</li>
+      </ul>
+
+      <a href="nos-formules.html?plan=privilege" class="btn">
+        Je veux être tranquille toute l’année
+      </a>
+    </div>
+
+    <!-- CONFORT -->
+    <div class="card">
+      <h3>Confort</h3>
+      <p class="price">À partir de 130€</p>
+      <p>Le bon équilibre entre sécurité et budget</p>
+
+      <ul>
+        <li>✔ Entretien annuel</li>
+        <li>✔ Contrôle sécurité</li>
+        <li>✔ 1 dépannage inclus</li>
+      </ul>
+
+      <a href="nos-formules.html?plan=confort" class="btn">Choisir</a>
+    </div>
+
+  </div>
+
 </section>
 
 <!-- CTA -->
