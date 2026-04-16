@@ -673,3 +673,19 @@ section {
   background:#1C1C1C;
   color:#fff;
 }
+/* FIX CARTE PRIVILÈGE */
+
+.contrats .card {
+  overflow: visible; /* 🔥 autorise le badge à sortir */
+}
+
+/* BADGE FIX */
+.contrats .card.vip::before{
+  top: -14px;
+  z-index: 2;
+}
+
+/* LÉGER AJUSTEMENT VISUEL */
+.contrats .card.vip{
+  margin-top: 10px; /* évite effet collé */
+}
