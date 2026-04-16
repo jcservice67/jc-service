@@ -1065,3 +1065,117 @@ section {
   border-radius:30px;
   text-decoration:none;
 }
+/* ===== FIX FINAL FORMULAIRE (PROPRE ET STABLE) ===== */
+
+/* CONTEXTE PAGE */
+body.form-page.clean-layout{
+  background:#f7f7f7;
+}
+
+/* HERO */
+.form-page.clean-layout .hero-light{
+  text-align:center;
+  padding:140px 20px 40px;
+}
+
+/* CONTAINER */
+.form-page.clean-layout .contact-page{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 20px 80px;
+}
+
+/* BOX CENTRÉE */
+.form-page.clean-layout .contact-box{
+  width:100%;
+  max-width:520px;
+  margin:auto;
+  background:#fff;
+  padding:40px;
+  border-radius:18px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.06);
+}
+
+/* LOGO */
+.form-page.clean-layout .contact-logo{
+  display:block;
+  margin:0 auto 20px;
+}
+
+/* INPUTS */
+.form-page.clean-layout input,
+.form-page.clean-layout select,
+.form-page.clean-layout textarea{
+  width:100%;
+  padding:14px;
+  border-radius:8px;
+  border:1px solid #E5E7EB;
+  margin-bottom:15px;
+  font-family:'Inter', sans-serif;
+}
+
+/* CHECKBOX ALIGNÉES */
+.form-page.clean-layout .checkbox-group{
+  margin:20px 0;
+}
+
+.form-page.clean-layout .checkbox-group label{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start; /* 🔥 clé */
+  gap:10px;
+  margin:10px 0;
+  cursor:pointer;
+}
+
+.form-page.clean-layout .checkbox-group input{
+  width:auto;
+  margin:0;
+}
+
+/* PRIX BOX */
+.form-page.clean-layout .price-box{
+  margin:25px 0;
+  padding:18px;
+  border-radius:10px;
+  background:#f5f5f5;
+  text-align:center;
+  font-weight:600;
+}
+
+/* BOUTON */
+.form-page.clean-layout button{
+  width:100%;
+  padding:16px;
+  border:none;
+  background:#C8A96A;
+  color:#1C1C1C;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.form-page.clean-layout button:hover{
+  opacity:0.9;
+}
+
+/* RETOUR */
+.form-page.clean-layout .back-home{
+  position:fixed;
+  top:20px;
+  left:20px;
+  z-index:1000;
+}
+
+/* URGENCE */
+.form-page.clean-layout .urgence-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#1C1C1C;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:30px;
+  text-decoration:none;
+}
