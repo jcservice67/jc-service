@@ -600,3 +600,76 @@ section {
   background:#1C1C1C;
   color:#fff;
 }
+/* ===== FIX PAGE ENTRETIEN UNIQUEMENT ===== */
+
+/* CONTAINER */
+.contrats .cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+  align-items:stretch;
+}
+
+/* CARD SPÉCIFIQUE ENTRETIEN */
+.contrats .card{
+  background:#fff;
+  padding:35px 30px;
+  border-radius:18px;
+  width:300px;
+  border:1px solid #eee;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  transition:0.3s;
+  position:relative;
+}
+
+/* HOVER */
+.contrats .card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* VIP */
+.contrats .card.vip{
+  border:2px solid #C8A96A;
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* BADGE */
+.contrats .card.vip::before{
+  content:"LA PLUS CHOISIE";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#C8A96A;
+  color:#1C1C1C;
+  font-size:12px;
+  padding:6px 14px;
+  border-radius:20px;
+  font-weight:600;
+}
+
+/* LISTE */
+.contrats .card ul{
+  list-style:none;
+  padding:0;
+  text-align:left;
+  margin:20px 0;
+  flex-grow:1;
+}
+
+/* BOUTON ALIGNÉ */
+.contrats .card .btn{
+  margin-top:auto;
+}
+
+/* CTA VIP */
+.contrats .card.vip .btn{
+  background:#1C1C1C;
+  color:#fff;
+}
