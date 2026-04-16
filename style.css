@@ -689,3 +689,84 @@ section {
 .contrats .card.vip{
   margin-top: 10px; /* évite effet collé */
 }
+/* ===== PLANS ENTRETIEN ===== */
+
+.plans{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+  align-items:stretch;
+}
+
+/* CARD */
+.plan{
+  background:#fff;
+  padding:35px 30px;
+  border-radius:18px;
+  width:300px;
+  border:1px solid #eee;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  transition:0.3s;
+  position:relative;
+}
+
+.plan:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* VIP */
+.plan.vip{
+  border:2px solid #C8A96A;
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* BADGE */
+.plan.vip::before{
+  content:"LA PLUS CHOISIE";
+  position:absolute;
+  top:-14px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#C8A96A;
+  color:#1C1C1C;
+  font-size:12px;
+  padding:6px 14px;
+  border-radius:20px;
+  font-weight:600;
+}
+
+/* LISTE */
+.plan ul{
+  list-style:none;
+  padding:0;
+  margin:20px 0;
+  flex-grow:1;
+}
+
+.plan ul li{
+  margin:10px 0;
+}
+
+/* CTA */
+.plan .btn{
+  margin-top:auto;
+}
+
+/* CTA VIP */
+.plan.vip .btn{
+  background:#1C1C1C;
+  color:#fff;
+}
+
+/* PREUVE SOCIALE */
+.proof{
+  margin-top:30px;
+  opacity:0.7;
+  font-size:14px;
+}
