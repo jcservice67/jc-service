@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
-<body class="form-page">
+<body class="form-page clean-layout">
 
 <a href="index.html" class="back-home">← Accueil</a>
 
@@ -20,6 +20,7 @@
   <p>Obtenez une estimation rapide adaptée à votre installation</p>
 </section>
 
+<!-- FORM -->
 <section class="contact-page">
 
 <div class="contact-box">
@@ -71,6 +72,7 @@ Sélectionnez vos équipements
 📞 Urgence ? Appelez-nous
 </a>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-container">
     <h3>JC Service</h3>
@@ -95,7 +97,6 @@ const formule = document.getElementById("formule");
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const priceBox = document.getElementById("priceBox");
 
-/* UPDATE */
 function updatePrice(){
 let total = 0;
 const f = formule.value;
@@ -126,20 +127,20 @@ priceBox.innerText = "À partir de " + total + "€";
 }
 }
 
-/* PRÉ-SÉLECTION URL */
+/* PRÉ-SÉLECTION */
+window.addEventListener("DOMContentLoaded", () => {
 const params = new URLSearchParams(window.location.search);
 const plan = params.get("plan");
 
-if(plan){
+if(plan && prices[plan]){
 formule.value = plan;
 }
 
-/* EVENTS */
+updatePrice();
+});
+
 formule.addEventListener("change", updatePrice);
 checkboxes.forEach(cb=> cb.addEventListener("change", updatePrice));
-
-/* INIT */
-updatePrice();
 
 </script>
 
