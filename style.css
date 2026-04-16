@@ -469,3 +469,26 @@ section {
 .hero {
   padding-top: 140px;
 }
+/* ===== FIX BOUTON HAUT DROITE ===== */
+
+.top-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+
+  padding: 10px 18px;
+  font-size: 14px;
+
+  background: #C8A96A;
+  color: #1C1C1C;
+  border-radius: 30px;
+  text-decoration: none;
+
+  z-index: 1000;
+}
+
+/* SÉCURITÉ : éviter conflits */
+.top-bar {
+  position: static !important;
+  padding: 0 !important;
+}
