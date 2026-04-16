@@ -954,3 +954,114 @@ section {
   border-radius:30px;
   text-decoration:none;
 }
+/* ===== PAGE FORMULAIRE CLEAN ===== */
+
+.clean-layout {
+  background:#f7f7f7;
+}
+
+/* RETOUR */
+.clean-layout .back-home{
+  position:fixed;
+  top:20px;
+  left:20px;
+  z-index:1000;
+}
+
+/* HERO */
+.clean-layout .hero-light{
+  text-align:center;
+  padding:140px 20px 40px;
+}
+
+.clean-layout .hero-light h1{
+  font-family:'Playfair Display', serif;
+  font-size:34px;
+}
+
+.clean-layout .hero-light p{
+  opacity:0.6;
+}
+
+/* CONTAINER */
+.clean-layout .contact-page{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 20px 80px;
+}
+
+/* BOX */
+.clean-layout .contact-box{
+  background:#fff;
+  padding:45px;
+  border-radius:20px;
+  max-width:520px;
+  width:100%;
+  box-shadow:0 25px 60px rgba(0,0,0,0.06);
+}
+
+/* LOGO */
+.clean-layout .contact-logo{
+  display:block;
+  margin:0 auto 25px;
+  width:120px;
+}
+
+/* INPUTS */
+.clean-layout input,
+.clean-layout select,
+.clean-layout textarea{
+  width:100%;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:1px solid #E5E7EB;
+}
+
+.clean-layout input:focus,
+.clean-layout select:focus,
+.clean-layout textarea:focus{
+  outline:none;
+  border-color:#C8A96A;
+}
+
+/* CHECKBOX */
+.clean-layout .checkbox-group label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* PRIX */
+.clean-layout .price-box{
+  margin:25px 0;
+  padding:20px;
+  border-radius:12px;
+  background:#f9f9f9;
+  text-align:center;
+  font-weight:600;
+}
+
+/* BOUTON */
+.clean-layout button{
+  width:100%;
+  padding:16px;
+  border:none;
+  background:#C8A96A;
+  color:#1C1C1C;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* URGENCE */
+.clean-layout .urgence-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#1C1C1C;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:30px;
+  text-decoration:none;
+}
